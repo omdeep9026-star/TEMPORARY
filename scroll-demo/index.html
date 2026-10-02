@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scroll Technique Lab — cinematic scroll, scrub, parallax, frame sequence</title>
+
+<!-- Technique sources (see README.md):
+     - nateherkai/scroll-craft (MIT)          : act grammar, cue windows, dwell, playhead lerp, parallax rates
+     - matinmonshizadeh/animation-handbook    : lerp easing, blur-snap compositor trick, frame-sequence scrub
+     - houmahani/codrops-depth-gallery (MIT)  : scroll -> camera Z, velocity damping, camera bounds
+     GSAP + ScrollTrigger and three.js are loaded from CDN as ES modules / UMD. -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+  } }
+</script>
+
+<style>
+  :root{
+    /* Ground drift — one theme family, 5 small steps (scroll-craft devices.md §10) */
+    --g0:#08090c; --g1:#0b0f14; --g2:#10100e; --g3:#0a0d12; --g4:#07080a;
+    --ink:#f2f1ee; --muted:#8d8f96; --line:rgba(255,255,255,.10);
+    --accent:#8fd0ff;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:auto}
+  body{
+    background:var(--g0); color:var(--ink);
+    font:400 16px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
+  }
+  /* The single fixed world stage. Everything else is a document section above it. */
+  #world{position:fixed; inset:0; z-index:0}
+  #world canvas{display:block; width:100%; height:100%}
+  .vignette{position:fixed; inset:0; z-index:1; pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 40%, transparent 40%, rgba(0,0,0,.55) 100%)}
+  main{position:relative; z-index:2}
+
+  .sec{position:relative; min-height:100svh; display:flex; align-items:center; padding:14vh 6vw}
+  .sec--tall{min-height:260svh}
+
+  .wrap{max-width:min(680px,88vw)}
+  .eyebrow{font:500 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--muted); margin-bottom:22px}
+  .display{font-weight:600; letter-spacing:-.03em; line-height:1.02; font-size:clamp(38px,7.2vw,86px)}
+  .lede{color:#c9cbd2; font-size:clamp(16px,1.5vw,20px); margin-top:26px; max-width:52ch}
+  .note{color:var(--muted); font-size:13px; margin-top:18px; max-width:56ch}
+  .note code{color:var(--accent); font:12px/1 ui-monospace,Menlo,monospace}
+
+  /* ---- Kinetic type: per-line mask reveal (scroll-craft §5) ---- */
+  .kinetic .line{display:block; overflow:hidden; padding-bottom:.14em; margin-bottom:-.02em}
+  .kinetic .line > span{display:block; will-change:transform; white-space:nowrap}
+
+  /* ---- Character primitives (splitter output) ----
+     inline-block is mandatory: a character has to be a transformable box before
+     per-character rotationX / yPercent / drop-shadow mean anything. */
+  .ch{display:inline-block; will-change:transform,filter; backface-visibility:hidden}
+  .ch-wrap{display:inline-block; overflow:hidden; vertical-align:top}
+  /* A measured line box. Must be a block-level box or the per-line wrapper
+     masks have no height of their own to clip against. */
+  /* nowrap matters: splitting a line into inline-block characters disables
+     kerning and ligatures, so measured text grows a few percent. Without this,
+     an authored two-line headline silently becomes three lines with a one-word
+     orphan. The line breaks are decided by the splitter, not by the browser. */
+  .tline{display:block; white-space:nowrap}
+  /* Perspective must live on the PARENT of the rotated character: a transformed
+     element cannot establish its own perspective (codrops fx6/fx7). */
+  .fx3d{perspective:900px}
+  .fx3d .ch-wrap{display:inline-block; transform-style:preserve-3d}
+  .fx3d .ch{transform-style:preserve-3d}
+  /* The glow palette. Cool and restrained; one accent, never rainbow. */
+  :root{
+    --glow-ink:   rgba(150,205,255,.95);   /* hero ignition */
+    --glow-cue:   rgba(255,196,150,.90);   /* pinned-cue emphasis */
+    --glow-ember: rgba(255,120,90,.85);    /* travelling glow, start */
+    --glow-violet:rgba(150,140,255,.85);   /* travelling glow, end */
+  }
+
+  /* ---- Pinned scrubbed act ---- */
+  #pin-sec{height:340svh; padding:0}
+  #pin-stage{height:100svh; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:0 6vw}
+  /* An explicit width, not max-width: #pin-stage is a flex container, and the cue
+     children are absolutely positioned so they contribute no intrinsic width. A
+     max-width-only flex item shrinks to fit the widest in-flow sibling instead,
+     which collapses the cue box and wraps the headline one word per line. */
+  #pin-stage .wrap{width:min(900px,90vw); max-width:min(900px,90vw); margin-inline:auto}
+  /* The stack needs a box as tall as the display type, so it inherits that size.
+     em on the stack itself resolves against the stack's own font-size, so the
+     height has to be declared at the display scale, not the body scale. */
+  .cue-stack{position:relative; width:100%; font-size:clamp(30px,5.6vw,68px); min-height:1.02em}
+  .cue-stack > .display{position:absolute; inset:0; opacity:0; font-size:inherit; line-height:1.02}
+
+  /* ---- Frame-sequence canvas ---- */
+  #seq-wrap{position:relative; width:min(760px,90vw); aspect-ratio:16/10; border:1px solid var(--line);
+    border-radius:14px; overflow:hidden; background:#06070a}
+  #seq{display:block; width:100%; height:100%}
+  .seq-tag{position:absolute; left:14px; bottom:12px; font:11px/1 ui-monospace,Menlo,monospace;
+    color:var(--muted); letter-spacing:.12em}
+
+  /* ---- Layered parallax (animation-handbook parallax-depth-of-field) ---- */
+  #dof{position:relative; height:120svh; overflow:hidden}
+  #dof .layer{position:absolute; inset:-6% -12%; width:auto; max-width:none; will-change:transform,filter}
+  .floor{position:absolute; left:0; right:0; bottom:0; height:34%; z-index:9; pointer-events:none;
+    background:linear-gradient(to bottom, transparent, var(--g3) 78%)}
+
+  /* ---- Cinematic transition: one-sided crossfade veil between acts ---- */
+  #veil{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0; background:#000}
+
+  #dbg{position:fixed; right:12px; bottom:12px; z-index:20; display:none;
+    font:11px/1.6 ui-monospace,Menlo,monospace; color:var(--accent);
+    background:rgba(0,0,0,.6); border:1px solid var(--line); border-radius:8px; padding:8px 10px;
+    white-space:pre; pointer-events:none}
+  .hint{position:fixed; left:50%; bottom:16px; transform:translateX(-50%); z-index:20;
+    font:11px/1 ui-monospace,Menlo,monospace; letter-spacing:.16em; color:var(--muted);
+    text-transform:uppercase; pointer-events:none}
+  @media (prefers-reduced-motion:reduce){ .kinetic .line>span{transform:none!important} }
+</style>
+</head>
+<body>
+
+<div id="world" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div id="veil" aria-hidden="true"></div>
+
+<main>
+
+  <!-- ACT 0 · scrub — camera dolly in. Cinematic 3D, driven only by scroll. -->
+  <section class="sec" id="s0" data-ground="0">
+    <div class="wrap">
+      <p class="eyebrow">Act 01 · camera scrub</p>
+      <h1 class="display kinetic">
+        <span class="line"><span>Scroll is</span></span>
+        <span class="line"><span>the only timeline.</span></span>
+      </h1>
+      <p class="lede">A single Three.js camera on a fixed stage. Its position and target are pure
+      functions of scroll progress, damped toward the target every frame so wheel notches become a glide.</p>
+      <p class="note">Techniques: scroll&nbsp;→&nbsp;camera Z with bounded travel · exponential playhead damping ·
+      velocity-driven chromatic spread · fog as depth cue.</p>
+    </div>
+  </section>
+
+  <!-- ACT 1 · pin — frame holds, copy advances. Cue windows with plateaus. -->
+  <section class="sec sec--tall" id="pin-sec" data-ground="1">
+    <div id="pin-stage">
+      <div class="wrap">
+        <p class="eyebrow">Act 02 · pinned + scrubbed cues</p>
+        <!-- Cues are stacked in the same box so they crossfade IN PLACE.
+             Each has a plateau at full opacity; windows overlap by ~10% so the
+             stage is never empty; the closing cue holds to the end of the act. -->
+        <div class="cue-stack">
+          <div id="cue-a" class="display">One stage.</div>
+          <div id="cue-b" class="display">Four arguments.</div>
+          <div id="cue-c" class="display">All on the same frame.</div>
+        </div>
+        <p class="note" style="margin:34px auto 0">Cue windows overlap so the stage is never empty;
+        the last cue holds so the act ends on a statement.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACT 2 · frame sequence — deterministic canvas scrub. -->
+  <section class="sec sec--tall" id="s2" data-ground="2">
+    <div class="wrap">
+      <p class="eyebrow">Act 03 · canvas frame sequence</p>
+      <h2 class="display" style="font-size:clamp(30px,5vw,58px)">A flip-book drawn from a number</h2>
+      <p class="lede">120 procedural frames. The scroll position picks the frame, a lerped playhead eases
+      toward it, and each frame is a pure function of its index — so scrubbing backwards is exact.</p>
+      <div id="seq-wrap" style="margin-top:38px">
+        <canvas id="seq"></canvas>
+        <div class="seq-tag" id="seq-tag">FRAME 000 / 120</div>
+      </div>
+      <p class="note">A frame already on the canvas is not redrawn, and the canvas is only touched while
+      the act is on screen.</p>
+    </div>
+  </section>
+
+  <!-- ACT 3 · parallax + depth of field -->
+  <section id="dof" data-ground="3">
+    <div class="layer" id="L5" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" style="width:100%;height:100%">
+        <defs><radialGradient id="sky" cx="50%" cy="8%" r="80%">
+          <stop offset="0%" stop-color="#2b3c55"/><stop offset="60%" stop-color="#141c27"/>
+          <stop offset="100%" stop-color="#0a0e14"/></radialGradient></defs>
+        <rect width="1200" height="800" fill="url(#sky)"/>
+      </svg>
+    </div>
+    <div class="layer" id="L4" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" style="width:100%;height:100%">
+        <polygon fill="#2f4159" points="0,470 90,330 190,392 310,268 430,350 550,250 670,318 790,282 910,326 1030,262 1140,306 1200,286 1200,800 0,800"/>
+      </svg>
+    </div>
+    <div class="layer" id="L3" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" style="width:100%;height:100%">
+        <polygon fill="#222f42" points="0,520 110,382 230,436 370,314 490,398 610,306 730,368 850,340 970,380 1090,330 1200,358 1200,800 0,800"/>
+      </svg>
+    </div>
+    <div class="layer" id="L2" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" style="width:100%;height:100%">
+        <polygon fill="#161f2c" points="0,566 130,440 270,478 410,388 550,452 690,378 830,428 970,404 1110,438 1200,418 1200,800 0,800"/>
+      </svg>
+    </div>
+    <div class="layer" id="L1" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" style="width:100%;height:100%">
+        <polygon fill="#0b0e13" points="0,612 170,498 330,540 490,468 650,520 810,478 970,520 1130,488 1200,506 1200,800 0,800"/>
+      </svg>
+    </div>
+    <div class="floor" aria-hidden="true"></div>
+    <div class="wrap" style="position:relative; z-index:10; margin:0 auto">
+      <p class="eyebrow">Act 04 · layered parallax + focus pull</p>
+      <h2 class="display" style="font-size:clamp(30px,5vw,58px)">Depth is differential motion</h2>
+      <p class="lede">Five planes, each with its own rate. The plane of sharp focus travels from the far
+      ridge to the foreground, and every other plane is blurred by its distance from it.</p>
+      <p class="note">Blur is quantised to 0.5&nbsp;px steps so the compositor reuses the rasterised layer
+      instead of re-filtering five full-bleed planes on every frame.</p>
+    </div>
+  </section>
+
+  <!-- ACT 4 · transition — hard cut, then a settle. -->
+  <section class="sec" id="s3" data-ground="4">
+    <div class="wrap">
+      <p class="eyebrow">Act 05 · cinematic transition</p>
+      <h2 class="display">Cut on a scroll edge,<br>not on a timer.</h2>
+      <p class="lede">The veil is driven by section progress, so the cut lands exactly where the reader
+      put it and reverses perfectly on the way back up.</p>
+      <p class="note">Press <code>D</code> for the debug readout: scroll progress, lerped playhead,
+      camera Z, fps.</p>
+    </div>
+  </section>
+
+</main>
+
+<div id="dbg"></div>
+<div class="hint">scroll ↓</div>
+
+<script type="module">
+/* Fail loudly instead of silently: a scroll demo with a dead render loop looks
+   identical to a scroll demo that is merely dark. */
+const __err = (m) => { const d=document.getElementById('dbg'); if(d){ d.style.display='block'; d.textContent += m+'\n'; } };
+window.addEventListener('error', e => __err('ERROR '+(e.message||'')+' @'+(e.filename||'')+':'+(e.lineno||'')));
+window.addEventListener('unhandledrejection', e => __err('REJECT '+(e.reason && (e.reason.stack||e.reason.message) || e.reason)));
+/* ============================================================================
+   Scroll Technique Lab
+   One fixed WebGL stage + one document. Scroll is the only input.
+   Nothing here plays on a clock: every visual is derived from a scroll number.
+   ========================================================================== */
+
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const clamp = (v,a,b) => Math.min(Math.max(v,a),b);
+const lerp  = (a,b,t) => a + (b-a)*t;
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------------------------------------------------------------------------
+   1. THE WORLD — one fixed Three.js stage, camera on a scrubbed path.
+      Pattern: codrops-depth-gallery (scroll -> camera Z, damping, bounds)
+               + scroll-craft worldflight (one fixed stage, no seams).
+   ------------------------------------------------------------------------- */
+const GROUNDS = ['#08090c','#0b0f14','#10100e','#0a0d12','#07080a'];
+
+// One leg per document section: where the camera sits and where it looks.
+const LEGS = [
+  { cam:[ 0.0, 0.35,  7.0], look:[0, 0,  0] },   // 0 hero
+  { cam:[ 3.4, 0.10,  0.6], look:[0, 0, -4.0] },  // 1 pinned act (dolly right + push in)
+  { cam:[-4.2, 1.20, -4.6], look:[0, 0.4,-9.0] },// 2 frame sequence (swing left, rise)
+  { cam:[ 1.2,-0.90,-12.5], look:[0, 0.2,-18.0] },// 3 depth of field (drop to the floor line)
+  { cam:[ 0.0, 0.60,-19.5], look:[0, 0, -25.0] },// 4 finale
+];
+
+const world = document.getElementById('world');
+let camPos = LEGS[0].cam.slice(), camLook = LEGS[0].look.slice();
+let legTarget = 0, legCurrent = 0, legVel = 0;      // index of the leg scroll points at
+let camTarget = LEGS[0].cam.slice(), lookTarget = LEGS[0].look.slice();
+
+const three = await import('three');
+const renderer = new three.WebGLRenderer({ antialias:true, powerPreference:'high-performance' });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.setSize(innerWidth, innerHeight);
+world.appendChild(renderer.domElement);
+
+const scene  = new three.Scene();
+scene.fog    = new three.FogExp2(0x07080a, 0.038);           // depth cue for the dolly
+const camera = new three.PerspectiveCamera(52, innerWidth/innerHeight, 0.1, 140);
+camera.position.fromArray(camPos);
+
+// Key + rim + fill. Cheap, and the rim is what separates geometry from the fog.
+scene.add(new three.AmbientLight(0x5d708c, 1.15));
+const key = new three.DirectionalLight(0xfff2e2, 2.6); key.position.set(6, 8, 4); scene.add(key);
+const rim = new three.DirectionalLight(0x7cb4ff, 2.2); rim.position.set(-7, -2, -6); scene.add(rim);
+
+// Monoliths along the camera's path — the things the camera flies between.
+const monoMat = new three.MeshStandardMaterial({ color:0x2b3442, roughness:.5, metalness:.4,
+  emissive:0x0a121c, emissiveIntensity:1 });
+const edgeMat = new three.MeshBasicMaterial({ color:0x9fd8ff, transparent:true, opacity:.6 });
+// Emissive edge strip: the one element allowed to be genuinely bright. Glow here
+// is deliberate and sparse — a rim on every object would read as noise, and the
+// bloom pass below would amplify every lit pixel into mush.
+const edgeMatHot = new three.MeshBasicMaterial({ color:0xbfd9ff, transparent:true, opacity:.6 });
+const meshes = [];
+// Two rows flanking the camera path. The corridor between them is what makes the
+// dolly read as travel rather than as a zoom.
+for (let i = 0; i < 40; i++){
+  const side = i % 2 ? 1 : -1;
+  const w = 0.7 + Math.random()*2.2, h = 1.6 + Math.random()*5.5, d = 0.7 + Math.random()*1.6;
+  const g = new three.BoxGeometry(w, h, d);
+  const m = new three.Mesh(g, monoMat);
+  m.position.set(side * (3.2 + Math.random()*4.4), (Math.random()-.5)*5.0, -i * 1.55 - 2);
+  m.rotation.y = (Math.random()-.5) * .7;
+  scene.add(m); meshes.push(m);
+  // Only every fourth monolith gets the hot emissive strip. Bloom multiplies
+  // brightness, so making every edge bright turns the corridor into a white tube.
+  const hot = (i % 4 === 0);
+  const e = new three.Mesh(new three.BoxGeometry(g.parameters.width*1.01, .03, g.parameters.depth*1.01), hot ? edgeMatHot : edgeMat);
+  e.position.y = h/2 + .02; m.add(e);
+}
+
+// A horizon glow far down the corridor gives the fog something to grade against.
+const glow = new three.Mesh(
+  new three.PlaneGeometry(90, 34),
+  new three.MeshBasicMaterial({ color:0x2b4f7a, transparent:true, opacity:.32, depthWrite:false })
+);
+glow.position.set(0, 2, -62); scene.add(glow);
+
+// Dust: gives parallax inside the 3D scene and reads motion when the camera moves.
+const DUST = 1400, dpos = new Float32Array(DUST*3);
+for (let i=0;i<DUST;i++){ dpos[i*3]=(Math.random()-.5)*40; dpos[i*3+1]=(Math.random()-.5)*22; dpos[i*3+2]=-Math.random()*58-1; }
+const dgeo = new three.BufferGeometry();
+dgeo.setAttribute('position', new three.BufferAttribute(dpos,3));
+const dust = new three.Points(dgeo, new three.PointsMaterial({ size:.07, color:0xcfe4ff, transparent:true, opacity:.7, sizeAttenuation:true }));
+scene.add(dust);
+
+/* ---------------------------------------------------------------------------
+   1b. BLOOM — single-pass, global, low strength.
+        Pattern: three.js examples/webgl_postprocessing_unreal_bloom.html (MIT).
+
+        Global bloom is the first attempt on purpose. `threshold` is the important
+        parameter: at 0.72 only the deliberately bright pixels (edge strips, dust,
+        the horizon glow) cross it, so the monoliths and the fog stay matte and the
+        typography is never washed out. Selective two-composer bloom is the fallback
+        if this visibly fails, not the plan.
+
+        Typography is DOM, not WebGL, so bloom cannot touch it at all — which is why
+        a global pass is safe here in a way it would not be for text inside the scene.
+   ------------------------------------------------------------------------- */
+const { EffectComposer } = await import('three/addons/postprocessing/EffectComposer.js');
+const { RenderPass }     = await import('three/addons/postprocessing/RenderPass.js');
+const { UnrealBloomPass }= await import('three/addons/postprocessing/UnrealBloomPass.js');
+const { OutputPass }     = await import('three/addons/postprocessing/OutputPass.js');
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new three.Vector2(innerWidth, innerHeight), 0.62, 0.5, 0.72);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+// UnrealBloomPass runs five mip levels of separable blur, each a full-screen pair of
+// passes — roughly ten extra full-resolution draws per frame. That is nothing on a
+// GPU and ruinous on a software rasteriser, so the pass renders at HALF resolution
+// and the bloom texture is upsampled. The glow is a soft wide halo, so the lost
+// detail is invisible; if this demo is ever opened on a machine without one, set
+// window.__bloomOff = true and the plain renderer is used instead.
+const BLOOM_SCALE = 0.5;
+function sizeBloom(){
+  composer.setSize(innerWidth, innerHeight);
+  bloom.resolution.set(Math.max(1, innerWidth * BLOOM_SCALE), Math.max(1, innerHeight * BLOOM_SCALE));
+}
+
+// Bloom is only affordable where there is a real GPU. UnrealBloomPass is roughly ten
+// extra full-screen draws per frame; measured here at 10fps -> 3fps on a software
+// rasteriser (SwiftShader), which would make the whole demo unusable in exactly the
+// environments most likely to open it without a GPU. So detect that case up front and
+// skip the composer entirely. The emissive geometry and rim light still carry the
+// scene, so the difference is a softer glow, not a broken page.
+// Set window.__forceBloom = true to override either way.
+function isSoftwareRenderer(){
+  try{
+    const gl = renderer.getContext();
+    const ext = gl.getExtension('WEBGL_debug_renderer_info');
+    const name = ext ? String(gl.getParameter(ext.UNMASKED_RENDERER_WEBGL)) : '';
+    return /swiftshader|llvmpipe|software|basic render/i.test(name);
+  }catch(e){ return false; }
+}
+const SOFTWARE_GL = isSoftwareRenderer();
+window.__forceBloom = false;
+const BLOOM_ON = !REDUCED && (!SOFTWARE_GL || window.__forceBloom === true);
+if (SOFTWARE_GL && !window.__forceBloom) {
+  console.info('[scroll-demo] software WebGL detected — bloom pass disabled. Set window.__forceBloom = true before load to force it on.');
+}
+
+/* ---------------------------------------------------------------------------
+   2. SCROLL PROGRESS — one source of truth, rAF-lerped.
+      Pattern: scroll-craft "the playhead is lerped" + animation-handbook EASE.
+      Scroll writes a TARGET; a rAF loop walks the value toward it. A 1:1 write
+      reproduces every gap between wheel events and reads as a stutter.
+   ------------------------------------------------------------------------- */
+const EASE = REDUCED ? 1 : 0.12;            // share of distance covered per 1/60s
+const FRAME_MS = 1000/60;
+let progress = 0, progTarget = 0, last = 0, fps = 60;
+
+function onScroll(){
+  const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  progTarget = clamp(scrollY / max, 0, 1);
+}
+addEventListener('scroll', onScroll, { passive:true });
+
+// Which leg is the reader in? Derived from section geometry, clamped at both ends.
+const sections = [...document.querySelectorAll('[data-ground]')].map(el => ({ el, ground: GROUNDS[+el.dataset.ground] }));
+const legRanges = sections.map(s => ({ s, start:0, end:0 }));
+function measureLegs(){
+  const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+  sections.forEach((s,i) => {
+    const a = clamp(s.el.offsetTop / max, 0, 1);
+    const b = clamp((s.el.offsetTop + s.el.offsetHeight) / max, 0, 1);
+    legRanges[i].start = a; legRanges[i].end = b;
+  });
+  legRanges[legRanges.length-1].end = 1;
+}
+
+/* ---------------------------------------------------------------------------
+   3. GROUND DRIFT — the page colour interpolates between acts.
+      Pattern: scroll-craft devices.md §10. One theme family, small steps.
+   ------------------------------------------------------------------------- */
+const groundNow = { r:8, g:9, b:12 };
+function hex2rgb(h){ const n = parseInt(h.slice(1),16); return [n>>16&255, n>>8&255, n&255]; }
+const groundRGB = GROUNDS.map(hex2rgb);
+
+/* ---------------------------------------------------------------------------
+   4. PER-FRAME
+   ------------------------------------------------------------------------- */
+const camPosV = new three.Vector3(...camPos), lookV = new three.Vector3(...camLook);
+let camZNorm = 0;
+
+function tick(now){
+  requestAnimationFrame(tick);
+  if (last) fps = lerp(fps, 1000/Math.max(1, now-last), .1);
+  const dt = last ? Math.min(now-last, 50) : FRAME_MS; last = now;
+
+  // Frame-rate independent ease: the glide lasts the same on 30/60/120Hz.
+  const k = REDUCED ? 1 : 1 - Math.pow(1-EASE, dt/FRAME_MS);
+  progress += (progTarget - progress) * k;
+
+  // Which leg, and how far into it.
+  let leg = 0;
+  for (let i=0;i<legRanges.length;i++) if (progress >= legRanges[i].start) leg = i;
+  const r = legRanges[leg];
+  const local = clamp((progress - r.start) / Math.max(1e-6, r.end - r.start), 0, 1);
+
+  // Dwell remap: fast at the edges, settles in the middle where the copy is.
+  const dwell = 0.32;
+  const eased = REDUCED ? local : local + dwell * Math.sin(Math.PI * 2 * local) / (2*Math.PI);
+
+  // Catmull-Rom through the legs so the path curves instead of snapping between waypoints.
+  const p0 = LEGS[Math.max(0,leg-1)], p1 = LEGS[leg], p2 = LEGS[Math.min(LEGS.length-1,leg+1)];
+  const cr = (a,b,c,d,t) => {
+    const t2=t*t, t3=t2*t;
+    return .5*((2*b) + (-a+c)*t + (2*a-5*b+4*c-d)*t2 + (-a+3*b-3*c+d)*t3);
+  };
+  for (let i=0;i<3;i++){
+    camTarget[i]  = cr(p0.cam[i],  p1.cam[i],  p2.cam[i],  p2.cam[i],  eased);
+    lookTarget[i] = cr(p0.look[i], p1.look[i], p2.look[i], p2.look[i], eased);
+  }
+
+  // Damped camera — same lerp as the scroll value, so the camera never snaps.
+  for (let i=0;i<3;i++){
+    camPos[i]  = lerp(camPos[i],  camTarget[i],  k);
+    camLook[i] = lerp(camLook[i], lookTarget[i], k);
+  }
+  camPosV.fromArray(camPos); lookV.fromArray(camLook);
+  camera.position.copy(camPosV);
+  camera.lookAt(lookV);
+
+  // Velocity: drives edge glow + chromatic spread, so fast scrolling feels fast.
+  const vel = Math.abs(camPos[2] - camZNorm); camZNorm = camPos[2];
+  legVel = lerp(legVel, clamp(vel*22, 0, 1), .12);
+  edgeMat.opacity = .38 + legVel*.5;
+  edgeMatHot.opacity = .5 + legVel*.45;          // hot edges lead the response
+  dust.rotation.z = progress * .22;
+
+  // Bloom breathes with the same velocity the edges already use, so the whole
+  // scene brightens together on a fast scroll instead of in unrelated places.
+  if (BLOOM_ON) bloom.strength = 0.5 + legVel * 0.55;
+
+  // Ground drift toward the current act's colour.
+  const g = groundRGB[leg];
+  groundNow.r = lerp(groundNow.r, g[0], k*.35);
+  groundNow.g = lerp(groundNow.g, g[1], k*.35);
+  groundNow.b = lerp(groundNow.b, g[2], k*.35);
+  const gc = `rgb(${groundNow.r|0},${groundNow.g|0},${groundNow.b|0})`;
+  document.body.style.background = gc;
+  scene.fog.color.setRGB(groundNow.r/255, groundNow.g/255, groundNow.b/255);
+
+  renderFrame(progress, local, leg);
+  if (BLOOM_ON && !window.__bloomOff) composer.render(); else renderer.render(scene, camera);
+
+  const dbg = document.getElementById('dbg');
+  if (dbg && dbg.style.display !== 'none')
+    dbg.textContent = `progress ${progress.toFixed(3)}  target ${progTarget.toFixed(3)}\n`
+                    + `leg ${leg}  local ${local.toFixed(3)}\n`
+                    + `camZ ${camPos[2].toFixed(2)}  vel ${legVel.toFixed(2)}\n`
+                    + `fps  ${fps.toFixed(0)}`;
+}
+
+
+/* ---------------------------------------------------------------------------
+   5. TYPOGRAPHY FOUNDATION — line/word/char splitter.
+      Pattern: ScrollBlurTypography/js/textSplitter.js (76 lines, MIT),
+      reduced to what this demo needs and made re-entrant.
+
+      Two rules that matter more than the code:
+      - Never split before the webfont has loaded. Character boxes measured
+        against a fallback face are wrong, and every transform written against
+        them lands in the wrong place once the real face swaps in.
+      - Re-split on resize, because line breaks move. Anything bound to the old
+        characters has to be rebound, so the caller is handed a callback.
+   ------------------------------------------------------------------------- */
+function splitLinesChars(el){
+  // Idempotent: mark the element so a second call is a no-op, not a double split.
+  if (el.dataset.splitDone === '1') return { lines: el.querySelectorAll('.tline'), chars: el.querySelectorAll('.ch') };
+
+  // Snapshot for screen readers BEFORE the DOM is rewritten: a screen reader
+  // announcing a heading letter-by-letter is a regression.
+  const original = el.textContent.replace(/\s+/g, ' ').trim();
+
+  // Respect breaks the author already wrote. A hard <br> is an intent, not a
+  // wrap the layout would have chosen, so re-wrapping across it would change
+  // the headline the author designed. Segments split on <br>; each segment is
+  // then wrapped on its own.
+  const segments = [[]];
+  [...el.childNodes].forEach(node => {
+    if (node.nodeName === 'BR'){ segments.push([]); return; }
+    if (node.nodeType === 3) node.textContent.split(/\s+/).filter(Boolean).forEach(w => segments[segments.length-1].push(w));
+  });
+  el.textContent = '';
+  // Re-join with spaces: textContent runs the two sides of a <br> together, which
+  // would give a screen reader "edge,not" instead of "edge, not".
+  el.setAttribute('aria-label', segments.map(sg => sg.join(' ')).filter(Boolean).join(' '));
+
+  // Greedy line breaking, measured against the REAL rendered characters.
+  //
+  // Measuring words as plain text in an offscreen probe does not work here: the
+  // characters render as inline-block spans, which lose kerning and ligatures, so
+  // the split text is a few percent WIDER than the probe reports. Wrapping on the
+  // probe's numbers therefore fits words that do not actually fit, and a two-line
+  // headline silently becomes three with a one-word orphan.
+  //
+  // So the line is built for real and measured, then the last word is popped if it
+  // overflows. One layout per word, once per heading — cheap, and always correct.
+  const makeLine = () => {
+    const l = document.createElement('span');
+    l.className = 'tline';
+    l.setAttribute('aria-hidden','true');
+    return l;
+  };
+  const addWord = (lineEl, w, first) => {
+    if (!first) lineEl.appendChild(document.createTextNode(' '));
+    for (const c of w){
+      const s = document.createElement('span');
+      s.className = 'ch';
+      s.textContent = c;
+      lineEl.appendChild(s);
+    }
+  };
+  const lines = [];
+  segments.forEach(words => {
+    let lineEl = null;
+    words.forEach((w, wi) => {
+      if (!lineEl){ lineEl = makeLine(); el.appendChild(lineEl); }
+      addWord(lineEl, w, wi === 0 || lineEl.childNodes.length === 0);
+      if (lineEl.getBoundingClientRect().width > el.clientWidth && lineEl.childNodes.length > 1){
+        // Overflowed: remove the word we just added and close the line before it.
+        // Walk back over the chars of this word, then the separating space.
+        const spans = [...lineEl.querySelectorAll('.ch')];
+        for (let k = 0; k < w.length; k++) spans[spans.length - 1 - k]?.remove();
+        lineEl.lastChild?.nodeType === 3 && lineEl.lastChild.remove();
+        lines.push(lineEl);
+        lineEl = makeLine(); el.appendChild(lineEl);
+        addWord(lineEl, w, true);
+      }
+    });
+    if (lineEl) lines.push(lineEl);
+  });
+  el.dataset.splitDone = '1';
+  return { lines: el.querySelectorAll('.tline'), chars: el.querySelectorAll('.ch') };
+}
+
+/* A glow is a single filter string. Building it in one place keeps the radius
+   unit and the colour consistent across every act. `a` is the glow radius in px. */
+const glowFilter = (px, colour) => px > 0.15 ? `drop-shadow(0px 0px ${px.toFixed(1)}px ${colour})` : 'none';
+
+/* ---------------------------------------------------------------------------
+   6. ACT 1 — pinned scrubbed cues with overlapping windows and a held close.
+   ------------------------------------------------------------------------- */
+(function pinnedAct(){
+  // Split each cue into characters BEFORE the timeline binds to it, so the
+  // timeline animates characters rather than whole blocks. Idempotent, so a
+  // re-split after resize does not double-wrap.
+  const CUES = ['#cue-a','#cue-b','#cue-c'].map(sel => {
+    const el = document.querySelector(sel);
+    const { chars } = splitLinesChars(el);
+    return { sel, el, chars: [...chars] };
+  });
+  window.__cues = CUES;
+
+  const pinStageEl = document.getElementById('pin-stage');
+  let pinProgress = 0;
+  const tl = gsap.timeline({
+    scrollTrigger:{ trigger:'#pin-sec', start:'top top', end:'bottom bottom',
+                   scrub: REDUCED ? true : 0.6, pin:'#pin-stage', anticipatePin:1,
+                   onUpdate(self){ pinProgress = self.progress; } }
+  });
+  // Each cue: in with a plateau, out with a plateau. Windows overlap by ~10%,
+  // so there is always something at partial or full opacity on screen.
+  // The last cue has no out — the act ends on a statement, not on a fade.
+  //
+  // Grid stagger from the centre (codrops fx4): each character starts displaced
+  // away from the middle by an amount proportional to its distance from centre,
+  // so the word assembles inward rather than sweeping in from the left.
+  const cue = (sel, at, dur) => {
+    const chars = CUES.find(c => c.sel === sel).chars;
+    tl.fromTo(sel, { opacity:0, y:40 }, { opacity:1, y:0, ease:'power2.out', duration:dur }, at)
+      .to(sel,     { opacity:0, y:-32, ease:'power2.in',  duration:dur }, at + dur*2.35);
+    if (!REDUCED) tl.fromTo(chars,
+      { x: (i, _, arr) => 70 * (i - (arr.length - 1) / 2) },
+      { x:0, ease:'power1.inOut', duration:1,
+        stagger:{ grid:'auto', from:'center' } }, at);
+    return tl;
+  };
+  cue('#cue-a', .00, .17);
+  cue('#cue-b', .40, .17);
+  tl.fromTo('#cue-c', {opacity:0, y:40}, {opacity:1, y:0, ease:'power2.out', duration:.18}, .82);
+  tl.set('#cue-a', {opacity:0}, .82); tl.set('#cue-b', {opacity:0}, .82);
+  if (!REDUCED) tl.fromTo(CUES[2].chars,
+    { x: (i, _, arr) => 70 * (i - (arr.length - 1) / 2) },
+    { x:0, ease:'power1.inOut', duration:1, stagger:{ grid:'auto', from:'center' } }, .82);
+
+  // ---- Cue glow, driven by the timeline's own progress ----
+  // The glow is NOT a second animation. It reads the cue's current opacity and
+  // derives radius from it, so glow strengthens during the emphasis plateau and
+  // falls away as the cue exits — with no constant neon anywhere.
+  const cueGlowState = CUES.map(() => -1);
+  const CUE_GLOW_MAX = 16;
+  // The closing cue has no fade-out, so its opacity sits at 1 for the rest of the
+  // act. Left alone that is a flat 16px glow on display type for a third of a page
+  // — which is exactly the constant neon this is meant to avoid. The held cue
+  // therefore SETTLES: full glow as it lands, easing back to a quiet resting value.
+  const CUE_HOLD = .82, CUE_REST = .42;
+  function renderCueGlow(){
+    const settle = 1 - (1 - CUE_REST) * clamp((pinProgress - CUE_HOLD) / (1 - CUE_HOLD), 0, 1);
+    for (let i = 0; i < CUES.length; i++){
+      const c = CUES[i];
+      const op = parseFloat(getComputedStyle(c.el).opacity) || 0;
+      // Squared, so the glow only really appears near the top of the plateau.
+      const g = op * op * CUE_GLOW_MAX * settle;
+      const q = Math.round(g * 2) / 2;                 // 0.5px steps: cheap, and stable
+      if (q === cueGlowState[i]) continue;
+      cueGlowState[i] = q;
+      // Whole-block drop-shadow: the cue is one phrase, so one filter is enough.
+      // Per-character glow is reserved for the hero, where the stagger matters.
+      c.el.style.filter = glowFilter(q, 'var(--glow-cue)');
+      c.el.style.willChange = q > 0 ? 'opacity, transform, filter' : 'opacity, transform';
+    }
+  }
+  window.__renderCueGlow = renderCueGlow;
+
+  // Release the stage during the un-pin slide.
+  //
+  // The closing cue holds to the end of the timeline, but the timeline finishes
+  // BEFORE the pinned stage stops travelling: there is a further viewport of
+  // upward scroll before the pin releases. Left alone the held line rides that
+  // whole slide still at full opacity and lands on top of the next section's
+  // heading — invisible in any single screenshot, obvious while scrolling.
+  if (!REDUCED){
+    ScrollTrigger.create({
+      trigger:'#pin-sec', start:'bottom bottom', end:'bottom bottom-=45%',
+      onUpdate(self){ pinStageEl.style.opacity = (1 - self.progress).toFixed(3); }
+    });
+  }
+})();
+
+/* ---------------------------------------------------------------------------
+   7. HERO — per-character "ignite" reveal, scrubbed by scroll.
+      Patterns, combined:
+        ScrollBlurTypography effect-1  (MIT) : filter blur(10px) brightness(0%)
+                                          -> blur(0) brightness(100%), staggered,
+                                          scrub:true between two viewport offsets
+        OnScrollTextHighlight effect-13 (MIT): per-character drop-shadow(0 0 0)
+                                          -> drop-shadow(0 0 20px colour)
+        OnScrollTypographyAnimations fx4 (MIT): grid stagger from centre
+        scroll-craft §5 (MIT)               : each unit enters from behind a mask
+
+      The ignite reads because brightness() is doing half the work: the character
+      starts genuinely DARK and blurred, then lights and sharpens. A fade alone
+      would read as a fade; brightness is what reads as ignition.
+
+      Scroll drives it. `scrub: 1.2` is deliberate and is the weight of the hero,
+      not a smoothing hack — see the note in the README.
+   ------------------------------------------------------------------------- */
+(function heroIgnite(){
+  const lineUnits = [...document.querySelectorAll('.kinetic .line > span')];
+  const heroChars = [];
+  lineUnits.forEach(unit => {
+    const text = unit.textContent;
+    unit.setAttribute('aria-label', text);
+    unit.textContent = '';
+    for (const c of text){
+      if (c === ' '){ unit.appendChild(document.createTextNode('\u00A0')); continue; }
+      const s = document.createElement('span');
+      s.className = 'ch';
+      s.textContent = c;
+      unit.appendChild(s);
+      heroChars.push(s);
+    }
+  });
+
+  // Declared here, above both the branch and the trigger: onRefresh fires
+  // synchronously on create, so a `const` further down would still be in the
+  // temporal dead zone when the first paint happens.
+  const lastState = heroChars.map(() => -1);
+
+  if (REDUCED){
+    // Reduced motion: the end state, written once. No scrub, no per-frame filters.
+    gsap.set(heroChars, { yPercent:0, opacity:1, filter:'none' });
+    lineUnits.forEach(u => gsap.set(u, { yPercent:0 }));
+  } else {
+    gsap.set(heroChars, { opacity:0 });
+    gsap.set(lineUnits, { yPercent:0 });
+
+    ScrollTrigger.create({
+      trigger:'#s0', start:'top top', end:'bottom top+=35%',
+      scrub: 1.2,                       // weight, not smoothing — see README
+      onUpdate(self){ heroIgniteAt(self.progress); },
+      onRefresh(self){ heroIgniteAt(self.progress); }
+    });
+  }
+
+  // Pure function of scroll progress. Recomputing from scratch each call (rather
+  // than letting GSAP interpolate) means the reveal is exactly reversible and can
+  // be driven from anywhere — including the debug harness.
+  function heroIgniteAt(t){
+    const q = clamp(t, 0, 1);
+    for (let i = 0; i < heroChars.length; i++){
+      // Grid stagger from centre, computed per character from its index.
+      const centre = (heroChars.length - 1) / 2;
+      const dist = Math.abs(i - centre) / Math.max(1, centre);
+      const local = clamp((q - dist * 0.34) / 0.66, 0, 1);
+
+      // Quantise to 1/64 so we only touch the DOM when the value visibly changed.
+      const lq = Math.round(local * 64) / 64;
+      if (lq === lastState[i]) continue;
+      lastState[i] = lq;
+
+      const blur = (1 - lq) * 11;                       // 11px -> 0
+      const bright = 30 + 70 * lq;                      // 30% -> 100%
+      const radius = lq * lq * 17;                      // quadratic: glow arrives late
+      const filters = [];
+      if (blur > 0.15) filters.push(`blur(${blur.toFixed(1)}px)`);
+      filters.push(`brightness(${bright.toFixed(0)}%)`);
+      if (radius > 0.15) filters.push(`drop-shadow(0px 0px ${radius.toFixed(1)}px var(--glow-ink))`);
+
+      const ch = heroChars[i];
+      ch.style.filter = filters.join(' ');
+      ch.style.opacity = lq.toFixed(2);
+      // Masked slide: each character rises from behind the line box, so it enters
+      // from a clean edge instead of merely fading in.
+      ch.style.transform = `translate3d(0, ${((1 - lq) * 112).toFixed(1)}%, 0)`;
+    }
+  }
+  // Only seed the reveal state when it is actually driven by scroll. Under
+  // reduced motion the branch above has already written the final state, and
+  // calling this would overwrite it with the un-ignited start state — leaving the
+  // hero headline invisible with nothing left to scroll it in.
+  if (!REDUCED) heroIgniteAt(0);
+  window.__heroIgniteAt = heroIgniteAt;
+})();
+
+gsap.utils.toArray('.sec:not(#pin-sec) .eyebrow, .sec:not(#pin-sec) .lede, .sec:not(#pin-sec) .note').forEach(el=>{
+  gsap.from(el, { opacity:0, y:14, duration:REDUCED?0:.62, ease:'power2.out',
+    scrollTrigger:{ trigger:el, start:'top 88%', once:true } });
+});
+
+/* ---------------------------------------------------------------------------
+   7. ACT 2 — canvas frame sequence. 120 deterministic frames, scrubbed.
+      Pattern: animation-handbook scroll-image-sequence.
+      A frame already drawn is not redrawn; the canvas is only touched while visible.
+   ------------------------------------------------------------------------- */
+const FRAMES = 120, seq = document.getElementById('seq'), sctx = seq.getContext('2d');
+let seqTarget = 0, seqShown = 0, seqDrawn = -1, seqW = 0, seqH = 0, seqDPR = 1;
+const CUBE_V=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+const CUBE_E=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+const OCT_V=[[1.5,0,0],[-1.5,0,0],[0,1.5,0],[0,-1.5,0],[0,0,1.5],[0,0,-1.5]];
+const OCT_E=[[0,2],[0,3],[0,4],[0,5],[1,2],[1,3],[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]];
+
+function seqResize(){
+  const r = seq.getBoundingClientRect();
+  seqDPR = Math.min(devicePixelRatio||1, 2);
+  seqW = r.width; seqH = r.height;
+  seq.width = Math.round(seqW*seqDPR); seq.height = Math.round(seqH*seqDPR);
+  sctx.setTransform(seqDPR,0,0,seqDPR,0,0);
+  seqDrawn = -1;                                    // resizing clears the canvas
+}
+function rot(v,ax,ay){
+  let [x,y,z]=v;
+  const cy=Math.cos(ay), sy=Math.sin(ay); const x1=x*cy-z*sy, z1=x*sy+z*cy;
+  const cx=Math.cos(ax), sx=Math.sin(ax); const y1=y*cx-z1*sx, z2=y*sx+z1*cx;
+  return [x1,y1,z2];
+}
+function proj(v,cx,cy,s){ const d=4.5, k=d/(d-v[2]); return [cx+v[0]*s*k, cy+v[1]*s*k, v[2]]; }
+function drawWire(verts,edges,rx,ry,ex,cx,cy,s,hue){
+  const p = verts.map(v=>{
+    const n=Math.hypot(v[0],v[1],v[2])||1;
+    return proj(rot([v[0]+v[0]/n*ex, v[1]+v[1]/n*ex, v[2]+v[2]/n*ex], rx, ry), cx, cy, s);
+  });
+  for (const [a,b] of edges){
+    const za=(p[a][2]+p[b][2])/2, alpha=.26+.64*((za+2.4)/4.8);
+    sctx.strokeStyle=`hsla(${hue},92%,72%,${alpha.toFixed(3)})`;
+    sctx.lineWidth=1.3; sctx.beginPath(); sctx.moveTo(p[a][0],p[a][1]); sctx.lineTo(p[b][0],p[b][1]); sctx.stroke();
+  }
+  sctx.fillStyle='#dcecff';
+  for (const q of p){ sctx.beginPath(); sctx.arc(q[0],q[1],1.7,0,7); sctx.fill(); }
+}
+// Pure function of the frame index: same index, same picture. Reversal is exact.
+function drawSeqFrame(f){
+  const t = FRAMES>1 ? f/(FRAMES-1) : 0;
+  sctx.clearRect(0,0,seqW,seqH);
+  const cx=seqW/2, cy=seqH/2, s=Math.min(seqW,seqH)*.23;
+  const ry=t*Math.PI*2.6, rx=t*Math.PI*1.4, ex=Math.sin(t*Math.PI)*.95;
+  drawWire(CUBE_V,CUBE_E,rx,ry,ex,cx,cy,s,205);
+  drawWire(OCT_V,OCT_E,-rx*1.3,-ry*.7,ex*.5,cx,cy,s*.6,150);
+  sctx.strokeStyle='rgba(255,255,255,.10)'; sctx.lineWidth=1;
+  sctx.beginPath(); sctx.arc(cx,cy,s*2.3,0,7); sctx.stroke();
+  document.getElementById('seq-tag').textContent =
+    `FRAME ${String(Math.round(f)).padStart(3,'0')} / ${FRAMES}`;
+}
+// Scroll picks the frame; a lerped playhead eases toward it.
+ScrollTrigger.create({
+  trigger:'#s2', start:'top bottom', end:'bottom top',
+  onUpdate(self){
+    const h = self.trigger.offsetHeight - innerHeight;
+    seqTarget = clamp(self.progress,0,1) * (FRAMES-1);
+  }
+});
+
+/* ---------------------------------------------------------------------------
+   8. ACT 3 — layered parallax with a travelling focus plane.
+      Pattern: animation-handbook parallax-depth-of-field.
+      Rates are relative; blur quantised to 0.5px so the compositor can reuse it.
+   ------------------------------------------------------------------------- */
+const LAYERS = [
+  { el:document.getElementById('L5'), depth:0.0, speed:0.00, blur:0 },
+  { el:document.getElementById('L4'), depth:0.2, speed:0.10, blur:7 },
+  { el:document.getElementById('L3'), depth:0.4, speed:0.25, blur:4 },
+  { el:document.getElementById('L2'), depth:0.7, speed:0.45, blur:2 },
+  { el:document.getElementById('L1'), depth:1.0, speed:0.70, blur:0 },
+];
+const BLUR_STEP = 0.5, MAX_BLUR = 18;
+const lastBlur = LAYERS.map(()=>NaN), lastOff = LAYERS.map(()=>NaN);
+let dofTarget = 0, dofShown = 0, dofMaxOffset = 200;
+
+ScrollTrigger.create({
+  trigger:'#dof', start:'top bottom', end:'bottom top',
+  onUpdate(self){ dofTarget = clamp(self.progress,0,1); }
+});
+function measureDof(){ dofMaxOffset = innerHeight * (innerWidth<=600 ? .12 : .2); }
+
+function renderDof(k){
+  dofShown += (dofTarget - dofShown) * k;
+  const f = dofShown;                              // focus travels far -> near
+  for (let i = 0; i < LAYERS.length; i++){
+    const L = LAYERS[i];
+    // Blur by distance from the focus plane. Each layer also carries a little
+    // constant softness so the far plane never reads as razor-sharp.
+    const dist = Math.abs(L.depth - f);
+    const b = Math.round((L.blur + dist * MAX_BLUR) / BLUR_STEP) * BLUR_STEP;
+    if (b !== lastBlur[i]){
+      L.el.style.filter = b > 0 ? `blur(${b}px)` : 'none';
+      lastBlur[i] = b;
+    }
+    const off = REDUCED ? 0 : L.speed * f * dofMaxOffset;
+    if (off !== lastOff[i]){
+      L.el.style.transform = `translate3d(0,${off.toFixed(2)}px,0)`;
+      lastOff[i] = off;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   9. ACT 4 — cinematic transition: a one-sided veil on a scroll edge.
+      Driven by progress, so it cuts where the reader put it and reverses.
+   ------------------------------------------------------------------------- */
+const veil = document.getElementById('veil');
+let veilShown = 0;
+// Two independent windows on the same section, deliberately not overlapping.
+//   - glow:  the section's whole approach, so the colour has room to travel
+//   - veil:  only the last 30% of the approach, so the cut lands AFTER the type
+//            has assembled. A veil that peaks mid-assembly blacks out the
+//            headline exactly while the reader is trying to read it.
+ScrollTrigger.create({
+  trigger:'#s3', start:'top bottom', end:'top 15%',
+  onUpdate(self){ veilShown = clamp(self.progress,0,1); }
+});
+let cutShown = 0;
+ScrollTrigger.create({
+  trigger:'#s3', start:'top 55%', end:'top 20%',
+  onUpdate(self){ cutShown = clamp(self.progress,0,1); }
+});
+
+/* ---------------------------------------------------------------------------
+   9b. TRAVELLING GLOW — a colour and an offset that move across the finale type.
+        Pattern: codrops/TextClipScroll effect-7 (MIT):
+          fromTo(content, {filter:'drop-shadow(-100px -20px 5px #6b0c0c)'},
+                            {filter:'drop-shadow(100px 20px 20px #2a1554)'})
+        The whole point is that GSAP (and here, hand interpolation) treats the
+        drop-shadow OFFSET as animatable, so the light appears to travel across the
+        letters while the shadow itself also travels. Adapted here to be driven by
+        the existing progress value rather than by a tween.
+   ------------------------------------------------------------------------- */
+const finaleEl = document.querySelector('#s3 h2');
+let finaleSplit = null;
+function renderFinaleGlow(t){
+  if (!finaleEl) return;
+  if (!finaleSplit){
+    finaleSplit = splitLinesChars(finaleEl);
+    finaleSplit.chars.forEach(ch => {
+      // The finale gets the 3D treatment: perspective on the PARENT, flip on the
+      // child (codrops fx6/fx7). perspective on the child itself does nothing.
+      const wrap = document.createElement('span');
+      wrap.className = 'ch-wrap';
+      ch.parentNode.insertBefore(wrap, ch);
+      wrap.appendChild(ch);
+    });
+    finaleEl.classList.add('fx3d');
+  }
+  // Held low for the first third so the eye is drawn to the type before the
+  // colour commits; the travel then happens across the readable middle range.
+  const q = clamp((t - 0.18) / 0.72, 0, 1);
+  // Ember -> violet, and the offset travels left-to-right as it goes.
+  const r = Math.round(lerp(255, 150, q)), g2 = Math.round(lerp(120, 140, q)), b = Math.round(lerp(90, 255, q));
+  const ox = lerp(-26, 22, q).toFixed(1), oy = lerp(-8, 7, q).toFixed(1);
+  const rad = lerp(3, 15, q * q).toFixed(1);
+  finaleEl.style.filter = `drop-shadow(${ox}px ${oy}px ${rad}px rgba(${r},${g2},${b},.8))`;
+
+  // Per-character flip, staggered so the type assembles as the glow travels.
+  const chars = finaleSplit.chars;
+  const centre = (chars.length - 1) / 2;
+  chars.forEach((ch, i) => {
+    const dist = Math.abs(i - centre) / Math.max(1, centre);
+    const local = clamp((q - dist * 0.42) / 0.58, 0, 1);
+    const lq = Math.round(local * 64) / 64;
+    if (ch.dataset.q === String(lq)) return;
+    ch.dataset.q = String(lq);
+    ch.style.transform = `rotateX(${((1 - lq) * 62).toFixed(1)}deg) translate3d(0, ${((1 - lq) * 26).toFixed(1)}%, 0)`;
+    ch.style.opacity = (0.25 + 0.75 * lq).toFixed(2);
+  });
+}
+
+/* ---------------------------------------------------------------------------
+   10. Per-frame composition
+   ------------------------------------------------------------------------- */
+function renderFrame(p, local, leg){
+  // Frame sequence: only touched while the canvas is anywhere near the viewport.
+  const seqBox = seq.getBoundingClientRect();
+  if (seqBox.bottom > -200 && seqBox.top < innerHeight + 200){
+    seqShown += (seqTarget - seqShown) * (REDUCED ? 1 : 0.18);
+    const idx = Math.round(seqShown);
+    if (idx !== seqDrawn){ drawSeqFrame(idx); seqDrawn = idx; }
+  }
+  renderDof(REDUCED ? 1 : 0.12);
+
+  // Cue glow follows the cue timeline's own opacity (see pinnedAct).
+  window.__renderCueGlow && window.__renderCueGlow();
+
+  // Travelling glow on the finale type, driven by that section's progress.
+  // Under reduced motion it is resolved once to the end state at setup, so the
+  // heading is legible but never animates.
+  if (!REDUCED) renderFinaleGlow(veilShown);
+
+  // Veil: fully opaque for a beat at the middle of its own window, then off.
+  const cut = Math.max(0, 1 - Math.abs(cutShown-0.5)*2);
+  veil.style.opacity = (REDUCED ? 0 : cut*cut).toFixed(3);
+}
+
+/* ---------------------------------------------------------------------------
+   11. Debug overlay (press D)
+   ------------------------------------------------------------------------- */
+addEventListener('keydown', e => {
+  if (e.key === 'd' || e.key === 'D'){
+    const d = document.getElementById('dbg');
+    d.style.display = d.style.display === 'block' ? 'none' : 'block';
+  }
+});
+
+/* ---------------------------------------------------------------------------
+   12. Measure + run. Layout is read here, never inside the frame loop.
+   ------------------------------------------------------------------------- */
+function onResize(){
+  camera.aspect = innerWidth/innerHeight; camera.updateProjectionMatrix();
+  renderer.setSize(innerWidth, innerHeight);
+  if (BLOOM_ON) sizeBloom();
+  measureLegs(); measureDof(); seqResize();
+  ScrollTrigger.refresh();
+  onScroll();
+}
+addEventListener('resize', onResize);
+document.fonts?.ready.then(()=>{ ScrollTrigger.refresh(); measureLegs(); });
+
+measureLegs(); measureDof(); seqResize(); onScroll();
+if (REDUCED && finaleEl) renderFinaleGlow(1);
+if (BLOOM_ON) sizeBloom();
+// Exposed only so the composer path can be verified on a machine that auto-disabled
+// it: __scrollDebug.on() / .off() / .render()
+window.__scrollDebug = { composer, bloom, bloomOn:BLOOM_ON,
+  on(){ window.__bloomOff=false; }, off(){ window.__bloomOff=true; },
+  render(){ composer.render(); } };
+if (BLOOM_ON && !window.__bloomOff) composer.render(); else renderer.render(scene, camera);
+requestAnimationFrame(tick);
+</script>
+</body>
+</html>

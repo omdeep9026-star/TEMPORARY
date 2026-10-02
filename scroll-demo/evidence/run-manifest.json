@@ -1,0 +1,30 @@
+{
+  "project": "scroll-animation-repo-research",
+  "objective": "Find 2-3 GitHub repositories that together provide the widest reference set for professional scroll-driven / scrollytelling animation, then build one small HTML demo from the techniques found.",
+  "date": "2026-10-01",
+  "tooling": {
+    "orx": "not installed in this environment; the local-first research loop was run directly and its artefacts written here in the same evidence layout (evidence/ + run-manifest.json + sources)",
+    "github_mcp": "available but returned 'Authentication Failed: Bad credentials' on every call; github MCP could not be used",
+    "fallbacks_used": [
+      "unauthenticated GitHub REST API via curl (rate-limited partway through; batched and spaced)",
+      "git clone --depth 1 for candidate inspection",
+      "read_file on cloned source for technique extraction",
+      "web_search for candidate discovery and license/activity cross-checks",
+      "headless Chromium via the Hermes browser tool for render verification"
+    ]
+  },
+  "constraints": [
+    "no new projects beyond a single small demo folder",
+    "single index.html preferred, CDN dependencies, no build system",
+    "existing projects (OpenResearch/, HyperFrames) must not be modified"
+  ],
+  "outcome": {
+    "selected": [
+      "nateherkai/scroll-craft",
+      "matinmonshizadeh/animation-handbook",
+      "houmahani/codrops-depth-gallery"
+    ],
+    "artifacts": ["scroll-demo/index.html", "scroll-demo/README.md"],
+    "verified": "renders under headless Chromium; all five acts confirmed driving from scroll at 9 sampled positions"
+  }
+}
