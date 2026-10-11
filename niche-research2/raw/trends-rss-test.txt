@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:ht="https://trends.google.com/trending/rss" version="2.0">
+	<channel>
+		<title>Daily Search Trends</title>
+		<description>Recent searches</description>
+		<link>https://trends.google.com/trending/rss?geo=US</link>
+		<atom:link href="https://trends.google.com/trending/rss?geo=US" rel="self" type="application/rss+xml"/>
+		<item>
+			<title>steelers schedule</title>
+			<ht:approx_traffic>5000+</ht:approx_traffic>
+			<description/>
+			<link>https://trends.google.com/trending/rss?geo=US</link>
+			<pubDate>Sun, 11 Oct 2026 07:30:00 -0700</pubDate>
+			<ht:picture>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGh4GvaR0tlY6KghFJWKrjzN4rsa9F7HOdHCe_jL9z8nk61xklH_z9OKs7Wqo</ht:picture>
+			<ht:picture_source>Pittsburgh Post-Gazette</ht:picture_source>
+			<ht:news_item>
+				<ht:news_item_title>Steelers-Colts scouting report: Stopping Jonathan Taylor will be the top priority</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://www.post-gazette.com/sports/steelers/2026/10/11/colts-scouting-report-nfl-preview-jonathan-taylor/stories/202610110061</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRGh4GvaR0tlY6KghFJWKrjzN4rsa9F7HOdHCe_jL9z8nk61xklH_z9OKs7Wqo</ht:news_item_picture>
+				<ht:news_item_source>Pittsburgh Post-Gazette</ht:news_item_source>
+			</ht:news_item>
+			<ht:news_item>
+				<ht:news_item_title>Where to Watch: Colts at Steelers for Week 5 matchup</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://sports.yahoo.com/articles/where-watch-colts-steelers-week-132431510.html</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSYSqMnlxb1u7fFFFCVnGRhuPCoDYQnIQX5F1qevGckFjkFDon8pJLxLnTanhg</ht:news_item_picture>
+				<ht:news_item_source>Yahoo Sports</ht:news_item_source>
+			</ht:news_item>
+			<ht:news_item>
+				<ht:news_item_title>How to watch today&apos;s Pittsburgh Steelers vs. Indianapolis Colts game in Week 5 of the NFL schedule</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://www.cbsnews.com/pittsburgh/news/how-to-watch-todays-pittsburgh-steelers-indianapolis-colts-game-week-5-nfl/</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWyBhz4Bd4XOI4f9DQOw7j-O-WFIIIWDE4KtKmUErtcfHCyRlAQBVQfNrM-VE</ht:news_item_picture>
+				<ht:news_item_source>CBS News</ht:news_item_source>
+			</ht:news_item>
+		</item>
+		<item>
+			<title>premier league standings</title>
+			<ht:approx_traffic>1000+</ht:approx_traffic>
+			<description/>
+			<link>https://trends.google.com/trending/rss?geo=US</link>
+			<pubDate>Sun, 11 Oct 2026 07:30:00 -0700</pubDate>
+			<ht:picture>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFplpWM581FOIln0MmGqFT67FIDURPcGSUAdaz_MEbkyjOXYQq3-13QpbL1OU</ht:picture>
+			<ht:picture_source>The New York Times</ht:picture_source>
+			<ht:news_item>
+				<ht:news_item_title>How Saturday&apos;s Premier League action unfolded as Arsenal beat Leeds and Manchester United draw with Spurs</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://www.nytimes.com/athletic/live-blogs/premier-league-live-updates-scores-results-news/nSaCUVzOjvjj/</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFplpWM581FOIln0MmGqFT67FIDURPcGSUAdaz_MEbkyjOXYQq3-13QpbL1OU</ht:news_item_picture>
+				<ht:news_item_source>The New York Times</ht:news_item_source>
+			</ht:news_item>
+			<ht:news_item>
+				<ht:news_item_title>What we&apos;ve learned from Saturday&apos;s Premier League matches</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://www.premierleague.com/en/news/4731669/what-weve-learned-from-saturdays-matches</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ5_jZ9AxSkVoHGdqXNXNCSs6uQ_rLrLtz-cef54t3pwKwkawAyAZkYx786S_o</ht:news_item_picture>
+				<ht:news_item_source>Premier League</ht:news_item_source>
+			</ht:news_item>
+			<ht:news_item>
+				<ht:news_item_title>Premier League LIVE: Build-up, Team news, live text, radio &amp; score updates as it happens from across the Premier League</ht:news_item_title>
+				<ht:news_item_snippet/>
+				<ht:news_item_url>https://www.bbc.com/sport/football/live/c3ekzq1g4xlt?page=2</ht:news_item_url>
+				<ht:news_item_picture>https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcToL_Hn3a0PklF_zvXMCGXp-ShJrqeCCHniKPtW-wspnVvQd_AlHSWuikqHidI</ht:news_item_picture>
+				<ht:news_item_source>BBC</ht:news_item_source>
+			</ht:news_item>
+		</item>
+		<item>
+			<title>amos kipruto</title>
+			<ht:approx_traffic>500+</ht:approx_traffic>
+			<description/>
+			<link>https://trends.google.com/trending/rss?geo=US</link>
+			<pubDate>Sun, 11 Oct 2026 07:30:00 -0700</pubDate>
+			<ht:picture>https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcStGiwy

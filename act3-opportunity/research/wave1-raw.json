@@ -1,0 +1,962 @@
+{
+ "industry-manuals-technician": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword technician troubleshooting manual retrieval manufacturing --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2608.18465",
+    "title": "Reducing Technician Search Burden: A Multimodal RAG for Cessna 172 Maintenance Manual",
+    "abstract": "Proper use of the aircraft maintenance manual is essential for correct maintenance, providing procedures, diagrams, cautions, and specifications. However, technicians often avoid consulting it because it is difficult to navigate and time-consuming under strict schedules. Retrieval augmented generation (RAG) models have recently been introduced in aircraft maintenance, yet existing models focus solely on textual retrieval. This research therefore targeted the Cessna 172 Maintenance Manual (C172-MM), widely used in general aviation, and developed a multimodal manual retriever (MMR) capable of retrieving multimodal manual pages. Retrieval performance was evaluated using synthetic queries covering procedures, diagrams, caution/safety information, and specifications; the MMR achieved 93.37% recall@5. Beyond retrieval, a multimodal RAG (MRAG) pipeline was examined, in which retrieved pages were input to a vision-language model that generated responses to the synthetic queries, achieving 87.20% semantic similarity to ground-truth answers. Three practical feasibilities were also assessed: inference time, operational cost, and interpretability. Average retrieval time for five pages was 11.93 seconds and response generation took 4.95 seconds, at $0.0091 per query, while interpretability was validated through heatmap visualizations. These results indicate that the MRAG pipeline for the C172-MM can reduce the time technicians spend searching manuals and retrieving multimodal information.",
+    "publicationDate": "2026-08-19T02:39:35.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Reducing Technician Search Burden: A Multimodal RAG\nfor Cessna 172 Maintenance Manual\nSeongjun Ha\n*\nPurdue University, West Lafayette, Indiana, 47907, United States\nMd Rashedul Islam\n\u2020\nClemson Univers..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Reducing Technician Search Burden: A Multimodal RAG\nfor Cessna 172 Maintenance Manual\nSeongjun Ha\n*\nPurdue University, West Lafayette, Indiana, 47907, United States\nMd Rashedul Islam\n\u2020\nClemson Univers..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.20754",
+    "title": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting Agents",
+    "abstract": "Effective troubleshooting agents in enterprise customer support depend on retrieving actionable guidance from similar historical cases, yet existing retrieval-augmented generation (RAG) systems treat support cases as static documents and overlook their multi-stage, stateful nature. We introduce RAFT (Retrieval-Augmented Framework for Troubleshooting Agents), a stateful RAG framework that abstracts each closed historical case into a directed chain of timeline entries and retrieves at the entry level, surfacing cases whose intermediate states match the active case and returning the parent-case trajectory anchored at the matched state; an optional case-level graph links cases through a configurable similarity representation. We evaluate this retrieval layer directly, which, unlike evaluating a full agent system, requires no production deployment. Because public multi-stage troubleshooting data is extremely rare, we pair a synthetic benchmark built from Microsoft Learn Windows Server documentation with real Apache Jira issues carrying human-created duplicate labels. RAFT improves Case Hit over vanilla RAG and GraphRAG baselines at every stage of case progress, with statistically significant gains over the strongest baseline; the Jira results provide directional evidence that the advantage transfers to real case histories. We release our benchmark, implementation, and the Apache Jira evaluation set.",
+    "publicationDate": "2026-09-17T17:41:31.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting\nAgents\n*\nMingxuan Zhang, Xiaowen Wang, Anupma Sharan, Zhengyi Chen,\nChenyu Diana Zhang, Shanshan Yang, Chittibabu Pacharu\nMicrosoft, ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "RAFT: A Stateful Retrieval-Augmented Framework for Troubleshooting\nAgents\n*\nMingxuan Zhang, Xiaowen Wang, Anupma Sharan, Zhengyi Chen,\nChenyu Diana Zhang, Shanshan Yang, Chittibabu Pacharu\nMicrosoft, ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.35780",
+    "title": "TSG Suggester: Tree-Structured Knowledge-Graph Retrieval for Troubleshooting Guide Recommendation in Cloud Incident Management",
+    "abstract": "On call engineers in large scale cloud services work under intense time pressure, yet locating the correct Troubleshooting Guide (TSG) for an incident remains a largely manual, keyword driven process, and prior empirical work finds that guide search consumes a substantial fraction of total mitigation time.\nWe present TSG Suggester, a retrieval system that recommends relevant TSGs directly from an incident description. We evaluate five retrieval strategies: Text Only RAG, Image Augmented RAG, RAPTOR, Tree Structured Retrieval, and our proposed Tree + Knowledge Graph (Tree+KG), on 314 real world incidents spanning 112 unique TSGs drawn from 18 service teams on a production incident management system.\nTree+KG converts each guide into a tree that preserves its native section hierarchy, attaches LLM generated problem abstractions to internal nodes to bridge the solution oriented language of guides and the problem oriented language of incidents, extracts a per guide entity knowledge graph, and fuses embedding similarity with entity level matching at query time. Tree+KG attains 54.78% Top 1 and 82.48% Top 5 accuracy, leading every baseline at every cutoff, with an 8.58 point Top 1 gain over text only RAG.\nTwo findings are of independent interest. First, structural alignment dominates: methods that preserve or rebuild document structure outperform flat chunking where precise discrimination matters. Second, and contrary to our initial hypothesis, multimodal enrichment actively hurts. Captioning guide screenshots and injecting the captions costs 22.64 Top 5 points relative to the text only baseline because generic captions dilute embeddings rather than sharpen them. We report error analyses for both results and provide concrete deployment guidance.",
+    "publicationDate": "2026-08-04T21:47:06.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "TSG Suggester: Tree-Structured Knowledge-Graph\nRetrieval for Troubleshooting Guide\nRecommendation in Cloud Incident Management\nShawn Pan\nMicrosoft\nCambridge, USA\nshawnpan@microsoft.com\nPavanUttej Ravv..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "... pressure, yet locating the correct Trou-\nbleshooting Guide (TSG) for an incident remains a largely\nmanual, keyword-driven process\u2014and prior empirical work\nfinds that guide search consumes a substanti..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.05116",
+    "title": "Beyond Maintenance Manual Multimodal RAG: Suggesting What Tool",
+    "abstract": "Aircraft technicians are required to consult the maintenance manual (MM) for nearly every task, and locating the relevant procedure across hundreds of pages remains time-consuming. Multimodal retrieval augmented generation (MRAG) has been proposed to address this, allowing technicians to retrieve procedures, together with the accompanying figures, through natural-language queries. However, retrieval alone does not tell the technicians which tools the task requires. The MM identifies special tools only when the corresponding step is reached, and it does not state hand tool requirements at all; to select hand tools, technicians are required to find the hardware dimension from the illustrated parts catalog (IPC) and infer the right tool from it. We therefore propose MRAG-SWAT, an extension of the MRAG pipeline that returns the required hand tools and special tools alongside the retrieved procedure. The framework was implemented for the Lycoming IO-360-N1A engine and demonstrated on eight test queries. By presenting the correct tools together with the procedure, MRAG-SWAT may help reduce repeated trips to the tool crib, prevent damage to aircraft caused by improper tool selection, and thereby avoid additional maintenance tasks and support continued airworthiness.",
+    "publicationDate": "2026-09-04T13:09:16.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...l Engineering\nClemson University\nFernow St\nClemson, SC, 29634\nmdrashi@clemson.edu\nAbstract\u2014Aircraft technicians are required to consult the\nmaintenance manual (MM) for nearly every task, and locating\n..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "THIS IS A PREPRINT AND HAS NOT BEEN PEER REVIEWED.\nBeyond Maintenance Manual Multimodal RAG:\nSuggesting What Tool\nSeongjun Ha\nSchool of Aviation and Transportation Technology\nPurdue University\n1401 Av..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.09503",
+    "title": "Agentic AI-enabled Semantic Commissioning of a Cognitive Digital Twin for Reconfigurable Manufacturing",
+    "abstract": "Rapid bespoke commissioning of the Cognitive Digital Twin (CDT) is a major challenge in reconfigurable manufacturing. Traditional digital twin (DT) construction methods primarily focus on geometric reconstruction, often neglecting the deep semantic integration and functional interoperability necessary for autonomous reasoning. This paper proposes an agent-based, AI-driven workflow to automate end-to-end CDT debugging. The system utilises LangGraph as a multi-agent orchestration engine to achieve dual-path synthesis: the semantic path extracts technical specifications from unstructured documents using Retrieval Augmented Generation (RAG), while the functional path autonomously discovers and binds to real-time industrial telemetry data using Model Context Protocol (MCP). Experimental validation in a robotic machining cell demonstrates that the system achieves a mean average accuracy (mAP) of 97.2% in perception and reduces the deployment cycle from several weeks to an average of 2 hours, marking a paradigm shift from manual scripting to autonomous orchestration.",
+    "publicationDate": "2026-09-08T22:34:38.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ces the\ndeployment cycle from several weeks to an average of 2 hours,\nmarking a paradigm shift from manual scripting to autonomous\norchestration.\nI. INTRODUCTION\nCDT extends traditional DT by integrat..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...th synthesis:\nthe semantic path extracts technical specifications from\nunstructured documents using Retrieval Augmented Generation\n(RAG), while the functional path autonomously discovers and\nbinds to ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.16155",
+    "title": "LLMs as Master Forgers: Generating Synthetic Time Series Data for Manufacturing",
+    "abstract": "This paper presents a novel framework leveraging Large Language Models (LLMs) to generate synthetic time series data for manufacturing processes. Motivated by the scarcity of labeled time-series data in real-world manufacturing settings, which hinders the development of robust machine learning models, we explore the potential of LLMs to learn complex temporal dependencies and generate realistic synthetic data. Our approach involves fine-tuning pre-trained LLMs on manufacturing process instructions and employing a Retrieval Augmented Generation (RAG) technique to enhance data diversity and realism. We evaluate our method against traditional time series modeling techniques like ARIMA and LSTMs, using quantitative metrics, PCA analysis, and downstream task performance (anomaly detection). Results demonstrate that our LLM-driven framework outperforms these baselines, generating high-quality synthetic time series data that effectively captures temporal dependencies and statistical properties of real manufacturing data, leading to improvements in downstream task performance.",
+    "publicationDate": "2026-09-14T18:01:29.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...pproach\ninvolves fine-tuning pre-trained LLMs on manufacturing process\ninstructions and employing a Retrieval Augmented Generation\n(RAG) technique to enhance data diversity and realism. We\nevaluate ou..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "LLMs as Master Forgers: Generating Synthetic Time Series\nData for Manufacturing\nMantek Singh*\nLiverpool John Moores University\nLiverpool, England\nmantek.singh2@gmail.com\nJeshwanth Challagundla\nUnivers..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.02760",
+    "title": "Measurement-Driven Sub-Network Selection for On-Premise Retrieval-Augmented Factory Agents",
+    "abstract": "On-premise assistants can give factory workers conversational access to machine documentation, but models capable of the task rarely fit shop-floor hardware. We show that after structural compression and retrieval-grounded adaptation, model size is no longer a reliable predictor of adapted answer quality: general capability falls almost linearly with parameter count, while judged retrieval-augmented answer quality does not. We therefore treat deployment as a post-adaptation selection problem, committing one sub-network per device on judged answer quality and measured on-device throughput under a configurable general-capability floor and memory budget; rules that optimize size, speed, or quality alone each give up capability or throughput. A weight-shared supernetwork trained with sandwich-style in-place distillation keeps this selection inexpensive. In a manufacturing-manual case study, extraction costs 13.7 percent of the unpruned model's judged quality and retrieval-grounded distillation returns it to within 4.6 percent, recovering two thirds of the loss, and the same assistant runs across three heterogeneous edge tiers at 1.3 to 5 watts standby.",
+    "publicationDate": "2026-09-02T16:00:05.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ed with\nsandwich-style in-place distillation keeps this selection inexpen-\nsive. In a manufacturing-manual case study, extraction costs\n13.7% of the unpruned model\u2019s judged quality and retrieval-\ngrou..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Measurement-Driven Sub-Network Selection for\nOn-Premise Retrieval-Augmented Factory Agents\n1\nst \nVasileios Rizeakos\nAI lab of enakronIC PC\nAspasias 72, 15561, Cholargos, Greece\n0000-0003-4475-6232\n2\nn..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.30410",
+    "title": "SePArate: Segmenting Patterns from Defects in Wafer Manufacturing Using Weak Supervision",
+    "abstract": "In semiconductor manufacturing, defect analysis is essential, but manual inspection cannot scale. However, existing automated inspection methods remain insufficient for root-cause analysis and process optimization. To this end, we present SePArate, a weakly supervised wafer defect segmentation method. SePArate enables pixel-level separation of patterns by leveraging only image-level annotations. It consists of a three-phase training: encoder pretraining, knowledge transfer to learn spatial cues, and training on synthetic mixed-defect data for accurate segmentation. Experiments demonstrate that SePArate outperforms the baselines.",
+    "publicationDate": "2026-08-31T08:07:57.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...Korea\nleejinho@snu.ac.kr\nAbstract\nIn semiconductor manufacturing, defect analysis is essential, but\nmanual inspection cannot scale. However, existing automated in-\nspection methods remain insufficient..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "SePArate: Segmenting Patterns from Defects in Wafer\nManufacturing Using Weak Supervision\nDain Kwon\nSeoul National University\nSeoul, South Korea\ndain.kwon@snu.ac.kr\nChangmin Shin\nSeoul National Univers..."
+     }
+    ]
+   }
+  ]
+ },
+ "industry-predictive-maintenance": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword equipment failure prediction maintenance decision support --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2610.08363",
+    "title": "Explainable Failure Prediction and Prevention in Maritime",
+    "abstract": "Maritime systems operate in highly dynamic environments where unexpected equipment failures can compromise safety, reliability, and operational efficiency. Recent advances in artificial intelligence (AI), machine learning, digital twins, and predictive maintenance enable proactive failure prediction and prevention. However, ensuring trustworthy and explainable decision-making remains a major challenge in safety-critical maritime applications. This chapter reviews key AI technologies required for explainable failure prediction and prevention in maritime systems and presents a conceptual architecture capable of supporting autonomous or human-in-the-loop corrective actions. This architecture integrates data acquisition, time-series forecasting, anomaly detection, risk assessment, decision-making, and explainable AI into a closed-loop framework. With reference to the architectural components, a review and discussion of relevant maritime studies is performed, outlining their methods, advantages, and limitations. Furthermore, it highlights current challenges, including uncertainty and robustness, model generalization, explainability, limited availability of maritime datasets, and operational deployment, and identifies future research directions toward trustworthy AI-assisted maritime decision-making.",
+    "publicationDate": "2026-10-06T13:51:58.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...iakovidis}@uth.gr\nAbstract\nMaritime systems operate in highly dynamic environments where unexpected equipment failures can compromise\nsafety, reliability, and operational efficiency. Recent advances i..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Explainable Failure Prediction and Prevention in Maritime\nDionisis Kalogeropoulos\n1\n, Georgia Sovatzidi\n1\n, Panagiotis G. Kalozoumis\n1\n, Dimitris K. Iakovidis\n1\n1\nDept. of Computer Science and Biomedi..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.33641",
+    "title": "Scalable and Data-Driven Decision Support in the Maintenance, Repair, and Overhaul Process",
+    "abstract": "Several businesses apply maintenance, repair, and overhaul (MRO) principles to the life-cycle of their existing products. In cases like casted gas turbine component Product Lifecycle Management (PLM), repairing components in frequent intervals can extend the lifetime expectation of the product, provide higher cost efficiency compared to newly produced components, and even improve the part design during the repair cycle. Another aspect of repair concerns sustainability, as products often contain rare materials. The emissions produced by the repair process are usually smaller than mining materials and casting new components.\nTo optimize the repair process further, we propose the Smart Expert System (SES), which assists engineering experts with machine learning-based decision support throughout the repair process. We elaborate on its IT architecture and present machine learning models employed for representative MRO use cases. The SES is evaluated using actual industry data from a leading gas turbine company and demonstrably fulfills formulated requirements concerning the suitability of the overall decision support and the stability of the enclosing IT architecture.",
+    "publicationDate": "2026-09-27T15:03:36.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ling.\n3) Empirical results show that our solution can achieve high\nperformance for repair operation predictions and effec-\ntively and reliably handle varying loads on the system\nvia horizontal scaling..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Scalable and Data-Driven Decision Support in the\nMaintenance, Repair, and Overhaul Process\nHoukun Zhu\n1\n, Helena Ebel\n1\n, Dominik Scheinert\n1\n, Florian Schmidt\n1\n, Jens Altenkirch\n2\n, and Odej Kao\n1\n1..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.04840",
+    "title": "Long Horizon Transformer Quantile Fault Prediction for Multi Site Industrial Predictive Maintenance",
+    "abstract": "Long-horizon predictive maintenance requires models to distinguish slowly evolving degradation from normal operating-regime variation over planning windows measured in days rather than hours. This paper evaluates whether an explicit conditional-quantile representation provides an informative classifier interface for this problem. The proposed TQRNN30d framework combines a dual-stage quantile regression neural network (QRNN) feature extractor with a multi-stream temporal fusion classifier. Each hourly word of 81-channel machine behaviour is mapped to a 324-dimensional quantile-state representation, and 720 ordered hourly words form the 30-day document supplied to the long-horizon model. The classifier fuses quantile states with dynamic covariates, channel-level static metadata, and a 168-hour latent-history stream using gated residual processing, causal recurrent encoding, and metadata-conditioned cross-modal attention. A bounded instability-aware signal derived from sustained one-word-ahead prediction-error divergence provides auxiliary memory modulation at the longest horizon. Evaluation uses a machine-disjoint 43/14/15 train/validation/test allocation across 72 machines in nine manufacturing facilities. At 30 days, TQRNN30d achieves 79.97% F1, 80.18% recall, 81.82% precision, 82.39% accuracy, and 0.820 ROC-AUC. It leads all 18 evaluated baselines at the 7-, 14-, and 30-day fixed-threshold comparisons, with the largest F1 advantage at 14 days. The results support held-out-machine performance within the observed homogeneous nine-facility fleet, but do not establish unseen-site, cross-equipment, or cross-sector generalisation.",
+    "publicationDate": "2026-09-04T07:57:33.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...nce within the observed\nhomogeneous nine-facility fleet, but does not establish unseen-\nsite, cross-equipment, or cross-sector generalisation.\nIndex Terms\u2014Fault forecasting, long-horizon prediction, q..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...bility, process stability, and timely maintenance\nintervention. Corrective maintenance reacts after failure, while\npreventive maintenance acts on fixed intervals that may not\nreflect the actual condit..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.06695",
+    "title": "A Transferable Autologistic Model for Predicting Rare Failures in Heterogeneous Equipment",
+    "abstract": "Predicting failures before they occur remains a major challenge in predictive maintenance, particularly when failures are rare, when equipment of the same family differ in sensor configurations, and when the goal is anticipation rather than diagnosis of an already observed fault. This paper proposes a common-to-target probabilistic model that learns shared failure-related patterns across a family of heterogeneous equipment and adapts parsimoniously to target equipment. The model explicitly accounts for sensor heterogeneity, operating context, and degradation dynamics to produce calibrated failureprobability estimates suitable for maintenance planning. Its performance is evaluated on a synthetic refrigerator dataset comprising 27 simulated refrigerators with varying sensor configurations, operating conditions, and failure types, providing a controlle",
+    "publicationDate": "2026-08-07T01:48:11.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "A Transferable Autologistic Model for Predicting Rare\nFailures in Heterogeneous Equipment\nIslam Benamirouche, Djemel Ziou\n\u2217\n, Feriel Fass\nD\u00e9partement d\u2019informatique, Universit\u00e9 de Sherbrooke, 2500 bou..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "A Transferable Autologistic Model for Predicting Rare\nFailures in Heterogeneous Equipment\nIslam Benamirouche, Djemel Ziou\n\u2217\n, Feriel Fass\nD\u00e9partement d\u2019informatique, Universit\u00e9 de Sherbrooke, 2500 bou..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.13566",
+    "title": "Planning or Learning: Reliability and Cost in Multi-Asset Maintenance",
+    "abstract": "Industrial maintenance systems involve multiple interacting assets and shared resources, making it challenging to balance reliability and operational cost using a single decision framework. While recent work has focused on reinforcement learning (RL) for maintenance scheduling, direct comparisons with planning approaches under identical settings remain limited. In this work, we empirically compare planning and RL for multi-asset bearing maintenance using run-to-failure data. We examine how these methods behave when balancing preventive maintenance against tolerable failures across a range of failure penalty scenarios. We observed a consistent behavioral difference driven by objective formulation. Planning enforces reliability as a hard constraint and produces zero-failure policies whose total cost is largely insensitive to the magnitude of failure penalties. RL agents optimize expected cost and often trade off preventive maintenance against occasional failures as penalties vary, resulting in lower costs under low-penalty regimes but persistent non-zero failures even when penalties are high. We also investigate lightweight constraint mechanisms, including reward shaping and action masking, to encourage RL's reliability. From a practical perspective, planning may be more suitable when strict reliability is required and deployment horizons are short, whereas RL may provide cost-efficient policies when limited failures are acceptable and long-run operational efficiency is prioritized. Overall, this study clarifies the trade-offs between reliability and cost in multi-asset maintenance and suggests that planning and RL are complementary approaches. Beyond these findings, the controlled benchmark protocol itself that unifies environment, cost model, and evaluation across paradigms, offers a reusable template for comparing decision-making approaches in other maintenance settings.",
+    "publicationDate": "2026-09-11T22:10:59.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...e for comparing\ndecision-making approaches in other maintenance settings.\n1 Introduction\nIndustrial equipment increasingly operates in fleets where multiple assets degrade simultaneously and share mai..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "... this work, we\nempirically compare planning and RL for multi-asset bearing maintenance using run-to-failure data.\nWe examine how these methods behave when balancing preventive maintenance against tole..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.38474",
+    "title": "Condition-Based Maintenance of Degrading Assets underIntermittent Accessibility",
+    "abstract": "Many maintenance models implicitly assume that maintenance can be performed whenever intervention is warranted. In practice, however, environmental uncertainty, such as weather and sea conditions, can make maintenance opportunities intermittent and dynamically evolving. We consider a degrading asset for which preventive maintenance may be performed before failure, but intervention is possible only when the asset is accessible. Accessibility evolves stochastically over time and therefore affects not only whether maintenance can be performed now, but also the value of waiting for future opportunities. We formulate this setting as a finite-state Markov decision process under a long-run average cost criterion and investigate the structure of the optimal maintenance policy. Under monotone degradation and cost conditions, we show that an optimal policy retains a threshold form in asset condition, but unlike a single threshold, the optimal threshold varies with the accessibility state. Thus, intervention depends jointly on the asset condition and the expected evolution of future maintenance opportunities. Through a numerical study motivated by offshore wind turbine maintenance, we examine how accessibility dynamics, degradation characteristics, and economic parameters shape the optimal thresholds and compare the optimal policy with constant-threshold and age-based maintenance policies. In a representative setting, adapting the condition threshold to accessibility reduces long-run average cost by 4.31% relative to an optimized condition-based maintenance policy. Relative to an optimized age-based policy, the optimal policy reduces long-run average cost by 33.95%. The results show that maintenance thresholds are not universal: they should adapt to the degradation and accessibility characteristics of the system, and failing to account for these conditions can lead to substantial cost increases.",
+    "publicationDate": "2026-09-29T20:04:57.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ly evolving. We consider a degrading asset for which preventive maintenance\nmay be performed before failure, but intervention is possible only when the asset is accessible. Accessibility evolves\nstoch..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Condition-Based Maintenance of Degrading Assets under\nIntermittent Accessibility\nMuhammet Ceyhan Sahin\nIndustrial & Systems Engineering, Wayne State University, ceyhan@wayne.edu\nMurat Yildirim\nIndustr..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.24358",
+    "title": "Explainable Neuro-Fuzzy Prediction for Trustworthy Decision-Making in Maritime",
+    "abstract": "Predicting when maritime systems require maintenance can be critical, avoiding hazards and costly consequences. To address this problem, this paper proposes an explainable decision-making framework that integrates a neuro-fuzzy prediction model with a two-stage explainable component. The first stage of this component produces feature-attribution explanations, using gradient-based saliency maps, and the second stage extracts local rules using a fuzzy decision tree. The proposed framework is generic and can be integrated into any deep learning-based approach, rendering it explainable. To the best of our knowledge, this is the first fuzzy logic-based framework enabling both feature-level and local rule-based explanations of black box models. This approach aims to foster trustworthiness in decision making through user-understandable machine inferences. The performance of the proposed framework using a deep residual-based neural backbone is evaluated on various general-purpose public benchmark datasets, and its utility in maritime is demonstrated in the context of early fault detection in a naval propulsion system dataset. The results indicate that it can provide predictions outperforming relevant state-of-the-art approaches, with an average AUC-ROC (Area Under the Receiver Operating Characteristic Curve) value, reaching up to 99%, while offering the advantage of explainability.",
+    "publicationDate": "2026-09-21T09:47:23.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "... to enhance predictive\nmaintenance performance and capture degradation dynamics\nin naval propulsion equipment. Furthermore, Sahraoui et al.\n[6] applied ensemble learning to improve fault prediction\nac..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...y monitoring\nsystem health indicators and enabling maintenance actions to\nbe performed early before failure, thereby reducing the\nprobability of hazards, unnecessary downtime and consequent\ncosts [1]...."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.05572",
+    "title": "Disentangling Task Difficulty from Run-Level Failure in Agent Failure Prediction",
+    "abstract": "Predicting whether an LLM agent will fail has emerged as a promising direction for supporting intervention during execution. Recent approaches report strong predictive performance, often with AUROC values between 0.85 and 0.94. However, predictors are typically trained by pooling runs from many tasks. We hypothesize that part of this performance comes from recognizing that some tasks are harder than others, rather than detecting whether a particular run is heading toward failure. This distinction matters because task-level difficulty supports decisions about where to allocate computation, while run-level prediction is needed to decide whether to intervene in an ongoing trajectory. We study benchmarks with repeated attempts of the same task by the same agent and separate cross-unit comparisons from comparisons between successful and failed runs of the same model-task unit. Across the evaluated corpora, more than 99.93% of the positive-negative pairs underlying pooled AUROC are cross-unit. Accordingly, predictors that never observe the current run can achieve high pooled performance, including a difficulty oracle with AUROC up to 0.945, while remaining at chance within task. Early run-level discrimination is consistently weak across trajectory predictors, released monitors, and hidden-state probes, although it improves later in execution and is stronger for weaker agents. Under fixed token budgets, task-level allocation outperforms abort-only strategies, while early stopping becomes beneficial only when within-task AUROC reaches about 0.84-0.93, far above the 0.50-0.55 range observed for early monitors. These results show that failure prediction should be evaluated not only by outcome accuracy, but by whether the captured signal supports the intended deployment decision.",
+    "publicationDate": "2026-10-04T22:17:04.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Disentangling Task Difficulty from Run-Level Failure in\nAgent Failure Prediction\nMOHSEN ESFANDYARIDOULABI, North Carolina State University, USA\nLAWRENCE ARKOH, North Carolina State University, USA\nBIR..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Disentangling Task Difficulty from Run-Level Failure in\nAgent Failure Prediction\nMOHSEN ESFANDYARIDOULABI, North Carolina State University, USA\nLAWRENCE ARKOH, North Carolina State University, USA\nBIR..."
+     }
+    ]
+   }
+  ]
+ },
+ "health-discharge-instructions": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword discharge instructions patient comprehension readability --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.20827",
+    "title": "From Discharge Notes to Patient Understanding: Persona-Grounded, Open-Ended Simulation of LLMs as Discharge Educators",
+    "abstract": "Hospital discharge education is an interactive teaching task: a clinician adapts a discharge plan to a patient's literacy, recall, and personality. Existing LLM evaluations target static or artifact-generation tasks and do not measure patient understanding under open-ended dialogue. We introduce DischargeBench, a persona-grounded simulation in which a candidate LLM educator conducts a multi-turn session with a Virtual Patient, while an Education Monitor Agent regulates patient realism without modifying the educator, protecting the evaluation signal. We curate MIMIC-IV-Ext-DischargeBench, 477 cases over 24 ICD chapters with persona axes (personality, education level, health literacy, past-medical-history recall) for stratified analysis. Each simulation is scored on four axes -- Conversation Quality, Topic Checklist, Comprehension, and Factual Consistency -- by an LLM-as-a-Judge aligned against physician annotations. Across closed- and open-source LLMs, aggregate scores conceal clinically relevant variation across ICD chapters and patient personas; difficult personas expose coverage failures, comprehension gaps, and reduced source-answer agreement. LLM evaluation for discharge education should center patient understanding, not text quality or answer accuracy alone.",
+    "publicationDate": "2026-07-22T13:24:24.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "From Discharge Notes to Patient Understanding:\nPersona-Grounded, Open-Ended Simulation of LLMs as Discharge\nEducators\nWon Seok Jang\n1\n, Zonghai Yao\n1\n, Hong Yu\n1\n,\n1\nUniversity of Massachusetts Lowell..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...hospitals with prescriptions, follow-\nup appointments, and ideally, education about their\ndischarge instructions. Patient education represents\na core dimension of the clinician\u2013patient relation-\nship,..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.13581",
+    "title": "Toward Complete Hospital Discharge Summarization with Abstract Meaning Representation",
+    "abstract": "Discharge summaries are lengthy medical documents that summarize a hospital in-patient visit. Automatically generating them can reduce documentation burden and return clinician time to patient care. Whereas Large Language Model (LLMs) could be used for this task, their Achilles heel is hallucinations, which can have drastic consequences for clinical documentation. We present an evidence-driven alignment framework for discharge summarization at the clinical encounter level, that treats provenance as a first-class constraint, using semantic graphs and deep learning models. Each summary sentence is selected and organized via cross-document semantic alignment and is accompanied by explicit evidence links to its source spans. We show our results on two corpora: a publicly available corpus (MIMIC-III) and clinical notes written by physicians at the University of Illinois Hospital (UIC Health). Additionally, we make source code and trained models available.",
+    "publicationDate": "2026-09-11T22:38:34.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Toward Complete Hospital Discharge\nSummarization with Abstract Meaning\nRepresentation\nPaul Landes\nDepartment of Computer Science\nUniversity of Illinois Chicago\nChicago, USA\nplande2@uic.edu\nSitara Rao\n..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...e@aah.org\nAbstract\u2014Discharge summaries are lengthy medical docu-\nments that summarize a hospital in-patient visit. Automatically\ngenerating them can reduce documentation burden and return\nclinician ti..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.04641",
+    "title": "Back to the Future: Regressing Readability Features from LLMs",
+    "abstract": "Code readability supports software understanding, review, and maintenance. As AI coding agents become more widely used, readable code helps both humans review agent-generated output and agents maintain code within limited context windows. Yet existing readability models do not consistently agree with human judgements across datasets.\nWe introduce BTTF (Back To The Future), pairing linear regression with information-theoretic features. Rather than using language models as black-box judges, BTTF uses them as measurement instruments. It combines traditional code measurements, embedding-based semantic organisation, and causal-LM predictability to capture source structure, semantic coherence, and contextual surprise.\nWe evaluate BTTF on five publicly available human-rated readability benchmarks and our manually annotated MBJP development set, totalling 1,100 samples. BTTF improves average Spearman correlation over the strongest baseline by up to 0.101. Across 13 controlled readability-reducing transformations on production code, it achieves response rates of 93.8% in Java and 87.6% in Python, outperforming Dorn by 14% and 19.2%. It performs best among local models and trails the strongest cloud-LLM response by 1.7% in Java and 5.1% in Python. The direct-LLM baselines require an average of 1,083 prompt tokens per evaluation while remaining opaque. BTTF combines state-of-the-art benchmark performance and strong transformation robustness with feature-granular interpretability: every feature coefficient matches its theoretical directional effect across all evaluated model configurations.",
+    "publicationDate": "2026-10-03T16:31:50.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Back to the Future: Regressing Readability Features\nfrom LLMs\nTAIRAN WANG, University College London, United Kingdom\nEARL T. BARR, University College London, United Kingdom\nCode readability determines..."
+     },
+     {
+      "pageNumber": 2,
+      "snippet": "...is is compression: many observations are\nencoded by a shorter internal description [7, 12]. Program comprehension likewise produces mental\nrepresentations at multiple levels of abstraction [3, 37]. In..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.24650",
+    "title": "Assessing Readability with LLMs: The Role of Reasoning and Few-Shot Prompting",
+    "abstract": "Readability assessment is essential for tailoring texts to intended audiences across educational, healthcare, and information retrieval domains. However, traditional readability formulas struggle to generalize across genres and languages, while supervised machine learning models rely on scarce, domain-specific annotated corpora, limiting their applicability--particularly for less-resourced languages. Large Language Models (LLMs) offer a highly scalable, multilingual alternative that requires no task-specific training, yet the impact of advanced prompting strategies on their performance remains underexplored. In this paper, we conduct a systematic benchmark of diverse open-source LLMs for multilingual readability assessment, focusing on the prediction of discrete readability levels required by educational frameworks. In addition to English, we evaluate our approach on a less-resourced language, Slovenian, to establish whether LLMs remain effective in low-resource settings. Specifically, we investigate the influence of explicit reasoning, demonstrating that Chain-of-Thought (CoT) prompting and reasoning-oriented models yield significant improvements over direct answering. Furthermore, our exploration of few-shot in-context learning reveals that providing just one labelled example per category (1-shot) substantially enhances prediction quality compared to zero-shot settings, with additional examples offering diminishing returns. By comprehensively comparing these approaches against traditional unsupervised metrics and state-of-the-art supervised baselines, we establish the viability of out-of-the-box LLMs as robust, cross-lingual readability assessors.",
+    "publicationDate": "2026-09-21T14:22:39.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Assessing Readability with LLMs: The Role of\nReasoning and Few-Shot Prompting\nRapha\u00ebl Thieffry\n1,2[0009\u22120008\u22127988\u22122945] \nand\nMatej Martinc\n2[0000\u22120002\u22127384\u22128112]\n1 \nUniversit\u00e9 Paris-Saclay, Orsay, Fra..."
+     },
+     {
+      "pageNumber": 2,
+      "snippet": "...are used to match educational texts to student and language-\nlearner levels [10, 30], and to ensure patient comprehension of healthcare mate-\nrials [3, 17]. Additionally, readability serves as an eval..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.19585",
+    "title": "CliniCIRCA: A Modular LLM Framework for Constructing Longitudinal Mental Health Patient Journeys from Raw EHR Narratives",
+    "abstract": "In mental health care, reasoning over patient journeys is a key task for clinicians. Yet these journeys, encompassing a longitudinal progression of biological, psychological, and social events, are often spread across disparate unstructured text narratives, making temporal recovery challenging. We present CliniCIRCA, a multi-stage LLM framework for Calendar-anchored, Imprecision-aware Reconstruction of Clinical Annals. To our knowledge, CliniCIRCA is the first to temporally classify clinical events across unstructured discharge summaries without event-level timestamps. From 14,882 MIMIC-III mental health admissions, we first construct a benchmark of 52 discharge summaries on which CliniCIRCA produces 15,891 temporally tagged events. After correcting 629 errors based on a clinician-in-the-loop evaluation, we produce verified gold-standard labels. Finally, the corrected timelines drive a temporally grounded summarization stage that compresses each source 1.52 times into a date-grouped chronological record. We then scale the framework to generate 1,000 silver-standard timelines and evaluate them as training data. Compared with zero- and few-shot prompting, instruction tuning generally improves five open-weight models on event extraction, temporal tagging, and summarization across silver and clinician-verified evaluations.",
+    "publicationDate": "2026-09-17T02:13:21.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...times-\ntamps. From 14, 882 MIMIC-III mental health\nadmissions, we first construct a benchmark of\n52 discharge summaries on which CliniCIRCA\nproduces 15, 891 temporally tagged events. Af-\nter correctin..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "CliniCIRCA: A Modular LLM Framework for Constructing Longitudinal\nMental Health Patient Journeys from Raw EHR Narratives\nAiwei Ivy Zhang\n1 \nNimra Ishfaq\n2 \nMohit Chandra\n1 \nSantiago Alvarez Lesmes\n3\nA..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2606.06214",
+    "title": "Towards the Readability of LLM-Generated Codes through Multitask Representation Engineering",
+    "abstract": "Correctness and readability are key measures of code quality, respectively ensuring functional fidelity and ease of comprehension. While most existing research focuses on improving the correctness of large language models~(LLMs) generated codes, readability remains under-addressed. Enhancing readability through targeted control is challenging due to its subjective nature. In this article, we employ representation engineering~(RepE) as the targeted control method given its characteristics of low data dependency and low computational cost. Prior work on RepE has primarily focused on the targeted control for a single task, but improving the code readability requires the control across multiple tasks. Accordingly we proposes the multitask RepE framework and theoretically discuss the impact of the multitask steering method on the tradeoff between the code readability and correctness. We further provide comprehensive experiments in support. All the relevant implementations are open-source and available upon request.",
+    "publicationDate": "2026-06-04T14:24:14.000Z",
+    "votes": 6,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...readability are key measures of\ncode quality, respectively ensuring functional fidelity and ease\nof comprehension. While most existing research focuses on\nimproving the correctness of large language m..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "IEEE JOURNAL SUBMISSION, VOL. XX, NO. XX, MONTH 2026 1\nTowards the Readability of LLM-Generated Codes\nthrough Multitask Representation Engineering\nHuifan Gao, Liuhua He, Yinghui Pan, Shenbao Yu, Yifen..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.27986",
+    "title": "Relative Discharge Stage (RDS) Classification: A Practical Indicator of Battery Discharge Progress",
+    "abstract": "Accurate remaining discharge time (RDT) prediction is challenging in real-world battery applications because future load profiles are unknown and highly dynamic. To address the uncertainty of continuous RDT regression, this paper introduces Relative Discharge Stage (RDS), a battery-management indicator that represents the remaining discharge condition using five interpretable classes: Normal, Good, Moderate, Low, and Recharge Required. Unlike state of charge (SOC), which reflects the current charge level, RDS characterizes the remaining discharge process without requiring future-current information during inference. A physics-informed RDS classification framework is proposed, combining SOC estimation with lightweight temporal learning. The SOC-estimation component includes second-order ECM state and terminal-voltage prediction, hysteresis and OCV temperature correction, core-temperature estimation, and AEKF state correction, supported by OCV evaluation, online STC-ECM parameter adaptation, and pretrained neural residual-voltage correction. The measured current, terminal voltage, surface temperature, and estimated SOC are arranged into a sliding observation window and processed by a lightweight temporal convolutional network. Experiments on two public lithium-ion battery datasets demonstrate robust RDS classification, with accuracy exceeding 80% under varying load and thermal conditions.",
+    "publicationDate": "2026-09-23T12:14:14.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Relative Discharge Stage (RDS) Classification: A\nPractical Indicator of Battery Discharge Progress\nKhoa Tran\na\n, Tri Le\nb\n, Hung-Cuong Trinh\nc\n, Hung Tran-Nam\nd,e,\u2217\na\nData Science Laboratory, Faculty ..."
+     },
+     {
+      "pageNumber": 2,
+      "snippet": "...fication, with accuracy exceeding 80% under\nvarying load and thermal conditions.\nKeywords: Relative Discharge Stage (RDS), Battery Management System\n(BMS), Lithium-ion battery, State of Charge (SOC) e..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.15129",
+    "title": "Medical Knowledge Simplification for Patients in the Era of LLMs: A Case Study on Diabetes",
+    "abstract": "Complex medical information is often difficult for patients to understand, making effective medical knowledge simplification essential for improving patient comprehension, informed decision-making, and health outcomes. Recent advances in large language models (LLMs) provide a promising approach for simplifying complex medical information into patient-friendly language; however, their effectiveness in real-world patient education remains insufficiently explored through human evaluation. To investigate their practical effectiveness, this paper presents a case study on diabetes knowledge simplification through the implementation and evaluation of MediClear, an LLM-based medical knowledge simplification system enhanced with Retrieval-Augmented Generation (RAG). Public diabetes-related articles from Diabetes Australia, WHO, American Diabetes Association (ADA), NIDDK, and AIHW are indexed in the RAG knowledge base to retrieve clinically grounded information, which is then simplified by the LLM into accessible patient explanations. We evaluate the generated responses using standard readability metrics, including the Flesch-Kincaid Grade Level (FKGL), and conduct a human study involving 10 participants. Results show that MediClear consistently reduces the reading level of generated responses to the recommended patient literacy range while achieving high user satisfaction and willingness for future use. This case study demonstrates the potential of LLMs to improve the accessibility of medical knowledge for patient education.",
+    "publicationDate": "2026-09-14T07:05:05.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...y,\nlistening, and communication skills needed to navigate the healthcare system\nand follow clinical instructions [1]. However, inadequate health literacy remains\nwidespread across diverse populations ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Medical Knowledge Simplification for Patients in\nthe Era of LLMs: A Case Study on Diabetes\nPallika Kafle\n1\n, Yipeng Zhou\n1[0000\u22120003\u22121533\u22120865]\n, Guanfeng\nLiu\n1[0000\u22120001\u22128980\u22124950]\n, Quan Z. Sheng\n2[..."
+     }
+    ]
+   }
+  ]
+ },
+ "health-clinician-admin": {
+  "cmd": "/home/codespace/.local/bin/orx discover embedding clinicians spending time on documentation and administrative tasks instead of patient care --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2608.15252",
+    "title": "MDwAIstScheduler: Bringing On-Device Voice Documentation into Clinical Practice",
+    "abstract": "Clinical documentation forces physicians to split attention between the patient and their keyboard, and much of it spills into uncom- pensated after-hours work. We present MDwAIstScheduler, a low- cost, belt-worn pipeline that lets a physician speak naturally dur- ing the encounter and have the resulting medications, allergies, labs/orders/referrals, follow-up scheduling, vitals, and problems land in the EHR as review-ready drafts. Building on our earlier prototype, which relied on cloud speech recognition and a cloud language model, the current pipeline runs both transcription and intent extraction entirely on-device. Using a medical-domain auto- matic speech recognition (ASR) model and a 1.7B-parameter lan- guage model we fine-tuned for clinical action extraction, no patient audio or text leaves the device, and the structured drafts are written directly into the Elation EHR for the physician to confirm. The result is a documentation tool that removes keyboard work from the visit without removing the clinician from the record, allowing them to focus on what matters most, patient care, while reducing burden at the same time.",
+    "publicationDate": "2026-08-15T14:16:32.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2606.08442",
+    "title": "Clinical Reasoning in the Age of AI: Longitudinal Cognition and Human-AI Collaboration",
+    "abstract": "As physicians turn to AI-powered systems to help meet the dual demands of speed and care quality, they are met with hallucinations and sycophancy. Understanding how doctors reason through clinical problems in real-world settings is critical for design of effective AI reasoning systems. While recent advances in medical AI have emphasized performance benchmarks and diagnostic accuracy, comparatively little attention has been paid to the structure of clinicians' reasoning processes as they unfold over time, e.g., how they interact with electronic health records and operate under conditions of uncertainty and constraint. This study provides a comprehensive, empirically-grounded account of clinical reasoning and its relationship to current AI-mediated workflows through a mixed-methods design that combines qualitative interviews with structured survey data.\nFindings indicate that current AI systems are primarily deployed for encounter-level tasks such as documentation and summarization, and only partially align with physicians' underlying reasoning processes. In particular, AI-generated representations often omit temporal or interpretive structures central to clinical decision-making, while core aspects of reasoning, especially those spanning multiple encounters, remain largely implicit and physician-driven. By integrating fine-grained qualitative insights with broader quantitative patterns, this study offers a unified framework for understanding clinical reasoning as a context-sensitive, temporally extended process and identifies key mismatches between clinician cognition and current AI design. These results provide concrete directions for the development of AI systems that more effectively align with and augment real-world clinical reasoning.",
+    "publicationDate": "2026-06-07T03:51:15.000Z",
+    "votes": 2
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2605.15467",
+    "title": "Retrieval-Augmented Large Language Models for Schema-Constrained Clinical Information Extraction",
+    "abstract": "Conversational nurse-patient transcripts contain actionable observations, but converting these transcripts into structured representations at scale remains challenging. Documentation burden is substantial, with prior studies showing clinicians spend large portions of their workday on documentation and related desk work rather than direct patient care. MEDIQA-SYNUR focuses on observation extraction from conversational nurse-patient transcripts, requiring systems to normalize these narratives into a predefined schema with value-type constraints. We propose a modular retrieval-augmented generation (RAG) pipeline that uses the training set as an exemplar corpus, combines schema-constrained prompting (full schema vs. pruned candidate schema), deterministic schema-based postprocessing, and a second-pass audit, with two LLM backbones: Llama-4-Scout-17B-16E-Instruct and GPT-5.2 with corresponding embedding models for RAG. Our best configuration uses GPT-5.2 with full schema, RAG, and a second-pass auditing, achieving 80.36% F1 score. Overall, our results show that RAG consistently improves performance, while the optimal degree of schema constraint depends on the model, and second-pass auditing yields modest additional gains by correcting residual schema-adherence errors.",
+    "publicationDate": "2026-05-14T23:13:05.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.16465",
+    "title": "Healthcare AI for Automation or Allocation? A Transaction Cost Economics Framework",
+    "abstract": "Healthcare productivity is shaped not only by clinical complexity but by the costs of coordinating work under uncertainty. Transaction-cost economics offers a theory of these coordination frictions, yet has rarely been operationalised at task level across health occupations. Using task statements and frequency weights from the O*NET occupational database, we characterised healthcare work at task granularity and coded each unique task using a constrained large language model into one dominant transaction-cost category (information search, decision and bargaining, monitoring and enforcement, or adaptation and coordination) together with an overall transaction-cost intensity score. Aggregating to the occupation level, clinician roles exhibited substantially higher transaction-cost intensity than non-clinician roles, driven primarily by greater burdens of information search and decision-related coordination, while dispersion of transaction costs within occupations did not differ. These findings demonstrate systematic heterogeneity in the nature of coordination work across healthcare roles and suggest that the opportunities for digital and AI interventions are unevenly distributed, shaped less by technical task complexity than by underlying coordination structure.",
+    "publicationDate": "2026-04-08T18:22:46.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2603.29366",
+    "title": "AI-Generated Prior Authorization Letters: Strong Clinical Content, Weak Administrative Scaffolding",
+    "abstract": "Prior authorization remains one of the most burdensome administrative processes in U.S. healthcare, consuming billions of dollars and thousands of physician hours each year. While large language models have shown promise across clinical text tasks, their ability to produce submission-ready prior authorization letters has received only limited attention, with existing work confined to single-case demonstrations rather than structured multi-scenario evaluation. We assessed three commercially available LLMs (GPT-4o, Claude Sonnet 4.5, and Gemini 2.5 Pro) across 45 physician-validated synthetic scenarios spanning rheumatology, psychiatry, oncology, cardiology, and orthopedics. All three models generated letters with strong clinical content: accurate diagnoses, well-structured medical necessity arguments, and thorough step therapy documentation. However, a secondary analysis of real-world administrative requirements revealed consistent gaps that clinical scoring alone did not capture, including absent billing codes, missing authorization duration requests, and inadequate follow-up plans. These findings reframe the question: the challenge for clinical deployment is not whether LLMs can write clinically adequate letters, but whether the systems built around them can supply the administrative precision that payer workflows require.",
+    "publicationDate": "2026-03-31T07:40:31.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.16352",
+    "title": "MDwAIstScheduler: A Low-Cost, Voice-Activated Device for Hands-Free Clinical Scheduling",
+    "abstract": "Physicians spend nearly half their workday on EHR tasks and administrative work, contributing to burnout and reducing time for direct patient care. We present MDwAIstScheduler, a low-cost, belt-worn voice assistant that allows hands-free calendar management during patient encounters. Hidden beneath a lab coat, the device avoids the eye-contact disruptions caused by visible screens or wrist-worn devices. Running on a Raspberry Pi with cloud-based speech recognition and LLM intent extraction, the system lets clinicians simply say 'Schedule a follow-up with Mr. Smith next Tuesday at 2' and automatically creates the calendar event. Our demo show-cases this end-to-end pipeline.",
+    "publicationDate": "2026-03-17T02:24:38.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.16346",
+    "title": "DR. INFO at the Point of Care: A Prospective Pilot Study of Physician-Perceived Value of an Agentic AI Clinical Assistant",
+    "abstract": "Background: Clinical documentation and information retrieval consume over half of physicians working hours, contributing to cognitive overload and burnout. While artificial intelligence offers a potential solution, concerns over hallucinations and source reliability have limited adoption at the point of care. This study aimed to evaluate physician-perceived time efficiency, decision-making support, and satisfaction with DR. INFO, an agentic AI clinical assistant, in routine clinical practice.\nMethodology: In this prospective, single-arm, pilot feasibility study, 29 physicians and medical students across multiple specialties in Portuguese healthcare institutions used DR. INFO v1.0 over five working days within a two-week period. Outcomes were assessed via daily Likert-scale evaluations (time saving and decision support) and a final Net Promoter Score (NPS). Non-parametric methods were used throughout, with bootstrap confidence intervals (CIs) and sensitivity analysis to address non-response.\nResults: Physicians reported high perceived time saving (mean = 4.27/5; 95% CI = 3.97-4.57) and decision support (mean = 4.16/5; 95% CI = 3.86-4.45), with ratings stable across the five-day study window. Among the 16 (55%) participants who completed the final evaluation, the NPS was 81.2, with no detractors; sensitivity analysis indicated an NPS of 44.8 under conservative non-response assumptions.\nConclusions: Physicians across specialties and career stages reported positive perceptions of DR. INFO for both time efficiency and clinical decision support within the study window. These findings are preliminary and should be confirmed in larger, controlled studies that include objective performance measures and independent accuracy verification.",
+    "publicationDate": "2026-03-16T13:09:14.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.22767",
+    "title": "The Imbalanced User-AI Relationships as an Ethical Failure of Front-End Design in Healthcare AI",
+    "abstract": "Ethical discourse on AI in healthcare has focused predominantly on back-end concerns such as bias, fairness and explainability, while the front-end interface, where patients and clinicians actually encounter AI outputs, remains under explored. This paper identifies imbalanced user-AI relationships as a distinct class of front-end ethical failure: patients are rendered highly visible to AI systems through data inference, yet cannot understand, question or influence how they are represented. Through the concept of asymmetric legibility and a chat-based telemedicine case, we show how design choices e.g., default recommendations, restricted inputs and suppressed uncertainty, undermine agency, clinician judgment and human oversight even where systems are technically accurate. We propose reciprocity as a design orientation and offer interventions for more balanced, participatory user-AI relationships in healthcare.",
+    "publicationDate": "2026-03-24T17:15:57.000Z",
+    "votes": 0
+   }
+  ]
+ },
+ "commerce-catalog-enrichment": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword product catalog enrichment ecommerce data quality --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2608.20844",
+    "title": "TRACE: Agentic Catalog Enrichment with Multi-source Evidence Grounding",
+    "abstract": "Product catalogs underpin search, discovery, and recommendation in e-commerce, yet they are often attribute-sparse: the attributes shoppers and downstream systems rely on are either buried in unstructured content such as titles and images or missing from the catalog altogether. Manually enriching e-commerce catalogs is impractical given their scale and rapid growth. This paper introduces TRACE, a novel framework for automated catalog attribute enrichment using agentic Large Language Models (LLMs). A ScoutAgent triangulates multimodal evidence across merchant catalogs, syndicated feeds, and identity-matched web search to propose candidate attribute values with supporting evidence, while a JudgeAgent verifies the proposed value for each attribute value against its supporting evidence and decides whether to publish it or route it to human review. On an offline human evaluation dataset, TRACE's proposed attribute values were 98.2% accurate at 74.7% attribute coverage. Deployed in production on an industry-scale catalog, TRACE increased impression-weighted enrichment coverage across four business verticals by 90.4%. An online experiment subsequently showed that surfacing the enriched attributes on the product detail page increased checkout conversion by 0.48%.",
+    "publicationDate": "2026-08-21T08:08:27.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "..., Matthew Long\n1\n, Bernice Chow\n1\n,\nMac VanRenterghem\n1 \nand Sudeep Das\n1\n1\nDoorDash, Inc.\nAbstract\nProduct catalogs underpin search, discovery, and recommendation in e-commerce, yet they are often at..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "TRACE: Agentic Catalog Enrichment with Multi-source\nEvidence Grounding\nRohan Kumar\n1\n, Steven Xu\n1\n, Kyle MacDonald\n1\n, Matthew Long\n1\n, Bernice Chow\n1\n,\nMac VanRenterghem\n1 \nand Sudeep Das\n1\n1\nDoorDa..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.02468",
+    "title": "DeepAffinity: Long-Term Aspect Preference Prediction in eCommerce using Small Language Models",
+    "abstract": "We explore predicting eCommerce user preferences for product aspects such as brand, size, and color - a task we define as Aspect Affinity. Solving this task improves customer understanding and enables fine-grained personalization in recommendation, search, and marketing. We frame Aspect Affinity as a temporal prediction task: forecasting a users future aspect choices from their time-ordered interaction history, capturing long-term preferences that evolve beyond the current session. To this end, we propose DeepAffinity, which leverages Small Language Models (SLMs) with structured prompts and specialized prediction heads fine-tuned for this task. We show DeepAffinity outperforms standard generative fine-tuning methods, while general-purpose open-source LLMs perform poorly without task-specific tuning, highlighting their limits in modeling nuanced behavior. Finally, DeepAffinity enhances recommendation quality on a large-scale multinational eCommerce platform.",
+    "publicationDate": "2026-09-02T11:38:19.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...-Gurion University\nbshapira@bgu.ac.il\nAbstract\nWe explore predicting eCommerce user preferences for product\naspects such as brand, size, and color\u2014a task we define as Aspect\nAffinity. Solving this tas..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "DeepAffinity: Long-Term Aspect Preference Prediction in\neCommerce using Small Language Models\nYotam Eshel\n\u2217\neBay Inc.\nyeshel@ebay.com\nGuy Hadad\n\u2217\nBen-Gurion University\nguy_hadad@hotmail.com\nGuy Feigen..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.34211",
+    "title": "Behavior-Grounded Semantic Enrichment for Financial Fraud Modeling and Reasoning",
+    "abstract": "In financial fraud detection, rich semantic context can provide important evidence for transaction behavior modeling and fraud reasoning. However, public real-world financial datasets often lack rich semantics due to privacy constraints. Consequently, synthetic datasets incorporate generated semantics, but at the cost of behavioral realism; textual descriptions for contextual reasoning remain scarce. We address this gap through a semantic enrichment framework grounded in original transaction behavior to simulate multimodal financial data. We (1) propose a multi-agent semantic enrichment framework that generates interpretable financial semantics grounded in transaction behavior through role-specialized agents and consistency refinement, and (2) newly contribute a valuable multimodal financial fraud dataset, MS-FFSD, enriched with structured semantics and textual semantics while preserving real-data-grounded transaction behavior. Furthermore, we systematically analyze the quality and utility of semantic enrichment. Results demonstrate statistical fidelity and framework generalizability, while showing that richer semantics benefit fraud modeling and context-aware LLM reasoning. Overall, this work advances multimodal financial fraud research and bridges emerging LLM and multi-agent capabilities with operational anti-fraud practice. The framework and dataset are released at this https URL.",
+    "publicationDate": "2026-09-28T03:17:05.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "BEHAVIOR-GROUNDED SEMANTIC ENRICHMENT FOR\nFINANCIAL FRAUD MODELING AND REASONING\nLinbo Shao\n\u2217\n, Huilin He\n\u2217\n, Yating Lou, Dawei Cheng\n\u2020\nSchool of Computer Science and Technology, Tongji University, Sh..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...vidence\nfor transaction behavior modeling and fraud reasoning. However, public real-world\nfinancial datasets often lack rich semantics due to privacy constraints. Conse-\nquently, synthetic datasets in..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.00964",
+    "title": "RPTune: Learned Context Curation for LLM Catalog Search",
+    "abstract": "For small merchant businesses (SMBs) whose catalogs fit within a long-context LLM, full-catalog prompting offers a compelling alternative to multi-stage retrieval designed primarily for large marketplaces with millions of items. However, fitting the full catalog into the context window does not ensure that the model can use it effectively, since LLMs do not exploit long contexts uniformly. We therefore study in-context catalog search through two complementary questions: (1) how to curate and present catalogs to the LLM, and (2) how to adapt the LLM for product selection on curated contexts.\nWe propose RPTune, an end-to-end framework that couples learned catalog curation with LLM post-training using automatically generated, catalog-grounded supervision. An encoder-reorganizer curator orders and prunes products guided by downstream LLM feedback, while the resulting curated catalogs in turn improve the effectiveness of LLM post-training with a context-relative reward. We evaluate RPTune on 7 real merchants spanning distinct retail verticals, using 100 complex conversational queries per merchant. RPTune consistently improves search accuracy across both proprietary and open-weight LLMs, with context curation yielding gains of up to 31.4 percentage points and post-training adding a further 10.3 points on average.",
+    "publicationDate": "2026-10-01T02:52:24.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...tary questions: (1) how to curate and present catalogs to the LLM, and (2) how to adapt the\nLLM for product selection on curated contexts.\nWe propose RPTune, an end-to-end framework that couples learn..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "RPTune: Learned Context Curation for LLM\nCatalog Search\nChuxuan Hu\n1, 2*\n, Hejie Cui\n1\n, Norman Huang\n1\n, Shubham Kumar Bharti\n1\n, Wang-Chiew Tan\n1 \nand Sercan \u00d6. Ar\u0131k\n1\n1\nGoogle, \n2\nUniversity of Ill..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.20508",
+    "title": "Grounded Product Understanding in Livestream Videos",
+    "abstract": "E-commerce livestreams have emerged as an important channel for presenting products to online consumers, containing multiple products whose information is scattered in different moments. This poses significant challenges for downstream product understanding applications, such as product-centric livestream clipping, where models need to identify the product and its relevant segments for information gathering. However, existing benchmarks for general product understanding typically evaluate product retrieval and temporal localization in isolation, leaving the critical correspondence between product identity and temporal evidence largely unassessed. To address this limitation, we introduce GPUB, a large-scale benchmark comprising 3,000 livestream instances with quality-controlled multi-moment temporal annotations and a catalog of over 31K fashion products. GPUB supports three evaluation tasks: the main task Grounded Product Understanding (GPrU) requires jointly identifying the target product and localizing its supporting moments from a livestream video and a candidate product set; Product Retrieval and Product Moment Localization serve as two complementary subtasks. Evaluation of existing multimodal models shows that GPrU remains highly challenging, with the best-performing baseline achieving only 10.13% Pair mAP@.3. To narrow the performance gap, we further develop UniPro, a unified product understanding model that derives product-aligned and temporally structured representations from shared multimodal encoding, improving Pair mAP@.3 to 21.53% while achieving 37.23% Joint R@1@.3 on GPrU.",
+    "publicationDate": "2026-09-17T14:51:18.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "GROUNDED PRODUCT UNDERSTANDING\nIN LIVESTREAM VIDEOS\nXinyu Zhang\n1\n, Junjie Chen\n1\n, Jiawei Ge\n2\u2217\n, Qianlong Li\n1\nLibin Ma\n1\n, Baokun Pan\n1 \n& Yahui Luo\n1\n1\nKuaishou Technology \n2\nInstitute of AI for I..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...prising 3,000 livestream instances with quality-controlled multi-\nmoment temporal annotations and a catalog of over 31K fashion products. GPUB\nsupports three evaluation tasks: the main task Grounded P..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.09567",
+    "title": "Positional task conditioning for scalable defect detection across product families in large product catalogs",
+    "abstract": "Product families in large product catalogs suffer from inconsistencies such as duplicates and unit mismatches that degrade customer experience. Detecting these requires reasoning over multiple error types across lengthy product listings, where LLM classification quality degrades due to long-context limitations. We address this by decomposing detection into focused sub-tasks that reduce context and isolate error types, improving F1 from 52% to 87%. For scalable deployment, we introduce Positional Task Conditioning (PTC), which distills this capability into a single smaller model by reinforcing task identity at structural prompt boundaries. PTC outperforms rationale-based distillation across five models and two architecture families, achieving within 1.79% F1 of the frontier at upto 98% lower cost. Our system is deployed across multiple countries processing 10+ million product families.",
+    "publicationDate": "2026-09-09T00:48:18.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Positional task conditioning for scalable defect detection across product\nfamilies in large product catalogs\nSoham Satyadharma\n1\n, Gabriel Roccabruna\n1\n, Suleiman A. Khan\n1\n1 \nAmazon Catalog AI\nssatya..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Positional task conditioning for scalable defect detection across product\nfamilies in large product catalogs\nSoham Satyadharma\n1\n, Gabriel Roccabruna\n1\n, Suleiman A. Khan\n1\n1 \nAmazon Catalog AI\nssatya..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.38326",
+    "title": "Learning Gaia: A Generative Model Trained on the Gaia Data Release 3 Source Catalog",
+    "abstract": "I train a conditional flow matching model on the positions, photometry, and astrometry of $\\sim$ 579 million sources from the Gaia Data Release 3 Source Catalog. Using a probabilistic masking scheme during training, I develop a model capable of generating mock Gaia catalog sources with and without partial measurements of real Gaia sources. The model can produce coarse-grained mock Gaia Source Catalogs that reproduce the Milky Way disk and Magellanic Clouds, and can impute photometric and kinematic information. The model fails to reproduce small, distinct subpopulations like $\\omega$ Centauri. This model is a necessary step towards a foundation model trained on the entirety of Gaia data products, and provides a blueprint for future work with the upcoming Gaia Data Release 4.",
+    "publicationDate": "2026-09-29T18:00:32.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...uri.\nThis model is a necessary step towards a foundation model trained on the entirety of Gaia data\nproducts, and provides a blueprint for future work with the upcoming Gaia Data Release 4.\n1. INTRODU..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...lt style in AASTeX7.0.1\nLearning Gaia: A Generative Model Trained on the Gaia Data Release 3 Source Catalog\nJohn Soltis \n1\n1\nSpace Telescope Science Institute, Baltimore, MD 21218, USA\nABSTRACT\nI trai..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.02846",
+    "title": "Understanding Enrichment in Reinforcement Learning",
+    "abstract": "When rewards are sparse, reinforcement learning with verifiable rewards (RLVR) often uses hints or intermediate guidance to generate more successful rollouts. This enrichment biases policy-gradient updates unless corrected via importance weights, but existing methods omit correction or truncate importance weights in order to avoid the high variance of correction. It thus remains unclear what exactly is gained or lost in RLVR by correcting enriched rollouts. We show, mathematically, that omitted or truncated correction implicitly reweights the defined reward, and we decompose the resulting gradient error into scale, rotation, and variance to explain their distinct effects on learning. To make correction practical, we develop a novel sequential Monte Carlo (SMC) weight correction mechanism that, under stability and particle-order assumptions, tempers the exponential compounding of standard correction variance over the length of a sample to an additive accumulation. We then apply our analysis of enrichment to interpreting the results of a fine-tune of Qwen3-1.7B on a sparse band of OpenMathReasoning, establishing a concrete mechanism of how enrichment, both corrected and uncorrected, helps avoid collapse in sparse domains. Our main contribution is to understand, in general, how enrichment and correction can affect training, as opposed to claiming that either mode of operation is superior to unenriched RL.",
+    "publicationDate": "2026-10-02T05:34:41.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Preprint\nUNDERSTANDING ENRICHMENT IN REINFORCEMENT\nLEARNING\nJinwoo Kim \n\u2217\nUniversity of California-San Diego\nLa Jolla, CA, USA\njik083@ucsd.edu\nShraddha Barke\nMicrosoft Research\nRedmond, WA, USA\nsbarke..."
+     },
+     {
+      "pageNumber": 2,
+      "snippet": "...q\n\u03b8 \n[ \n\u03c0\n\u03b8 \n(x)\nq\n\u03b8 \n(x) \n\u00b7 R(x)\u2207\n\u03b8 \nlog \u03c0\n\u03b8 \n(x)] instead of Equation (2).\nHowever, many existing enrichment-based RLVR methods (Li et al., 2026a; Zhang et al., 2026b;\n2025) do not compute the corre..."
+     }
+    ]
+   }
+  ]
+ },
+ "commerce-review-mining": {
+  "cmd": "/home/codespace/.local/bin/orx discover openalex customer reviews converting feedback into product decisions --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "openalex",
+    "id": "10.17762/turcomat.v12i10.5357",
+    "title": "Mining Of Customer Review Feedback Using Sentiment Analysis For Smart Phone Product",
+    "abstract": "With the fast growth of e-commerce, large number of products is sold online, and a lot more people are purchasing products online. People also give feedback of product purchased in form of reviews. The user generated reviews for products and services are largely available on internet. To extract the valuable understanding, classification of reviews is required from a huge set of feedback which has converted into positive and negative sentiments. The process of Sentiment Analysis (SA) has mined the attitude, opinions and emotions spontaneously from text, speech and database via Natural Language Process (NLP).It contains feedback review about product, product features or some sentiment emotional views on the product given by the customer. In this research work, feedback from the customer which associated with smart phones is taken from Amazon.com in order to predict the rating of the product given by the user feedback using SA. Feedback review of the customers has been collected fromAmazon.com and this research work had nearly 4000customer feedback reviews based on related categories namely ID of the product, name of the product, name of the brand, Rating, review of the product and vote based on review. This kind of analysis will be helpful for the customers to identify the better product with quick analysis and identify the implicit product perhaps the e-commerce business to improve the sales based on providing offers for particular implicit products.",
+    "publicationDate": "2021-04-28",
+    "citations": 3
+   },
+   {
+    "source": "openalex",
+    "id": "10.1016/j.ijpe.2023.109003",
+    "title": "Supporting personalized new energy vehicle purchase decision-making: Customer reviews and product recommendation platform",
+    "abstract": "",
+    "publicationDate": "2023-08-06",
+    "citations": 38
+   },
+   {
+    "source": "openalex",
+    "id": "W7220326613",
+    "title": "THE EFFECTIVENESS OF CUSTOMER FEEDBACK IN STRATEGIC PRODUCT DEVELOPMENT",
+    "abstract": "Customer feedback has a great role to play in terms of providing insights for strategic product development, including consumer preferences, pain points, and expectations. Incorporating the feedback into the development process allows organizations to create a finer product by enhancing the user experience and remaining competitive in dynamic markets. The study thus explored whether customer feedback could affect the innovation in product development, change responsiveness to markets, and develop long-term brand loyalty. Companies detect emergent trends and areas for enhancement via multi-channel feedback systems, including surveys, reviews, social media interactions, and direct customer contact. The processing of qualitative and quantitative feedback helps organizations reach data-informed decisions about feature prioritization and waste eradication. Besides, embedding customer insight directly into iterative development is synonymous with agile methods, which help reduce product failure risk and ensure product-market fit. Customer feedback integration-related nuisances are the other elements analyzed in the research. Examples of these nuisances include data saturation, biased opinions, and misinterpreted data. To be effective, feedback management needs advanced analytical tools, a structured evaluation process, and a strategic framework for turning insights into actions for improvement. Cultivating a think-customer attitude inside the organization would enable it to make products that appeal to a broader audience while moving faster in the market. Hence, this work presents the strategic importance of customer feedback for innovation, product development, and in retaining a competitive edge in the consumer economy now.",
+    "publicationDate": "2024-12-31",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.1007/s40747-020-00155-2",
+    "title": "Machine learning based customer sentiment analysis for recommending shoppers, shops based on customers\u2019 review",
+    "abstract": "Abstract Big data analytics plays a major role in various industries using computing applications such as E-commerce and real-time shopping. Big data are used for promoting products and provide better connectivity between retailers and shoppers. Nowadays, people always use online promotions to know about best shops for buying better products. This shopping experience and opinion about the shopper\u2019s shop can be observed by the customer-experience shared across social media platforms. A new customer when searching a shop needs information about manufacturing date (MRD) and manufacturing price (MRP), offers, quality, and suggestions which can only be provided by the previous customer experience. The MRP and MRD are already available in the product cover or label. Several approaches have been used for predicting the product details but not providing accurate information. This paper is motivated towards applying Machine Learning algorithms for learning, analysing and classifying the product information and the shop information based on the customer experience. The product data with customer reviews is collected from benchmark Unified computing system (UCS) which is a server for data based computer product lined up for evaluating hardware, support to visualization, software management. From the results and comparison, it has been found that machine learning algorithms outperform than other approaches. The proposed HRS system has higher values of MAPE which is 96% and accuracy is nearly 98% when compared to other existing techniques. Mean absolute error of proposed HRS system is nearly 0.6 which states that the performance of the system is significantly effective.",
+    "publicationDate": "2020-06-11",
+    "citations": 149
+   },
+   {
+    "source": "openalex",
+    "id": "10.35940/ijeat.b2664.129219",
+    "title": "Customer Feedback Analyzer",
+    "abstract": "Product reviews always act as a great source of information for a company. These reviews record the customer\u2019s feedback on the product and services that the company provides. The problem that we face is that the number of reviews in these kinds of portals are in thousands for which manual analysis is time consuming and inefficient. So, we plan to make an automated system using machine learning which can do the job of analyzing large number of comments in seconds thereby increasing efficiency. These reviews which are posted online can be both positive and negative, categorizing them into broad categories like product defected, product size invalid, good fitting, excellent working etc., will ease the process for both consumers and sellers. This will help automate the process of Customer Resolution, as it takes a lot of time for an employee to manually sort each comment into various categories and then send it to the particular team for review. Additionally, trends can also be analyzed on these comments, such as which issue is most faced by consumers around a particular date/time. This project will efficiently extract the important topics of concern which the company should focus on and also change or improve in order to keep its customers happy and loyal.",
+    "publicationDate": "2019-12-30",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.1177/1094670514524625",
+    "title": "Analyzing Customer Experience Feedback Using Text Mining",
+    "abstract": "Complexity surrounding the holistic nature of customer experience has made measuring customer perceptions of interactive service experiences challenging. At the same time, advances in technology and changes in methods for collecting explicit customer feedback are generating increasing volumes of unstructured textual data, making it difficult for managers to analyze and interpret this information. Consequently, text mining, a method enabling automatic extraction of information from textual data, is gaining in popularity. However, this method has performed below expectations in terms of depth of analysis of customer experience feedback and accuracy. In this study, we advance linguistics-based text mining modeling to inform the process of developing an improved framework. The proposed framework incorporates important elements of customer experience, service methodologies, and theories such as cocreation processes, interactions, and context. This more holistic approach for analyzing feedback facilitates a deeper analysis of customer feedback experiences, by encompassing three value creation elements: activities, resources, and context (ARC). Empirical results show that the ARC framework facilitates the development of a text mining model for analysis of customer textual feedback that enables companies to assess the impact of interactive service processes on customer experiences. The proposed text mining model shows high accuracy levels and provides flexibility through training. As such, it can evolve to account for changing contexts over time and be deployed across different (service) business domains; we term it an \u201copen learning\u201d model. The ability to timely assess customer experience feedback represents a prerequisite for successful cocreation processes in a service environment.",
+    "publicationDate": "2014-03-21",
+    "citations": 194
+   },
+   {
+    "source": "openalex",
+    "id": "W7217034745",
+    "title": "Opinion Mining from Customer Reviews for Product Ranking",
+    "abstract": "Recently the peoples of the metropolitan cities are moving from traditional offline interactive shopping to online shopping due to time limitation and cost of products. In online shopping, the purchase decision is a challenging task for new customers as there may a large number of competitive products. Recently mostly online shopping sites have been facilitated to their customers to write the reviews about the products they have purchased. These customers\u2019 reviews do not only help to new customer for taking purchase decision but also help the manufacturer to increase the sale of their products by improving its quality. This paper presents a reviews mining method to extract product features and its opinion. Thereafter, we apply the Analytic Hierarchy Process (AHP) on extracted features and opinion to rank the competitive products by scoring them. The method has been validated on a data set related to five smart phones downloaded from three deferent online shopping websites - Flipkart, Snapdeal, and Amazon. The evaluation result shows that the proposed method gives up to marks result.",
+    "publicationDate": "2025-11-15",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.3390/app12178823",
+    "title": "SmartTips: Online Products Recommendations System Based on Analyzing Customers Reviews",
+    "abstract": "Online customers\u2019 opinions represent a significant resource for both customers and enterprises to extract much information that helps them make the right decision. Finding relevant data while searching the internet is a big challenge for web users, known as the \u201cProblem of Information Overload\u201d. Recommender systems have been recognized as a promising way of solving such problems. In this paper, a product recommendation system called \u201cSmartTips\u201d is introduced. The proposed model is built based on aspect-based sentiment analysis, which exploits customers\u2019 feedback and applies the aspect term extraction model to rate various products and extract user preferences as well. Several factors were considered, including readers\u2019 votes, aspect term frequency, opinion words\u2019 frequencies, etc. We tested our model on benchmark datasets that are widely used, and the results show that it outperforms the baseline methods regarding the mean squared errors of generated predictions.",
+    "publicationDate": "2022-09-02",
+    "citations": 9
+   }
+  ]
+ },
+ "smb-operations": {
+  "cmd": "/home/codespace/.local/bin/orx discover openalex small business operations manual administrative burden --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "openalex",
+    "id": "10.56975/ijcrt.v14i5.306074",
+    "title": "GST Compliance in India: Challenges, Costs, and Administrative Burden on Businesses",
+    "abstract": "UGC-CARE, UGC CARE, UGC CARE list, ugc approved journal, UGC CARE, UGC CARE list, UGC CARE list of Journal, UGCCARE, care journal list, UGC-CARE list, New UGC-CARE Reference List, New ugc care journal list, Research Journal, Research Journal Publication, Research Paper, Low cost research journal, Free of cost paper publication in Research Journal, High impact factor journal, Journal, Research paper journal, UGC CARE journal, UGC CARE Journals, ugc care list of journal, ugc approved list, ugc approved list of journal, ugc approved journal,ugc care journal, ugc care approved journal,Journal publication, ISSN approved, Research journal, research paper, research paper publication, research journal publication, high impact factor, free publication, index journal, publish paper, publish Research paper, low cost publication, ugc approved journal, UGC CARE, follow norms ugc approved journal, ugc approved list of journal, ugc care journal, care journal, UGC-CARE list, New UGC-CARE Reference List, UGC CARE Journals, ugc care list of journal, ugc care list 2020, ugc care approved journal, ugc care list 2020, new ugc approved journal in 2020, IJCRT - international Research Journal, INTERNATIONAL JOURNAL OF CREATIVE RESEARCH THOUGHTS , Low cost research journal, Online international research journal, Peer-reviewed, and Refereed Journals, ISSN approved, low cost journal, Research journal, research paper, research paper publication, research journal publication, high impact factor, free publication, index journal, Regarding Approval and Equivalence of - ugc approved journal, UGC CARE, ugc approved list of journal, ugc care journal, UGC CARE list, UGCCARE, care journal, UGC-CARE list, New UGC-CARE Reference List, UGC CARE Journals, ugc care list of journal, ugc care list 2020, ugc care approved journal, ugc care list 2020, new ugc approved journal in 2020, ugc care list 2021, ugc approved journal in 2021 : ugc approved journal in 18 before care approved journal and Valid as per new UGC Gazette regulations for UGC regulations on minimum qualifications for appointment of teachers and other academic staff in universities and colleges Peer-reviewed, and Refereed Journal is valid and point in Publication. IJCRT Followed Norms, guidelines, requirement, listing criteria and methodology of score/point from: ugc approved journal, UGC CARE, ugc approved list of journal, ugc care journal, UGC CARE list, UGCCARE, care journal, UGC-CARE list, New UGC-CARE Reference List, UGC CARE Journals, ugc care list of journal, ugc care list 2020, ugc care approved journal, ugc care list 2020, new ugc approved journal in 2020, ugc care list 2021, ugc approved journal in 2021, Scopus, web of Science , scholarly journals, UGC Approved journal, ugc approved,ugc, ugc certify, publish free of cost, free publication, UGC and ISSN Approved , International Peer Reviewed, Open Access Journal , ISSN: 2320-2882 Impact Factor : 7.97 , E- journal, Low Cost INR 500, Free Publication",
+    "publicationDate": "2026-01-01",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.64643/ijirtv12i7-189138-459",
+    "title": "GST Compliance Burden on Small Businesses in Gujarat",
+    "abstract": "Explore the article titled GST Compliance Burden on Small Businesses in Gujarat from IJIRT Volume 12, Issue 7. This study evaluates the effectiveness of teaching programs on waste management knowledge among women.",
+    "publicationDate": "2026-01-13",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.28991/esj-2024-08-01-019",
+    "title": "Artificial Intelligence for Impact Assessment of Administrative Burdens",
+    "abstract": "This study proposes the use of Artificial Intelligence (AI) to automatize part of the legislative impact assessment process. In particular, the focus of this study is the automatic identification of administrative burdens from legislative documents. The goal of impact assessment for administrative burdens is to apply an evidence-based approach toward compliance costs generated by regulation. Employing advanced Natural Language Processing (NLP) techniques based on a transformer architecture, a system was specifically developed and tested using Portuguese legislation. The experimental phase involved the system's ability to accurately and comprehensively identify administrative burdens. Experimental results demonstrated the system's effectiveness, showing its suitability for supporting the legislative impact assessment process by automating a time-consuming task. To the best of our knowledge, this is the first attempt concerning the use of AI for automatizing the identification of administrative burdens. The proposed system may provide governments and policymakers with a tool to speed up the legislative impact assessment process, thereby streamlining decision-making processes. Moreover, the use of AI can make the legislative impact assessment process less subjective, thus increasing its transparency and making citizens more confident about the impartiality of the process that leads to new legislation. Doi: 10.28991/ESJ-2024-08-01-019 Full Text: PDF",
+    "publicationDate": "2024-02-01",
+    "citations": 5
+   },
+   {
+    "source": "openalex",
+    "id": "10.1787/7a56bfbc-en",
+    "title": "Red tape and administrative burden in aquaculture licensing",
+    "abstract": "Concern that rates of aquaculture growth in OECD countries are below potential has resulted in environmentally sustainable production increase becoming a priority for policy makers. Growth in aquaculture production can be influenced by many factors. This report looks at the attributes of licensing and regulatory systems in OECD countries, the area over which policy makers have greatest direct control, and finds some suggestion they may be negatively related to aquaculture growth rates. Opportunities exist for reducing the administrative burden faced by enterprises, without sacrificing regulatory quality in the process. There is also a strong indication that quality governance, aided by having systems of evaluation and review in place, helps reduce overall administrative burden. Comparing the attributes of licensing systems with environmental performance was not possible due to the lack of suitable indicators. This highlights the need to measure environmental performance if regulatory effectiveness is to be evaluated further.",
+    "publicationDate": "2017-09-22",
+    "citations": 5
+   },
+   {
+    "source": "openalex",
+    "id": "10.1007/978-3-319-13437-6_8",
+    "title": "Analysis of the Administrative Capacity of the Institutions in Charge of Overseeing the Operations of Business Entities",
+    "abstract": "In addition to excessive taxation and over-regulation, a key reason for the spread of the shadow economy is the poor performance of government bodies. This chapter analyses the administrative and institutional capacity, and inter-institutional co-ordination of the key institutions in charge of overseeing the operations of business entities: the Tax Administration, the Labour Inspectorate, and the Market Inspectorate. The Labour and Market Inspectorates are responsible for tackling informal employment (\u2018working in the shadow\u2019) and undeclared transactions, while the Tax Administration is responsible for preventing tax evasion. The most important problems that these institutions face are a lack of appropriately qualified staff and equipment and the absence of sufficient co-ordination and integration with other inspection and oversight services. In addition to data contained in studies assessing the operation of and issues facing these institutions, in this chapter we use data from the Survey on Conditions for Doing Business in Serbia, which reveal how respondents rate the efficiency of the operation of these institutions and other features pertaining to them. These keywords were added by machine and not by the authors. This process is experimental and the keywords may be updated as the learning algorithm improves.",
+    "publicationDate": "2015-01-01",
+    "citations": 3
+   },
+   {
+    "source": "openalex",
+    "id": "10.1111/j.1537-2995.2008.01895.x",
+    "title": "Administrative Operations",
+    "abstract": "aDministratiVe operations section transfusion 2008-Vol.48 Supplement compliance.4. implement programs, policies and procedures to lower risk.5. repeat the pfmea to determine if our actions were successful.our immediate attention was directed to the potential modes of failure with the highest risk priority number (rpn).rating scale: 1 = Good or no performance effect, 10 = bad or injury to patient or employee.Conclusions: success was achieved in the areas of purchasing, receipt, storage temperature control, informed consent form development, tissue Dispense and adverse reaction investigations.even though a new informed consent was developed, the consent form was not released for use.When addressing the higher rpn's caution is needed so that a low rpn with high patient safety risk is not overlooked as in the recall process.the pfmea is an excellent proactive tool to quantify risk.once actions have been implemented to improve a process, a repeat fmea helps determine whether there is additional risk, the success of actions taken, or the need for additional actions.",
+    "publicationDate": "2008-09-01",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.1111/puar.13722",
+    "title": "How reducing documentation burdens impacts equity in access to small business COVID \u201019 relief funding",
+    "abstract": "Abstract Scholars have unveiled how and why administrative burdens perpetuate inequity in access to government benefits. However, less is known about the tools public managers can use to reduce burdens and disparities in program access. We partner with a local government in the U.S. to investigate whether a reduction in documentation requirements increased equity by promoting access for \u201cunderserved\u201d small business owners (i.e., racial/ethnic minorities, women, people with disabilities, and veterans). Specifically, we analyze outcomes for more than 8500 businesses in a COVID\u201019 small business relief fund before and after a reduction in documentation requirements. Utilizing an interrupted time series design, we find increased application success for underserved small businesses, but other applicants benefitted more from the program change, calling into question whether the policy change advanced equity. Our findings suggest that even well\u2010intentioned interventions can perpetuate disparity if targeted supports for marginalized communities are not implemented.",
+    "publicationDate": "2023-09-04",
+    "citations": 9
+   },
+   {
+    "source": "openalex",
+    "id": "10.1111/padm.70036",
+    "title": "Measuring Administrative Burden: Bringing the State \u201cBack in\u201d as a Reflexive Actor in Burden Reduction",
+    "abstract": "ABSTRACT This study examines how governments measure administrative burdens in citizen\u2013state interactions. Although scholarly interest in the burden framework has grown, little is known about how states themselves track and reduce these costs. A scoping review of 38 academic and gray sources, complemented by interviews with 11 experts, identifies six measurement approaches currently in use. An analysis of their indicators and data shows that all six capture burdens only partially: none encompasses all four dimensions\u2014time, money, effort, and psychological\u2014and none integrates both subjective and objective data for each. These tools reflect narrow, fragmented understandings of what burdens are and how they are experienced, highlighting the need for stronger alignment between conceptual advances, measurement practices, and policy efforts. Drawing on our findings, we propose three policy recommendations to enhance burden measurement and outline three research directions to further the study of how governments monitor, interpret, and mitigate the burdens they produce.",
+    "publicationDate": "2025-12-22",
+    "citations": 0
+   }
+  ]
+ },
+ "accessibility-info-access": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword information accessibility cognitive load plain language --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.38589",
+    "title": "C-LISTEN: Cognitive Load Impacts of Sensory-Triggered Environmental Navigation in Virtual Reality",
+    "abstract": "Nowadays, Virtual Reality (VR) systems are more helpful for making decisions, training, and rehabilitation. Multimodal settings in these systems impose a significant balance and cognitive difficulties. Additionally, decreased performance, higher cognitive load, user overwhelm, and limited accessibility of VR technology can be caused by excessive auditory, visual, and sensory stimulation. In our pilot study, we examine the strategic design of directional auditory cues to improve cognitive load and enhance user experience in virtual environments. This research also enhances fundamental knowledge that auditory feedback reduces cognitive load in VR, with statistical analysis confirming this improvement (p = .0011). This study investigates how postural balance and pupil diameter correlate with cognitive load while the users navigate. Moreover, this study provides realistic overview design guidelines for accessibility, which will make VR experiences safer and more useful for everyone, including people with cognitive impairments.",
+    "publicationDate": "2026-09-29T21:47:51.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "..., education, and entertainment. Cognitive\nload refers to the amount of mental effort for processing\ninformation while accomplishing a task, which is strongly\ninfluenced by the effectiveness of VR expe..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...fficulties. Additionally, decreased performance,\nhigher cognitive load, user overwhelm, and limited accessibility\nof VR technology can be caused by excessive auditory, visual, and\nsensory stimulation...."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.17398",
+    "title": "Enhancing Accessibility of Medical Texts through Large Language Model-Driven Plain Language Adaptation",
+    "abstract": "This paper addresses the challenge of making complex healthcare information more accessible through automated Plain Language Adaptation (PLA). PLA aims to simplify technical medical language, bridging a critical gap between the complexity of healthcare texts and patients' reading comprehension. Recent advances in Large Language Models (LLMs), such as GPT and BART, have opened new possibilities for PLA, especially in zero-shot and few-shot learning contexts where task-specific data is limited. In this work, we leverage the capabilities of LLMs such as GPT-4o-mini, Gemini-1.5-pro, and LLaMA for text simplification. Additionally, we incorporate Mixture-of-Agents (MoA) techniques to enhance adaptability and robustness in PLA tasks. Key contributions include a comparative analysis of prompting strategies, finetuning with QLoRA on different LLMs, and the integration of MoA technique. Our findings demonstrate the effectiveness of LLM-driven PLA, showcasing its potential in making healthcare information more comprehensible while preserving essential content.",
+    "publicationDate": "2026-09-15T16:33:38.000Z",
+    "votes": 6,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...aptation\nTing-Wei Chang\n1 \nHen-Hsen Huang\n2 \nHsin-Hsi Chen\n1,3\n1\nDepartment of Computer Science and Information Engineering, National Taiwan University, Taiwan\n2\nInstitute of Information Science, Acad..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Enhancing Accessibility of Medical Texts through Large Language\nModel-Driven Plain Language Adaptation\nTing-Wei Chang\n1 \nHen-Hsen Huang\n2 \nHsin-Hsi Chen\n1,3\n1\nDepartment of Computer Science and Inform..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.10271",
+    "title": "Senseful Consense: Towards Simplified Cookie Banners using Plain Language",
+    "abstract": "While the GDPR and ePrivacy Directive mandate that consent information must be clear and accessible, most modern cookie banners remain obscured by technical jargon, vague phrasing, and frequent content overload or underload. This feasibility study investigates the impact of applying plain language (Einfache Sprache) to cookie banners within the IAB Transparency &amp; Consent Framework (TCF). In our study, we analysed cookie banner texts from 200 websites, using AI-based mapping to categorise extracted content into standardised processing purposes. By substituting complex legal terms with simplified descriptions, we successfully demonstrated that the comprehension barrier can be lowered from a college-graduate level to a 7th-grade level. However, the effectiveness of plain language is inherently constrained by the informativeness of the original content; it cannot compensate for banners that omit legally required details. We conclude that while plain language is a vital tool for digital accessibility, it must be paired with standardised implementation guidelines to ensure that cookie banners are both readable and informative.",
+    "publicationDate": "2026-09-09T14:54:50.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...irective (ePD) further supports this by requiring that\nusers must be given \u201cclear and comprehensive information\u201d about\nthe purpose of the processing [19], so that users can make an\ninformed decision. ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...at omit legally required details. We conclude\nthat while plain language is a vital tool for digital accessibility, it\nmust be paired with standardised implementation guidelines\nto ensure that cookie b..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.37645",
+    "title": "Beyond Productivity: Measuring Developers' Cognitive Load During GenAI-Supported Software Development",
+    "abstract": "Generative AI (GenAI) is changing software development workflows and how developers work. Industry evaluations of GenAI adoption often monitor productivity gains, usage, and output quality, but limited attention is paid to the interaction experience and cognitive load of the actual adopters and drivers of GenAI technology - the software developers. Understanding whether GenAI changes or shifts developers' cognitive demands during everyday development is important for a developer-centered evaluation of GenAI-supported software development. It can inform organizations in designing and evaluating effective AI-supported workflows. In this work, we study how GenAI use and task context relate to professional developers' perceived cognitive load and whether wearable-derived physiological characteristics provide additional information beyond this context. In a four-day industrial field study at two SAP sites, 21 developers documented their tasks, task duration, GenAI use, and perceived cognitive load while wearing an EmbracePlus wristband. The results show that perceived cognitive load is associated with both GenAI use and task context, while physiological measures provide only limited additional information. These findings suggest that developers' perceived cognitive load during GenAI-supported software development should be evaluated in relation to the concrete work context, with wearable physiological data used as complementary rather than standalone information.",
+    "publicationDate": "2026-09-29T14:12:56.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...eived cognitive load and whether wearable-\nderived physiological characteristics provide additional\ninformation beyond this context. In a four-day industrial field\nstudy at two SAP sites, 21 developer..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "XXX-X-XXXX-XXXX-X/XX/$XX.00 \u00a920XX IEEE\nBeyond Productivity: Measuring Developers\u2019\nCognitive Load During GenAI-Supported Software\nDevelopment\nCharlotte Brandebusemeyer\nDigital Health \u2013 Connected Health..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.17039",
+    "title": "What Cognitive Accessibility Reveals About Data Visualization",
+    "abstract": "Data visualization aims to augment human cognition and make data accessible to diverse audiences. As data increasingly shapes participation and decision-making across many domains, there is a growing need to examine whether prevailing assumptions in visualization adequately reflect the diversity of human abilities, experiences, and needs. We argue that cognitive accessibility provides a critical lens for examining these questions and functions as a stress test for visualization theory. Drawing on cognitive accessibility research and our experiences studying accessible visualization, we identify three interconnected assumptions that shape visualization research and practice: assumptions about what forms of cognition visualization supports, how accessibility is defined and measured, and whose needs and abilities are centered in design and evaluation. Making these assumptions explicit reveals opportunities to rethink longstanding approaches and open new directions. Ultimately, we believe that cognitive accessibility can serve as a catalyst for innovation, expanding what visualization supports, whom it serves, and the roles it plays in people's lives.",
+    "publicationDate": "2026-08-17T18:38:39.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...as\nsupporting diverse ways of understanding, interpreting, applying,\nand meaningfully engaging with information. Our perspective is\ngrounded primarily in research with people with intellectual and\ndev..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "What Cognitive Accessibility Reveals About Data Visualization\nKeke Wu\n*\nUniversity of Maryland, College Park\nJinjuan Heidi Feng\n\u2020\nTowson University\nJonathan Lazar\n\u2021\nUniversity of Maryland, College Par..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.17175",
+    "title": "Balancing Safety and Autonomy: Accessibility-Oriented Interventions in Generative AI for Cognitive Impairment",
+    "abstract": "Generative AI systems are increasingly used by older adults with cognitive impairment for everyday tasks such as information seeking, health management, and communication. While these systems provide flexible, language-based support, their open-ended outputs introduce risks of over-reliance, misinterpretation, and inappropriate decision-making. Prior work has focused on usability and adoption, with limited attention to how system design shapes users' participation in decision-making and the distribution of agency in care contexts. We present a qualitative study of 45 individuals with cognitive impairment and their caregivers. We identify five accessibility-oriented mechanisms: AI Capability Constraint, Human Oversight Embedding, Cognitive Engagement Maintenance, Human-AI Relationship Regulation, and Risk Transparency and Control, through which systems structure interaction. These mechanisms both support and constrain users by redistributing decision-making across users and caregivers. We show that their effects vary by impairment level: while protective mechanisms support users with severe impairment, they can restrict autonomy for those with mild impairment. As impairment progresses, tensions become less visible as user participation diminishes. Our findings highlight the need for dynamic designs that balance safety and autonomy in AI-supported care.",
+    "publicationDate": "2026-08-17T22:24:34.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...t\nYibo Meng\n\u2217\nWeill Cornell Medicine\nNew York, United States\nyim4007@med.cornell.edu\nJingruo Chen\n\u2217\nInformation Science, Cornell\nUniversity\nIthaca, New York, United States\njc3564@cornell.edu\nLyumansha..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Balancing Safety and Autonomy: Accessibility-Oriented\nInterventions in Generative AI for Cognitive Impairment\nYibo Meng\n\u2217\nWeill Cornell Medicine\nNew York, United States\nyim4007@med.cornell.edu\nJingruo..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.24005",
+    "title": "Incorporating Cognitive Load and Knowledge Transfer for Multi-Domain Knowledge Tracing",
+    "abstract": "Knowledge Tracing (KT) aims to assess students' dynamic knowledge states from their learning histories. While most existing KT methods focus on single-domain learning with notable success, real-world learning scenarios often involve multiple domains simultaneously, introducing two critical factors: 1) Cognitive load, arising from managing learning across domains in both temporal and knowledge dimensions. 2) Knowledge transfer, where knowledge states in one domain influence related states both within and across domains. In this paper, we focus on exploring these factors to improve students' knowledge state assessment in multi-domain learning scenarios and propose a novel method incorporating cognitive Load and knowledge Transfer for Multi-domain Knowledge Tracing (LT-MKT). Specifically, to bridge isolated domains, LT-MKT first integrates textual information from questions and their associated concepts to construct a Multi-domain Hierarchical Graph, leveraging the advanced representational capabilities of large language models (LLMs). Then, cross-domain features in both the temporal and knowledge dimensions are explicitly modeled to capture the effects of cognitive load. Additionally, a knowledge transfer module is designed to model the propagation of knowledge states within and across domains. By jointly modeling these factors, LT-MKT enables more accurate prediction of students' future performance. Finally, extensive experiments on real-world datasets demonstrate that our method achieves state-of-the-art performance.",
+    "publicationDate": "2026-08-25T02:50:58.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ledge Tracing (LT-MKT). Specifically, to bridge isolated do-\nmains, LT-MKT first integrates textual information from questions\nand their associated concepts to construct a Multi-domain Hierarchi-\ncal ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Incorporating Cognitive Load and Knowledge Transfer for\nMulti-Domain Knowledge Tracing\nHaotian Zhang\nState Key Laboratory of Cognitive\nIntelligence, University of Science and\nTechnology of China\nHefei..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.03052",
+    "title": "The Geometry of Knowledge Accessibility in Large Language Models",
+    "abstract": "Large language models (LLMs) contain broad knowledge, but they cannot access all of it reliably. We study this problem through knowledge accessibility, which describes whether the knowledge needed for a query can be recalled from the model. We find that knowledge accessibility has a simple geometric structure in the model's representation of the query alone, before any generation. More accessible queries are closer to a center in the representation space, while less accessible queries are farther away. This geometry reveals a knowledge boundary that separates more accessible queries from less accessible ones. Accessibility consistently decreases with distance from the center, and this distance-based ordering transfers across datasets even when the centers differ. Controlled experiments further show that the centered geometry is more closely related to knowledge accessibility than to reasoning difficulty. The geometry also reveals when different interventions are useful. Query rewriting helps more for accessible queries, chain-of-thought reasoning helps more near the boundary, and retrieval gives larger gains beyond the boundary. These findings not only provide a new geometric view of how knowledge is organized in language models, but also suggest a useful pre-generation signal for adaptive inference.",
+    "publicationDate": "2026-10-02T09:33:10.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ration-free signals are potentially useful for deciding how much additional computation or\nexternal information a query may require.\nHowever, existing work often defines the knowledge boundary in term..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Preprint\nTHE GEOMETRY OF KNOWLEDGE ACCESSIBILITY\nIN LARGE LANGUAGE MODELS\nLihu Chen\nImperial College London\nlihu.chen@imperial.ac.uk\nABSTRACT\nLarge language models (LLMs) contain broad knowledge, but ..."
+     }
+    ]
+   }
+  ]
+ }
+}

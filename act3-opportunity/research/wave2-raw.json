@@ -1,0 +1,962 @@
+{
+ "education-knowledge-access": {
+  "cmd": "/home/codespace/.local/bin/orx discover embedding teachers spending hours preparing differentiated learning materials --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.31569",
+    "title": "Adapting for AI: How elementary teachers adjust their practices for an AI-integrated curriculum",
+    "abstract": "Conversational AI tools are entering children's everyday experiences, and schools are interested in adopting them. However, successful classroom integration depends not only on the technology but also on the work teachers do to make it usable and appropriate for their students and classroom context. There is little known about how elementary teachers work as they implement conversational AI tools in real classrooms. In this study, we examine three teachers' experiences implementing an AI literacy and English Language Arts (ELA) curriculum built around ToyTalk, a conversational AI toy development platform, over 13 instructional days, a three-week summer camp. Drawing on daily individual reflections, group reflections, and post-camp interviews, we find that teachers' adaptive practices of repair, differentiation, translation, and balancing sit at the intersection of three tensions (technology, learner, and instruction). Teachers' understanding of AI and their role evolved over the camp experiences. From these findings, we contribute design implications and considerations for deploying conversational AI within elementary classrooms.",
+    "publicationDate": "2026-09-25T17:33:47.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2606.17633",
+    "title": "AdaPT: Adaptive Lesson Plan Transformer for Cross-Regional and Differentiated Instruction",
+    "abstract": "Due to educational inequality, high-quality lesson plans often mismatch the needs of disparate educational contexts. Teachers typically modify existing lesson plans to fit new contexts, but current tools instead focus on generating content from scratch, creating additional workload. Moreover, a critical gap remains in supporting teachers to quickly adapt to new learning profiles. To bridge these gaps, we present AdaPT, a system leverages LLMs to support transformation of existing lesson plans for cross-regional and differentiated instruction. AdaPT features an interactive interface that allows teachers to input student profiles, offers structured lesson representation, provides explanations for lesson-plan transformations, automatically adapts lesson content for new contexts, and supports iterative, teacher-in-the-loop refinement. We evaluated AdaPT through a user study with 9 teachers and an expert evaluation with 3 specialists. Results show that AdaPT supports workflows of teachers and offers a promising pathway toward promoting educational equity.",
+    "publicationDate": "2026-06-16T07:43:57.000Z",
+    "votes": 4
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2605.20511",
+    "title": "Creating Learning Scaffolds for Engineering Design Using Concept Catalyst",
+    "abstract": "K-12 teachers employ Engineering Design Challenges to help students learn about the Engineering Design Process hands-on. They use techniques like hard scaffolding questions to guide the students as they think through the different stages of the engineering design process. While useful, the creation of these questions adds to the teacher's preparation time for their classes. Concept Catalyst uses Large Language Models to assist teachers with the rapid creation of scaffold questions for engineering design challenges. Unlike open-ended chat, Concept Catalyst uses LLMs to summarize and decompose an engineering design challenge into the concepts that students will engage with, allow the teacher to visually manipulate and link related concepts, and to propose scaffolding questions for the teacher to modify or accept.",
+    "publicationDate": "2026-05-19T21:32:42.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2605.13906",
+    "title": "Modeling AI-TPACK in Practice Insights from Teachers Multi-Agent Workflow Design",
+    "abstract": "This study investigates teachers design behaviors and cognitive underpinnings when designing multi-agent instructional workflows. Analyzing behavioral logs (N=61), cluster and Markov analyses identified three archetypes: Systematic Optimizers iteratively refining complex architectures; Prolific Creators rapidly prototyping pragmatic tools via scaffolding; and Passive Observers exhibiting polarized expert-novice profiles. Subsequent artifact (n=15) and interview (n=12) analyses reveal AI-TPACK integration emerges from a dynamic interplay of systems thinking, pedagogical beliefs, and self-efficacy, not merely from the possession of discrete knowledge. These findings call for differentiated scaffolding responsive to teachers cognitive-behavioral diversity.",
+    "publicationDate": "2026-05-13T02:55:03.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.15876",
+    "title": "Should There be a Teacher In-the-Loop? A Study of Generative AI Personalized Tasks Middle School",
+    "abstract": "Adapting instruction to the fine-grained needs of individual students is a powerful application of recent advances in large language models. These generative AI models can create tasks that correspond to students' interests and enact context personalization, enhancing students' interest in learning academic content. However, when there is a teacher in-the-loop creating or modifying tasks with generative AI, it is unclear how efficient this process might be, despite commercial generative AI tools' claims that they will save teachers time. In the present study, we teamed 7 middle school mathematics teachers with ChatGPT to create personalized versions of problems in their curriculum, to correspond to their students' interests. We look at the prompting moves teachers made, their efficiency when creating problems, and the reactions of their 521 7th grade students who received the personalized assignments. We find that having a teacher-in-the-loop results in generative AI-enhanced personalization being enacted at a relatively broad grain size, whereas students tend to prefer a smaller grain size where they receive specific popular culture references that interest them. Teachers spent a lot of effort adjusting popular culture references and addressing issues with the depth or realism of the problems generated, giving higher or lower levels of ownership to the generative AI. Teachers were able to improve in their ability to craft interesting problems in partnership with generative AI, but this process did not appear to become particularly time efficient as teachers learned and reflected on their students' data, iterating their approaches.",
+    "publicationDate": "2026-02-02T19:36:38.000Z",
+    "votes": 4
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.22186",
+    "title": "Codesigning Ripplet: an LLM-Assisted Assessment Authoring System Grounded in a Conceptual Model of Teachers' Workflows",
+    "abstract": "Assessments are critical in education, but creating them can be difficult. To address this challenge in a grounded way, we partnered with 13 teachers in a seven-month codesign process. We developed a conceptual model that characterizes the iterative dual process where teachers develop assessments while simultaneously refining requirements. To enact this model in practice, we built Ripplet, a web-based tool with multilevel reusable interactions to support assessment authoring. The extended codesign revealed that Ripplet enabled teachers to create formative assessments they would not have otherwise made, shifted their practices from generation to curation, and helped them reflect more on assessment quality. In a user study with 15 additional teachers, compared to their current practices, teachers felt the results were more worth their effort and that assessment quality improved.",
+    "publicationDate": "2026-02-25T18:30:44.000Z",
+    "votes": 3
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2601.22788",
+    "title": "FACET: Multi-Agent AI Supporting Teachers in Scaling Differentiated Learning for Diverse Students",
+    "abstract": "Classrooms are becoming increasingly heterogeneous, comprising learners with diverse performance and motivation levels, language proficiencies, and learning differences such as dyslexia and ADHD. While teachers recognize the need for differentiated instruction, growing workloads create substantial barriers, making differentiated instruction an ideal that is often unrealized in practice. Current AI educational tools, which promise differentiated materials, are predominantly student-facing and performance-centric, ignoring other aspects that shape learning outcomes. We introduce FACET, a teacher-facing multi-agent framework designed to address these gaps by supporting differentiation that accounts for motivation, performance, and learning differences. Developed with educational stakeholders from the outset, the framework coordinates four specialized agents, including learner simulation, diagnostic assessment, material generation, and evaluation within a teacher-in-the-loop design. School principals (N = 30) shaped system requirements through participatory workshops, while in-service K-12 teachers (N = 70) evaluated material quality. Mixed-methods evaluation demonstrates strong perceived value for inclusive differentiation. Practitioners emphasized both the urgent need arising from classroom heterogeneity and the importance of maintaining pedagogical autonomy as a prerequisite for adoption. We discuss implications for future school deployment and outline partnerships for longitudinal classroom implementation.",
+    "publicationDate": "2026-01-30T10:08:43.000Z",
+    "votes": 2
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.09605",
+    "title": "A General Formulation for the Teaching Assignment Problem: Computational Analysis Over a Real-World Dataset",
+    "abstract": "The Teacher Assignment Problem is a combinatorial optimization problem that involves assigning teachers to courses while guaranteeing that all courses are covered, teachers do not teach too few or too many hours, teachers do not switch assigned courses too often and possibly teach the courses they favor. Typically the problem is solved manually, a task that requires several hours every year. In this work we present a mathematical formulation for the problem and an experimental evaluation of the model implemented using state-of-the-art SMT, CP, and MILP solvers. The implementations are tested over a real-world dataset provided by the Division of Systems and Control at Chalmers University of Technology, and produce teacher assignments with smaller workload deviation, a more even workload distribution among the teachers, and a lower number of switched courses.",
+    "publicationDate": "2026-02-10T09:56:09.000Z",
+    "votes": 0
+   }
+  ]
+ },
+ "education-feedback-grading": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword automated feedback grading student writing workload --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2610.06506",
+    "title": "AISSA Demo: AI-based Student Slides Analysis Tool for Automated Grading and Feedback",
+    "abstract": "We present an AI-based web-oriented tool designed to support formative feedback for oral presentation slides in higher education: AISSA. It allows students to upload their slides before presentation and automatically receive rubric-based quantitative scores and qualitative feedback generated by large language models (LLMs). The tool analyses slide-level features and content using a teacher-defined rubric and delivers feedback through interactive Learning Analytics dashboards. These dashboards enable students to visualize performance indicators, inspect feedback in context, and reflect on strengths and areas for improvement, while teachers can review automated assessments, provide their own evaluations, and monitor student engagement with feedback.",
+    "publicationDate": "2026-10-05T15:25:06.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "AISSA Demo: AI-based Student Slides Analysis\nTool for Automated Grading and Feedback\nAlvaro Becerra\n1[0009\u22120003\u22127793\u22122682]\n, Diego Gomez\n1\n,\nRuth Cobos\n1[0000\u22120002\u22123411\u22123009]\n, and Julian Fierrez\n2[00..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "AISSA Demo: AI-based Student Slides Analysis\nTool for Automated Grading and Feedback\nAlvaro Becerra\n1[0009\u22120003\u22127793\u22122682]\n, Diego Gomez\n1\n,\nRuth Cobos\n1[0000\u22120002\u22123411\u22123009]\n, and Julian Fierrez\n2[00..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.28026",
+    "title": "Evaluating Feedback Focus and Pedagogical Adaptivity in LLM-Generated Feedback on Student Writing",
+    "abstract": "We investigate whether state-of-the-art large language models (LLMs) generate feedback that reflects the pedagogical practices of expert teachers in terms of feedback focus and adaptivity. Previous evaluation efforts have examined feedback characteristics, its impact on learning, and its target, yet the focus of feedback and its adaptivity remains largely overlooked. To bridge this gap, we adopt and refine Narciss's taxonomy into seven feedback focus types to annotate teacher and LLM-generated feedback across three university writing courses. We release FeedType, a benchmark containing annotated teacher and LLM feedback from six LLMs under three prompting strategies. We assess the coverage and distribution of feedback focus types, and examine whether LLMs adapt their feedback across draft stages and student performance levels as an expert instructor does. Our findings show that while most LLMs cover most feedback focus types, they fail to reflect teacher feedback distributions and show varying levels of adaptivity, with none matching the teachers' adaptive behavior. We believe FeedType will support future research on pedagogical alignment in LLM feedback generation.",
+    "publicationDate": "2026-09-23T12:51:08.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Evaluating Feedback Focus and Pedagogical Adaptivity in LLM-Generated\nFeedback on Student Writing\nNorah Almousa, Shayan Peyghambari Oskoui,\nRaquel Coelho, Gayle Rogers,\nXiang Lorraine Li, Diane Litman..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Evaluating Feedback Focus and Pedagogical Adaptivity in LLM-Generated\nFeedback on Student Writing\nNorah Almousa, Shayan Peyghambari Oskoui,\nRaquel Coelho, Gayle Rogers,\nXiang Lorraine Li, Diane Litman..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.03215",
+    "title": "SWIM: Student Writing Simulation via Proficiency-Conditioned Generation",
+    "abstract": "Writing proficiency manifests in how students develop content, organize ideas, choose words, and use language. Despite growing interest in LLM-based student simulation, whether LLMs can reproduce such multidimensional variation in extended writing remains largely unexplored. In this work, we explore if language models can realistically simulate student writing, and introduce SWIM, a task that formulates Student Writing sIMulation as proficiency-conditioned essay generation. We evaluate prompting, supervised fine-tuning (SFT), and reinforcement learning (RL) methods for writing simulation using automated essay scoring as a measure of profile alignment. Extensive experiments reveal that prompting provides limited proficiency control, even for strong proprietary LLMs with rubric-grounded strategies. In particular, while models can adjust content-oriented traits, they struggle to reproduce the lexical, grammatical, and organizational variation in different proficiency levels. SFT substantially improves alignment, while RL with the proposed proficiency-alignment reward yields further gains across all writing traits and essay prompts. Our findings suggest that explicit supervision enables substantially stronger profile alignment than prompting alone, while authentic low-proficiency writing remains challenging to reproduce.",
+    "publicationDate": "2026-09-02T23:10:51.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...upervised fine-tuning (SFT), and\nreinforcement learning (RL) methods for writ-\ning simulation using automated essay scoring\nas a measure of profile alignment. Extensive\nexperiments reveal that prompti..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...oduction\nEducational AI systems increasingly rely on sim-\nulated learners to train tutors, optimize feedback\nstrategies, and evaluate pedagogical interventions\nwithout costly human studies (Mannekote ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.05346",
+    "title": "Who Should Grade My Work? Student Perspectives on Transparent AI-Assisted Writing Assessment in Higher Education",
+    "abstract": "The integration of GenAI tools into higher education assessment raises important questions about how students understand, interpret, and respond to AI-mediated evaluation. As instructors increasingly explore AI tools for providing feedback, prior research has examined whether GenAI-generated feedback improves writing performance and how students perceive its usefulness; comparatively little is known, however, about how students interpret such evaluation when they are explicitly informed that an AI system, rather than a human instructor, produced the feedback and the score. This study reports findings from a qualitative pedagogical inquiry conducted in an undergraduate technical communication course for computing students at a Saudi public university. Thirteen male undergraduate computing students completed an in-class handwritten writing task; the scanned submissions were evaluated by ChatGPT using a rubric-based prompt aligned with the task objectives. Students were then explicitly informed that ChatGPT had generated the score and feedback and were invited to reflect on the evaluation in writing. Inductive thematic analysis of these reflections identified four themes: perceived usefulness of feedback; awareness of AI's contextual and pedagogical limitations; conditional trust, distinguishing feedback utility from evaluative authority; and reflection on the institutional and pedagogical role of the human instructor. Participants accepted GenAI feedback as useful for surface-level revision but consistently positioned the human instructor as the appropriate authority over grading decisions. The study identifies this as a distinction between feedback utility and evaluative authority, two judgments that students treat as analytically separate rather than as opposite ends of a single approval scale...",
+    "publicationDate": "2026-09-04T16:49:33.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "..., and respond to\nAI-mediated evaluation. As instructors increasingly explore AI tools for providing feedback, prior\nresearch has examined whether GenAI-generated feedback improves writing performance ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...e-level revision but consistently positioned the human instructor as the\nappropriate authority over grading decisions. The study identifies this as a distinction between\nfeedback utility and evaluativ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2607.16115",
+    "title": "Student Evaluation of Repeated AI Feedback Across a Semester of Writing",
+    "abstract": "Generative AI is increasingly used for feedback in higher education, but evidence from repeated classroom use remains limited. This short paper analyses 2988 reflective essay-feedback-appraisal instances from 283 Estonian bachelor students across one semester. Students obtained and assessed feedback from a self-selected AI tool using a uniform prompt. The present analysis of the anonymized text corpus covers essay content, AI feedback, and its perceived helpfulness. Students found feedback helpful and actionable more often than not; about a tenth thought AI unhelpful, more so towards the end of the semester. We also analyzed essay reflection depth, and used a validated AI text classifier to estimate the share of essays that could be treated as likely unaided student writing. The study contributes descriptive classroom evidence on integration of AI feedback - a fast and scalable way to provide immediate writing advice, but not a self-contained route to better reflection. Benefits depend on whether students learn to use AI selectively and critically, without sliding into over-use harmful for the learning process.",
+    "publicationDate": "2026-07-17T16:53:00.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Student Evaluation of Repeated AI Feedback Across a\nSemester of Writing\nAndres Karjus\n1,2,3 \nJanika Leoste\n1,4 \nTiia \u00d5un\n1\n1\nTallinn University \n2\nEstonian Business School \n3\nUniversity of Tartu \n4\nTa..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Student Evaluation of Repeated AI Feedback Across a\nSemester of Writing\nAndres Karjus\n1,2,3 \nJanika Leoste\n1,4 \nTiia \u00d5un\n1\n1\nTallinn University \n2\nEstonian Business School \n3\nUniversity of Tartu \n4\nTa..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.03857",
+    "title": "GRASP: Graph-Retrieval Automated Scoring Pipeline for Label-Free Multi-Topic Essay Grading",
+    "abstract": "Automated short-answer grading research has historically focused on exams consisting solely of questions pertaining to a single topic. Automatic grading of exams containing questions about more than one topic remains less explored. In this work, a Graph-Retrieval Automated Scoring Pipeline (GRASP) is introduced for grading label-free multi-topic science exams. Label-free exams are short-answer exams in which a student's responses to several distinct topics are merged into a single paragraph, with no markup labels or segmentation indicating which span answers which question. Reference answers for each question are encoded into a FAISS vector index via Sentence-BERT, and a semantic similarity graph is constructed over this set of reference answers. At grading time, sentence count heuristics, with a large language model used to resolve ambiguous cases, are first applied to predict how many distinct topics were answered in the student essay. This process is performed without training data or domain-specific example essays. Candidate reference nodes, each storing one (question, reference answer, concatenation of both) from the reference index, are then retrieved through cosine similarity based Retrieval-Augmented Generation (RAG) and Graph Retrieval-Augmented Generation (GRAG). GRAG operates by taking the top cosine matches as seed nodes and then performing a graph traversal over strong edges to find additional reference nodes that may have been missed by RAG. The Hungarian algorithm is then used to optimally assign one reference node per question segment such that no reference is duplicated. Each segment is then graded against its assigned reference independently using GPT-4.1-mini. This experiment is performed to show the effect of retrieval quality on grading accuracy and the benefit of graph-augmented retrieval versus strict cosine similarity methods at various levels of essay complexity.",
+    "publicationDate": "2026-09-03T13:48:54.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "This is a pre-print version of the paper accepted in ICONIP 2026.\nGRASP: Graph-Retrieval Automated Scoring\nPipeline for Label-Free Multi-Topic Essay\nGrading\nAafreen Husain, Samar Shailendra, and Saad ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "... in ICONIP 2026.\nGRASP: Graph-Retrieval Automated Scoring\nPipeline for Label-Free Multi-Topic Essay\nGrading\nAafreen Husain, Samar Shailendra, and Saad Sajid Hashmi\nMelbourne Institute of Technology, A..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.09400",
+    "title": "TutorLoop: Regulating Student Learning Behaviors via Sensor-in-the-Loop Generative Feedback",
+    "abstract": "We present TutorLoop, a sensor-in-the-loop system that regulates student learning behaviors by delivering adaptive feedback based on real-time cognitive states. Unlike prior large language model (LLM) tutors that directly depend on scenario-specific content, TutorLoop operates on sensor-derived signals captured via webcams. Moreover, unlike direct cognitive-to-feedback mappings that are short-sighted, the system employs a deep reinforcement learning (DRL) agent to optimize the feedback type across the entire learning process. Finally, another LLM tutor refines feedback into human-like, context-aware messages. We evaluate TutorLoop in a large-scale user study (N=187), where a model trained offline is directly applied to a new learning task without retraining. Results show that TutorLoop provides less frequent yet more effective interventions, improving attention, reducing workload, increasing engagement, and ultimately enhancing learning outcomes. These findings highlight the potential of closed-loop, sensor-driven feedback for scalable human-AI integrated systems to support learning.",
+    "publicationDate": "2026-10-07T04:03:32.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "TutorLoop: Regulating Student Learning Behaviors via\nSensor-in-the-Loop Generative Feedback\nSonglin Xu\nsonglin.xu@polyu.edu.hk\nThe Hong Kong Polytechnic University\nHong Kong, China\nXinyu Zhang\nxyzhang..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "TutorLoop: Regulating Student Learning Behaviors via\nSensor-in-the-Loop Generative Feedback\nSonglin Xu\nsonglin.xu@polyu.edu.hk\nThe Hong Kong Polytechnic University\nHong Kong, China\nXinyu Zhang\nxyzhang..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2607.14524",
+    "title": "WrAFT: a Modularized Automated Writing Evaluation System for Argumentative Essays",
+    "abstract": "This study presents WrAFT, a Writing Assessment and Feedback Tool, that delivers both accurate and reliable scores and effective comprehensive feedback to argumentative essays. WrAFT adopts a modular design by dividing automated writing evaluation (AWE) tasks into scoring, surface-level feedback, and deep-level feedback. In building the system, various Large Language Models (LLMs) have been evaluated, including LLaMA-3.3-70B-Instruct, GPT-4o, and Claude 3.7, through both direct prompting and supervised fine-tuning approaches. A proprietary dataset of 480 TOEFL Independent Writing essays with official benchmark scores was utilized. Benchmark-based evaluation shows that WrAFT achieves state-of-the-art performance in scoring, with a quadratic weighted kappa (QWK) of 0.84 and a root mean square error (RMSE) of 0.44 against official scores on a scale of 0-5. Human evaluation of system-generated feedback also reveals high approval ratings: 96.14 percent for surface-level feedback, 93.03 percent for deep-level macro feedback, and 94.69 percent for deep-level micro feedback. An interactive user interface has been developed for the system and is publicly available and free to use.",
+    "publicationDate": "2026-07-16T03:23:31.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "WrAFT: a Modularized Automated Writing\nEvaluation System for Argumentative Essays\nAdnan Labib\na\n, Yixuan Huang\nb\n, Jiahui Wu\nc\n, John Maurice Gayed\nb\n, Zheng\nYuan\nd\n, Qiao Wang\ne,\u2217\na\nDepartment of Inf..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...d, UK\ne\nHosei University, Tokyo, Japan\nAbstract\nThis study presents WrAFT, a Writing Assessment and Feedback Tool,\nthat delivers both accurate and reliable scores and effective comprehensive\nfeedback ..."
+     }
+    ]
+   }
+  ]
+ },
+ "personal-admin-logistics": {
+  "cmd": "/home/codespace/.local/bin/orx discover embedding people struggling with recurring paperwork appointments and bills across disconnected systems --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.28736",
+    "title": "Towards a Platform for Mastering Personal Sovereignty",
+    "abstract": "The ongoing digital transformation of work, administration, health, mobility, and social interaction is profoundly reshaping everyday life, steadily shifting control from individuals to large platform providers. Although data is often labeled the \"gold of the 21st century\", its real value is realized through services that access, combine, and exploit it. Today, individuals have little sovereignty: life events (e.g., changing an address, insurance, job, or marital status) require fragmented, repetitive interactions across numerous systems, leaving users overwhelmed rather than empowered. We argue for a fundamental rethinking of this situation and propose a virtual, trustworthy platform, called \"MyVirtualME\" that acts on behalf of the human individual towards companies, administrations, and other actors. This platform centers services, data, permissions, and data usage around humans, not foreign actors, allowing genuine control and transparency. Our vision goes beyond a pure data focus: supported by trusted services ranging from basic notifications to intelligent assistants, MyVirtualME aims to reduce digital bureaucracy, improve and even automate interactions, and support informed oversight of an individual's health, financial, and administrative situation. We firmly believe that a human-centered MyVirtualME is essential for restoring personal sovereignty in our digital future.",
+    "publicationDate": "2026-09-23T19:26:36.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.28166",
+    "title": "Essential, Yet Overlooked: Identity Verification Barriers for Blind and Low Vision People in Government Services",
+    "abstract": "Identity verification is a critical gateway to accessing government services and public benefits, yet contemporary systems are typically designed around visual interaction, leaving blind and low vision (BLV) individuals disproportionately burdened. In this work, we examine how BLV users navigate identity verification in government services and how current designs shape their access, security, and autonomy. Through a mixed methods study combining analysis of 219 Reddit posts and semi-structured interviews with 16 BLV participants, we uncover systemic accessibility breakdowns across both digital and in person verification processes. Our findings show that inaccessible verification workflows do not merely inconvenience users, they restructure how security is achieved in practice. We also identify how repeated verification demands, inaccessible physical infrastructure, and policy changes exacerbate exclusion from essential services. At the same time, participants articulate complex perspectives on AI, viewing it as both a critical accessibility aid and a growing vector for identity fraud.",
+    "publicationDate": "2026-04-30T17:51:07.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.21898",
+    "title": "Institutionalizing Best Practices in Research Computing: A Framework and Case Study for Improving User Onboarding",
+    "abstract": "Research computing centers around the world struggle with onboarding new users. Subject matter experts, researchers, and principal investigators are often overwhelmed by the complex infrastructure and software offerings designed to support diverse research domains at large academic and national institutions. As a result, users frequently fall into confusion and complexity to access these resources, despite the availability of documentation, tutorials, interactive trainings and other similar resources. Through this work, we present a framework designed to improve new-user onboarding experience. We also present an empirical validation through its application within the Research Infrastructure Services at Washington University in St. Louis.",
+    "publicationDate": "2026-04-23T17:47:24.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2605.20205",
+    "title": "Challenges in Working Towards Patient Engagement in Developing Technology Prototypes",
+    "abstract": "Creating supportive technologies for people living with multiple chronic conditions is extremely challenging. These patients are often faced with substantial visible and invisible treatment work as well as their everyday responsibilities, including coordinating across providers, tracking information, and repeating communication in emotionally charged contexts. In the Cumulative Complexity Model (CuCoM), the balance between patient workload and patient capacity shapes what patients can realistically take on, including whether a digital tool can be adopted and sustained. In this paper, we report engagement lessons from implementing MyCareCompass, a patient-facing digital health intervention (DHI) intended to support day-to-day self-management for people living with multiple chronic conditions. We define engagement as patient uptake and sustained use during a two-month pilot study of our platform, drawing on usage analytics and follow-up feedback, and distill three implementation lessons for designing for engagement in complex chronic care.",
+    "publicationDate": "2026-04-08T00:25:19.000Z",
+    "votes": 2
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2604.15108",
+    "title": "Data Engineering Patterns for Cross-System Reconciliation in Regulated Enterprises: Architecture, Anomaly Detection, and Governance",
+    "abstract": "Regulated enterprises in the United States--banks, telecommunications providers, large technology companies--operate across heterogeneous systems that were rarely designed to interoperate. ERP platforms, billing engines, supply chain tools, and financial reporting infrastructure coexist within the same organization, but they do not talk to each other well. The resulting fragmentation produces familiar problems: transactions recorded in one system but unreconciled in another, asset inventories drifting from their systems of record, and audit-readiness that depends on manual effort. The PCAOB's 2024 inspection cycle put a number on the consequences: a 39% aggregate Part I.A deficiency rate across all inspected firms. This paper introduces the GERA Framework (Governed Enterprise Reconciliation Architecture)--a vendor-neutral, four-layer data architecture that integrates deterministic cross-system reconciliation, statistical anomaly detection (baseline Z-Score with robust alternatives), governed semantic standardization, and NIST CSF 2.0-aligned security controls into a single methodology. The architecture spans four layers (ingestion, staging, core models, and semantic serving), following the multi-layer pattern now common in modern data platforms. The patterns are demonstrated through U.S. broadband operations--where billing reconciliation, inventory aging, and governance are tightly coupled--and draw on the author's implementation experience across three regulated enterprise environments: a regional bank, a national broadband provider, and a Fortune 500 technology company's central finance organization. This is a practitioner reference--an architectural framework paper documenting field-tested patterns--not a controlled experiment or benchmark study. No proprietary systems, datasets, or internal implementations are disclosed.",
+    "publicationDate": "2026-04-16T15:02:39.000Z",
+    "votes": 0
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.05016",
+    "title": "From Fragmentation to Integration: Exploring the Design Space of AI Agents for Human-as-the-Unit Privacy Management",
+    "abstract": "Managing one's digital footprint is overwhelming, as it spans multiple platforms and involves countless context-dependent decisions. Recent advances in agentic AI offer ways forward by enabling holistic, contextual privacy-enhancing solutions. Building on this potential, we adopted a ''human-as-the-unit'' perspective and investigated users' cross-context privacy challenges through 12 semi-structured interviews. Results reveal that people rely on ad hoc manual strategies while lacking comprehensive privacy controls, highlighting nine privacy-management challenges across applications, temporal contexts, and relationships. To explore solutions, we generated nine AI agent concepts and evaluated them via a speed-dating survey with 116 US participants. The three highest-ranked concepts were all post-sharing management tools with half or full agent autonomy, with users expressing greater trust in AI accuracy than in their own efforts. Our findings highlight a promising design space where users see AI agents bridging the fragments in privacy management, particularly through automated, comprehensive post-sharing remediation of users' digital footprints.",
+    "publicationDate": "2026-02-04T20:12:37.000Z",
+    "votes": 4
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.19319",
+    "title": "Health+: Empowering Individuals via Unifying Health Data",
+    "abstract": "Managing personal health data is a challenge in today's fragmented and institution-centric healthcare ecosystem. Individuals often lack meaningful control over their medical records, which are scattered across incompatible systems and formats. This vision paper presents Health+, a user-centric, multimodal health data management system that empowers individuals (including those with limited technical expertise) to upload, query, and share their data across modalities (e.g., text, images, reports). Rather than aiming for institutional overhaul, Health+ emphasizes individual agency by providing intuitive interfaces and intelligent recommendations for data access and sharing. At the system level, it tackles the complexity of storing, integrating, and securing heterogeneous health records, ensuring both efficiency and privacy. By unifying multimodal data and prioritizing patients, Health+ lays the foundation for a more connected, interpretable, and user-controlled health information ecosystem.",
+    "publicationDate": "2026-02-22T19:48:57.000Z",
+    "votes": 1
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2602.12650",
+    "title": "Bonik Somiti: A Social-market Tool for Safe, Accountable, and Harmonious Informal E-Market Ecosystem in Bangladesh",
+    "abstract": "People in informal e-markets often try to deal with fraud and financial harm by sharing posts, screenshots, and warnings in social media groups. However, buyers and sellers frequently face further problems because these reports are scattered, hard to verify, and rarely lead to resolution. We studied these issues through a survey with 124 participants and interviews with 36 buyers, sellers, and related stakeholders from Bangladesh and designed Bonik Somiti, a socio-technical system that supports structured reporting, admin-led mediation, and accountability in informal e-markets. Our evaluation with 32 participants revealed several challenges in managing fraud, resolving disputes, and building trust within existing informal practices and the assumptions behind them. Based on these findings, we further discuss how community-centered technologies can be designed to support safer and more accountable informal e-markets in the Global South.",
+    "publicationDate": "2026-02-13T06:22:07.000Z",
+    "votes": 1
+   }
+  ]
+ },
+ "public-services-burden": {
+  "cmd": "/home/codespace/.local/bin/orx discover openalex citizens navigating public services digital government administrative burden --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "openalex",
+    "id": "10.1016/j.giq.2021.101653",
+    "title": "The accidental caseworker \u2013 How digital self-service influences citizens' administrative burden",
+    "abstract": "Following a large worldwide uptake of digital public services, several countries have turned to mandatory digitization, whereby citizens or companies must use digital self-service applications to apply for public services. However, previous research on the adoption of digital public services has predominantly focused on simple, or even hypothetical, services and situations. We identify a knowledge gap concerning citizens' experience of actual interactions with digital self-service for more complicated social services and benefits. Therefore, we explore digital self-service from the perspective of citizens using the concept of administrative burden as a theoretical lens. Specifically, we analyze data from in-depth empirical studies encompassing observations, interviews, and focus group discussions with single mothers who have applied for public benefits following divorce or family separation. We present a descriptive process model for citizens' application for public benefits. Next, we illustrate how digital self-service influences citizens' administrative burden throughout this process. An important contribution reveals that citizens' administrative burden increases\u2014they must learn how to complete tasks that professional caseworkers previously conducted and comply with government demands concerning digital self-service applications and specific data formats. However, digital self-service can also reduce citizens' administrative burden through the online provision of information and automatic data transfers. Further, digital self-service offers an anonymous application process that may reduce the psychological costs and stigma associated with receiving public benefits. Finally, our research contributes new insights at the theoretical level, linking the concept of administrative burden to complex digital self-service use from a citizen perspective.",
+    "publicationDate": "2021-11-10",
+    "citations": 137
+   },
+   {
+    "source": "openalex",
+    "id": "10.1093/jopart/muaa031",
+    "title": "Administrative Capital and Citizens\u2019 Responses to Administrative Burden",
+    "abstract": "Abstract Administrative burden research has highlighted the multiple costs imposed by public policies and their impact on citizens. However, the empirical understanding of citizens\u2019 responses to such burdens remains limited. Using ethnographic data of doctors applying for maternity leave in Pakistan, this article documents strategies used by citizens to navigate the administrative burden faced by them. Our findings suggest that these strategies are based on an individual\u2019s cache of social, cultural capital, and economic capital. Based on our data, we also theorize the significance of another form of capital for navigating administrative burden. This administrative capital is defined as an individual\u2019s understanding of bureaucratic rules, processes, and behaviors. Our findings further illustrate that the different costs imposed by public policies can be interchangeable, which may be used by citizens to their advantage. Propositions for future research on the intersection of different forms capital and administrative burden are also included.",
+    "publicationDate": "2020-08-04",
+    "citations": 229
+   },
+   {
+    "source": "openalex",
+    "id": "10.1007/978-3-032-36676-4_4",
+    "title": "Identifying Administrative Burdens in Digital Government: A Practice-Based Conceptual Framework",
+    "abstract": "",
+    "publicationDate": "2026-09-05",
+    "citations": 0
+   },
+   {
+    "source": "openalex",
+    "id": "10.1111/ropr.12516",
+    "title": "Administrative burden in digital public service delivery: The social infrastructure of library programs for e\u2010inclusion",
+    "abstract": "Abstract In their efforts to digitize public service delivery, countries increasingly use algorithms based on mathematical models, data and/or a combination of different administrative datasets to issue decisions, but recent studies point towards challenges around citizens' understanding, accessing, and filing objections to such automated decisions. This paper focuses on the social infrastructure supporting citizens that struggle with accessing such services. To address this, we ask: How does the social infrastructure affect administrative burdens associated with digital government services? This is studied in the Dutch context through expert interviews and observations of support programs in libraries. We find that although libraries as primary sites for these services may pose the disadvantage of being more difficult to reach for low\u2010literate citizens, advantages are their organizational structure at the local level as well as their currently changing role to include a growing range of services, including (digital) skills courses.",
+    "publicationDate": "2022-11-07",
+    "citations": 58
+   },
+   {
+    "source": "openalex",
+    "id": "10.1017/s1474746422000719",
+    "title": "Administrative Literacy in the Digital Welfare State: Migrants Navigating Access to Public Services in Finland",
+    "abstract": "The digitalisation of public services brought challenges for their access and use. This article looks at the migrants as claimants of the public services to analyse the problems with the digital delivery of public services. The previous research recognised the various resources, such as digital skills and administrative literacy, needed for the successful use of digital services. However, the role of administrative literacy has not been studied in linguistically and culturally diverse contexts, such as migration. This article draws on the qualitative study of Russian-speaking migrants in Finland. By analysing the perspective of the service users, it describes in detail the requirements that people with migrant backgrounds try to meet to gain access to social protection. Findings demonstrate the multiple obstacles that burden or prevent access to entitlements.",
+    "publicationDate": "2023-01-23",
+    "citations": 32
+   },
+   {
+    "source": "openalex",
+    "id": "10.1007/978-3-031-23213-8_11",
+    "title": "Administrative Burden in Digital Self-service: An Empirical Study About Citizens in Need of Financial Assistance",
+    "abstract": "",
+    "publicationDate": "2022-01-01",
+    "citations": 22
+   },
+   {
+    "source": "openalex",
+    "id": "10.26599/cpar.2024.9680402",
+    "title": "The Logic of Administrative Burden: Why Digital Government Reform Fails to Reduce Administrative Burden",
+    "abstract": "Administrative burden affects government performance and credibility. It is widely believed that digital government may reduce administrative burden. However, since the patterns and sources of administrative burden have not been fully illustrated, the theoretical logic underlying digital government and administrative burden is still unclear. Based on contract theory, we view administrative burden as the costs imposed by the frictions among conflicting behavioral norms in the government-citizen interactions. From the perspective of those bearing the administrative burden, the most desirable norms are not followed, so the experience of policy implementation becomes onerous to them. This definition combines the existing interpretations of administrative burden as \u201cfriction\u201d, \u201cimposition\u201d, and \u201conerous experiences\u201d. The conflicting norms relate to the incomplete contract within government organizations, including the formal part consisting of organization rules and informal part consisting of shadow contracts, and different implicit contracts in government-citizen interactions, including the ones that call for respects for public interest and effective public services, and the ones that allow street-level bureaucrats to muddle through, sometimes by imposing costs on the citizens. Taking the digital government reform process in district A as example, we show that digital government reform leads to administrative burden in newer forms by 3 different ways. Each norm available in the government-citizen interactions between the tax office and industries in district A could be viewed as a salient focal point in the coordination games of tax business. Digital government reform could impose burden by setting a new game to play, decreasing the payoffs in the equilibrium of the game, or even motivating a deviation to non-equilibrium outcomes. Various apps and tools applied in the reform lead to larger learning costs to the taxpayers. However, when the taxpayers turn to the tax office for help, the bureaucrats refuse to follow the implicit norms that call for public services. This also leads to that the taxpayers refuse to follow the norms that cooperate the muddling through practice for the tax office, shifting administrative burdens backwards to the bureaucrats. The digital government reform also brings strict regulations in the bureaucrat system, while the tax officers make use of their hidden information to negate the effect of digitalized regulations. In short, the digital government reform brings new interactive tools, changes the rules of interactions in policy implementation, and also leads to conflicts among these rules and norms underlying the complicated and incomplete nature of government-citizen interactions. The costs imposed by these kinds of conflicts could feel onerous, thus could be viewed as newer administrative burden.",
+    "publicationDate": "2024-12-01",
+    "citations": 1
+   },
+   {
+    "source": "openalex",
+    "id": "10.12688/f1000research.184191.1",
+    "title": "Reducing Digital Exclusion at the Border through Village Bureaucratic Reform: A Critical Study of Administrative Burden in Village Website Implementation",
+    "abstract": "Digital transformation has become a central strategy for improving public service delivery, administrative efficiency, and governance transparency in rural areas. In Indonesia, the Digital Village Program has encouraged villages to adopt information and communication technologies to modernize public administration and strengthen citizen participation. This study examines how the implementation of a village website in Tapenpah Village, a border community located between Indonesia and Timor-Leste, reshapes administrative practices and generates administrative burdens for citizens. Employing a qualitative phenomenological approach with a case study design, data were collected through in-depth interviews with key informants, including the village head, village operators, and community members, complemented by field observations and document analysis. The analysis was guided by Administrative Burden Theory, focusing on learning costs, compliance costs, and psychological costs experienced by citizens when accessing digital public services. The findings indicate that the village website has improved administrative efficiency, transparency, information dissemination, and institutional responsiveness by reducing dependence on conventional face-to-face bureaucratic interactions. Nevertheless, significant barriers remain. Limited internet connectivity, unequal access to digital infrastructure, and insufficient digital literacy restrict the effective utilization of online services, particularly among elderly residents and citizens living in remote hamlets. Consequently, digital governance generates multiple forms of administrative burden, requiring citizens to learn new digital procedures, comply with additional technological requirements, and cope with uncertainty and frustration when navigating online systems. To mitigate these challenges, the village government adopted a hybrid administrative service model that combines digital platforms with assisted face-to-face services provided by village operators. The study concludes that digital governance initiatives in rural border regions require adaptive, inclusive, and citizen-centered implementation strategies. Without adequate investments in digital infrastructure, institutional capacity, and digital literacy, digitalization may inadvertently reproduce administrative exclusion rather than promote equitable access to public services.",
+    "publicationDate": "2026-07-16",
+    "citations": 0
+   }
+  ]
+ },
+ "emerging-ai-content-verification": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword verifying AI generated content provenance authenticity workflow --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2606.00621",
+    "title": "Authenticity Debt and the Synthetic Content Threat Landscape: A Layered Framework for Trust, Provenance, and IP Governance in the Generative AI Era",
+    "abstract": "Generative artificial intelligence has fundamentally changed how content is now produced. It has enabled how high-fidelity text, images, audio, and videos are created, modified, and redistributed at near-zero marginal cost. This shift exposes enterprises and ecosystems to a number of risks across four reinforcing authenticity layers -- authenticity, provenance, integrity, and accountability -- that traditional controls are inadequate to address in isolation. We introduce the concept of authenticity debt: the cumulative institutional liability that accumulates when organizations deploy AI-generated content without preserving verifiable origin, integrity, and accountability, deferring exposure that surfaces under regulatory, legal, or market scrutiny. This paper presents a comprehensive, multi-dimensional taxonomy of generative AI harms and attack vectors, surveys the capabilities and failure modes of technical controls including digital watermarking, provenance frameworks (C2PA, Adobe CAI), and detection technologies, and argues that no single mechanism is sufficient in open, adversarial, and evolving environments. Drawing on Zero Trust Architecture principles and enterprise governance frameworks, we propose a layered reference architecture that integrates cryptographic provenance, human-in-the-loop verification, and continuous governance to sustain defensible authenticity at scale. We further examine the regulatory landscape (EU AI Act, U.S.\\ FTC, NIST AI RMF) and identify practical guiding principles for organizations seeking to build authenticity as institutional infrastructure rather than an afterthought.",
+    "publicationDate": "2026-05-30T08:51:55.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...nt Threat\nLandscape:\nA Layered Framework for Trust, Provenance, and IP Governance\nin the Generative AI Era\nShubhashis Sengupta\n1\n, Benjamin McCarty\n1\n,\nMilind Savagaonkar\n1\n, Rhine Andotra\n1\n1\nAccentu..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...enticity debt: the cumulative institutional liability that accumulates when\norganizations deploy AI-generated content without preserving verifiable origin, integrity, and ac-\ncountability, deferring e..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.07727",
+    "title": "When Is Content \"AI-Generated Enough\"? Labelling Synthetic Media under the Digital Services Act and the AI Act",
+    "abstract": "European platform and AI governance increasingly relies on transparency duties to address synthetic and manipulated media. Under the DSA, very large online platforms and search engines may use prominent markings and recipient-facing indication tools as systemic-risk mitigation measures. Under the AI Act, providers must support machine-readable marking, while deployers must disclose deepfakes and certain AI-generated or manipulated public-interest text, subject to statutory qualifications.\nThis extended abstract examines when labelling is a meaningful regulatory response to synthetic media and when it risks becoming over-inclusive, under-inclusive, or ineffective. It argues that the central challenge is not only whether content should be labelled, but how legal thresholds, technical provenance systems, platform interfaces, and reporting practices determine when content is sufficiently generated, manipulated, or authentic-looking to trigger transparency obligations. Drawing on the emerging Article 50 AI Act implementation framework and a snapshot of the DSA Statement of Reasons database, the paper identifies four governance tensions: definitional ambiguity, interface and responsibility design, communicative effectiveness, and fairness and contestability. It conceptualises labelling as a socio-technical classification practice that distributes responsibility among AI providers, deployers, platforms, uploaders, and recipients.",
+    "publicationDate": "2026-09-07T16:36:16.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "When Is Content \u201cAI-Generated Enough\u201d? Labelling Synthetic\nMedia under the Digital Services Act and the AI Act\nMarie-Therese Sekwenz\nTU Delft, Delft, The Netherlands\nm.t.sekwenz@tudelft.nl\nPreprint \u2013 ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "When Is Content \u201cAI-Generated Enough\u201d? Labelling Synthetic\nMedia under the Digital Services Act and the AI Act\nMarie-Therese Sekwenz\nTU Delft, Delft, The Netherlands\nm.t.sekwenz@tudelft.nl\nPreprint \u2013 ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.08129",
+    "title": "Understanding Security and Privacy Perceptions of Content Creators Regarding AI Labels of AI-Generated Content",
+    "abstract": "AI labels, typically implemented via underlying tracing mechanisms such as watermarks and metadata, are crucial for protecting Artificial Intelligence-Generated Content (AIGC) against security threats like disinformation and evasion. However, the perceived devaluation of AI-assisted work discourages creators from disclosing AI use, incentivizing efforts to bypass labeling and compromising downstream traceability. Yet, how AIGC creators perceive the security and privacy (S\\&P) implications of these labels, and how their behaviors impact technical resilience remain underexplored. To this end, we conducted semi-structured interviews with 21 AIGC creators and measured images across 6 image generation platforms against 16 self-reported manipulation settings. Our findings reveal that creators conflate binary AI labels with granular traceability, and express strong fears of de-anonymization via platform identifiers. Driven by fears of algorithmic traffic suppression and reputational risks, they defensively removed digital traces. Through empirical tests, we show that targeted modifications like coarse quantization significantly degrade detection. AI detection capabilities are also inconsistent across platforms, and suffer from false positives even for human-authored images. Based on these insights, we advocate for workflow-resilient implicit AI labels that align technical guarantees with creators' incentives.",
+    "publicationDate": "2026-08-08T13:32:44.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Understanding Security and Privacy Perceptions of Content Creators Regarding AI\nLabels of AI-generated Content\nShuning Zhang\n\u2217\n, Hui Wang\n\u2020\n, Rongjun Ma\n\u2021\n, Xin Yi\n\u2217\n, Kanye Ye Wang\n\u00a7\n, Robert Xiao\n\u00b6 ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Understanding Security and Privacy Perceptions of Content Creators Regarding AI\nLabels of AI-generated Content\nShuning Zhang\n\u2217\n, Hui Wang\n\u2020\n, Rongjun Ma\n\u2021\n, Xin Yi\n\u2217\n, Kanye Ye Wang\n\u00a7\n, Robert Xiao\n\u00b6 ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.10743",
+    "title": "What does it mean to use AI critically? Unpacking critical AI literacy through students' evaluation of AI-generated content",
+    "abstract": "Although critical AI literacy has emerged as an important educational goal, the construct remains conceptually broad and insufficiently specified for guiding students' day-to-day interactions with AI. This study examines how students critically evaluated AI-generated content. Drawing on an analysis of students' chatbot interactions and written reflections, we first identified seven stages of AI-supported academic task completion and five functional roles assumed by AI. More importantly, we identified eight evaluative lenses that students used to assess AI-generated responses (accuracy, completeness, task alignment/relevance, personalization, practicality, creativity, ethics, and bias). The findings suggest that critical AI literacy extends beyond verifying the factual accuracy of AI-generated information. Rather, critically engaging with AI involves situated and multidimensional judgment about the epistemic quality, contextual fit, practical feasibility, creative value, and ethical implications of AI-generated content. The framework offers both a conceptual contribution to the emerging literature on critical AI literacy and a practical tool for educators seeking to help learners move from passive acceptance of AI toward deliberate, context-sensitive, and responsible human judgment.",
+    "publicationDate": "2026-10-07T18:11:50.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ality,\ncreativity, ethics, and bias). The findings suggest that critical AI literacy extends beyond\nverifying the factual accuracy of AI-generated information. Rather, critically engaging with AI\ninvo..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "1\nWhat Does It Mean to Use AI Critically? Unpacking Critical AI Literacy Through\nStudents\u2019 Evaluation of AI-Generated Content\nHyejeong Lee\nThe University of Texas at San Antonio\nhyejeong.lee@utsa.edu\n..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.05870",
+    "title": "Certification of Real Images through Calibrated Content Authentication",
+    "abstract": "Generative models can synthesize high-quality inauthentic multimedia content that is already being misused at scale. We evaluate twenty deepfake detectors against ten generators released in the last four years and find accuracy decreasing over time, from near-perfect 99.5% to 76%. Adversarial perturbations further reduce every baseline detector to below 2% accuracy, effectively inverting the detector's assigned label. We argue that this unreliability reflects a fundamental ambiguity: generators can reproduce authentic content exactly (e.g., through memorization), so content alone cannot reveal the true provenance label. For this reason, content produced by a generator must admit a faithful reconstruction by that same generator, and finding such a reconstruction makes synthetic provenance plausible and authenticity plausibly deniable. We therefore propose and evaluate a detection paradigm that outputs a calibrated prediction of whether authenticity is plausibly deniable: a faithful reconstruction by any known generator establishes plausible deniability, while calibration bounds how often content from known generators fails to be reproduced. Our evaluation shows that (i) our detector can be calibrated so that at most 1% of generated content is wrongly certified, an operating point at which most baseline detectors reach near-zero recall, including the strongest with 93% accuracy; (ii) calibrating a stricter security threshold on attacked samples preserves this bound against adaptive adversaries within the evaluated bounded-perturbation attack space, whose perturbations break every baseline, but does not cover arbitrary adversarial transformations; and (iii) post-hoc verifiability is eroding, as 1,116 of 3,000 Reddit images resist reproduction by a 2022 generator, but only 55 to 79 resist reproduction by 2024 generators.",
+    "publicationDate": "2026-10-05T06:36:03.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ce\nAbu Dhabi, UAE\n{sarim.hashmi, abdelrahman.elsayed, mohammed.alam, samuele.poppi, nils.lukas}@mbzuai.ac.ae\nAbstract\u2014Generative models can synthesize high-quality inau-\nthentic multimedia content tha..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...o be reproduced. Our evaluation shows\nthat (i) our detector can be calibrated so that at most 1% of\ngenerated content is wrongly certified, an operating point at\nwhich most baseline detectors reach ne..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.11022",
+    "title": "Workflow Cards: Structured Summaries of Workflow Executions Using Provenance Data",
+    "abstract": "Model Cards and Data Cards have demonstrated the value of structured, human-readable documentation for machine learning artifacts, capturing their context, parameters, limitations, and intended use. However, these practices remain focused on static artifacts (the datasets and trained models themselves) while overlooking the workflow executions that produce, transform, and evaluate them. Such executions hold critical details about data preparation, parameter choice, runtime behavior, resource use, and intermediate transformations, precisely where bias, performance variation, and reproducibility gaps tend to originate. To close this gap, we introduce Workflow Cards: structured summaries that condense the machine-readable provenance data of a workflow execution into a form both humans and large language models (LLMs) can read and analyze. This paper has two main parts. First, it defines a Workflow Card template informed by a representative set of provenance questions that surface from the execution-level data missing from Model and Data Cards. Second, it evaluates how effectively LLMs use Workflow Cards to understand workflow executions compared with querying provenance databases through a schema-based interface. Results show that Workflow Cards provide execution-level information absent from existing card types, such as Model Cards and Data Cards, thereby filling an important documentation gap; and that Workflow Cards nearly double answer quality compared with schema-based querying, consistently across LLM-as-a-Judge and human assessments.",
+    "publicationDate": "2026-08-11T15:02:11.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "..., capturing their context, parameters, limita-\ntions, and intended use. However, these practices remain focused\non static artifacts (the datasets and trained models themselves)\nwhile overlooking the w..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Workflow Cards: Structured Summaries of\nWorkflow Executions Using Provenance Data\nNicola Giuseppe Marchioro\n+\u2217 \nGabriele Padovani\n+\u2217 \nAmal Gueroudji\n\u2020 \nRafael Ferreira da Silva\n\u2021\nWesley Brewer\n\u2021 \nVale..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.02268",
+    "title": "Retrosynthesis of Synthetic Media for Explainable AI Provenance Forensics",
+    "abstract": "With the rapid proliferation of generative models on Machine Learning as a Service (MLaaS) platforms, reliably tracing the provenance of synthetic media without modifying generator architectures or parameters remains a major challenge. In this work, we propose a self-referential retrosynthesis framework for explainable AI provenance forensics under a fixed-generator setting. The framework leverages a jointly optimized encoder-decoder pair to implement a self-embedding mechanism that enables round-trip consistency verification. During inference, client inputs are first encoded and then processed by the generator to produce outputs with high visual fidelity. For forensic verification, the consistency between the resynthesized image and the query image is analyzed to determine whether the image originates from the target generative model. Our approach eliminates the need for watermark embedding or modifications to the generation process. Experimental results show that images generated from encoded inputs maintain visual quality comparable to original generator outputs, while decoded images reliably trace back to their corresponding source inputs. Furthermore, the framework provides interpretable evidence for generative content provenance, establishing a practical tool for explainable generative AI forensics.",
+    "publicationDate": "2026-09-02T08:15:52.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...H YOUR MANUSCRIPT ID NUMBER (DOUBLE-CLICK HERE TO EDIT) <\nRetrosynthesis of Synthetic Media for\nExplainable AI Provenance Forensics\nYijie Lin, Ching-Chun Chang, Senior Member, IEEE, Isao Echizen, Seni..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...termark embedding or modifications to the generation process.\nExperimental results show that images generated from encoded\ninputs maintain visual quality comparable to original generator\noutputs, whil..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.02329",
+    "title": "On Automated and Explainable Provenance of AI-Generated Code",
+    "abstract": "Generative AI for code generation has transformed software development, but it has also introduced a critical transparency problem: the origins of AI-generated code are opaque to the developers who use it, the organizations that deploy it, and the compliance professionals responsible for ensuring its legal and quality standards. Existing mitigations flag problematic outputs after the fact without explaining why a model produced them or how future generation could be improved. We present a research vision, grounded in a U.S. NSF-funded research grant, that argues that the next generation of CodeGenAI tools must be built on a foundation of explainable provenance: automated, post-hoc traceability that links generated code back to the prompt components, training data instances, global data features, and internal model components that caused its generation. We grounded this vision in empirical evidence from studies of software developers, model users, and compliance/legal professionals, which show that provenance information is a practical necessity that current tools do not provide. We characterize the problem across four traceability dimensions, outline a research program combining large-scale empirical studies with post-hoc causal and interpretability techniques, and identify the key open challenges that the community must address to realize this vision.",
+    "publicationDate": "2026-08-03T14:50:31.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "On Automated and Explainable Provenance of\nAI-Generated Code\nAlejandro Velasco, Nathan Wintersgill, Trevor Stalnaker, Oscar Chaparro, Denys Poshyvanyk\nSchool of Computing, Data Sciences and Physics\nWi..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "On Automated and Explainable Provenance of\nAI-Generated Code\nAlejandro Velasco, Nathan Wintersgill, Trevor Stalnaker, Oscar Chaparro, Denys Poshyvanyk\nSchool of Computing, Data Sciences and Physics\nWi..."
+     }
+    ]
+   }
+  ]
+ },
+ "multilingual-communication": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword language barriers workflow translation document processing enterprise --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2608.22081",
+    "title": "W-RAG: Source-Aware Retrieval for Enterprise Document Generation from Heterogeneous Knowledge Bases",
+    "abstract": "Retrieval-Augmented Generation (RAG) enables large language models to incorporate external knowledge during generation, improving factual grounding and domain adaptability. However, existing RAG pipelines assume that evidence retrieved from multiple repositories can be ranked globally using a single similarity function. While suitable for open-domain retrieval, this assumption breaks down in enterprise document generation, where heterogeneous knowledge bases (such as policies, regulations, technical documentation, and departmental guidelines) serve distinct roles and must be jointly represented in the generated document. As a result, global ranking often produces unbalanced context dominated by a subset of sources, leading to incomplete enterprise drafts. To address this limitation, we propose W-RAG, a source-aware retrieval framework that performs ontology-guided retrieval, local ranking within each knowledge base, and source-level weighting to regulate evidence composition. We further introduce a new dataset for retrieval-grounded enterprise document generation spanning multiple document types and industry domains. Experiments show that standard RAG pipelines struggle on this task, while W-RAG significantly improves document coverage and generation quality.",
+    "publicationDate": "2026-08-22T19:01:59.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...edu\nrombase@dmigs.com\nwangrzm@mit.edu\nAbstract\nRetrieval-Augmented Generation (RAG) en-\nables large language models to incorporate ex-\nternal knowledge during generation, improv-\ning factual grounding..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "W-RAG: Source-Aware Retrieval for Enterprise Document Generation\nfrom Heterogeneous Knowledge Bases\nHridya Dhulipala\n1 \nRajesh Ombase\n2 \nMichael Wang\n3 \nTien N. Nyugen\n1\n1\nThe University of Texas at D..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.27161",
+    "title": "STAR : Sentence Translation Alignment Rate for Document-to-Document Machine Translation",
+    "abstract": "Large Language Models (LLMs) have enabled a shift from sentence-level to document-to-document (Doc2Doc) machine translation, promising improved global coherence. However, document-to-document generation in a single pass frequently suffers from structural misalignment, manifesting as sentence omissions or hallucinations that violate the core requirement of source-target correspondence. To address this, we introduce Sentence Translation Alignment Rate (STAR), an auxiliary metric that explicitly quantifies sentence-level structural fidelity. Building on this, we propose STAR-masked Preference Optimization (StarPO), a framework that ranks document-level hypotheses by structural quality and utilizes a dynamic alignment mask to focus optimization on misaligned segments. Experimental results across news and literary domains demonstrate that StarPO significantly enhances translation quality and structural integrity. Notably, StarPO allows compact models to surpass the performance of massive proprietary systems like GPT-4o while maintaining superior token efficiency.",
+    "publicationDate": "2026-08-27T14:12:45.000Z",
+    "votes": 5,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...Hangzhou, China\ndong_yichen@foxmail.com, huaiyu.wh@alibaba-inc.com, jhli@suda.edu.cn\nAbstract\nLarge Language Models (LLMs) have en-\nabled a shift from sentence-level to document-\nto-document (Doc2Doc)..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "STAR : Sentence Translation Alignment Rate for Document-to-Document\nMachine Translation\nYichen Dong\n1\n* \nHao Wang\n2\n* \nJunhui Li\n1\u2020\nLinlong Xu\n2 \nLongyue Wang\n2 \nWeihua Luo\n2\n1\nSchool of Computer Scie..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.40181",
+    "title": "Index-Translate: A Multilingual Translation Model Family -- Text, Speech, Controlled Dubbing, and Long-Document Translation",
+    "abstract": "We introduce Index-Translate, a multilingual translation model family that combines a shared multilingual foundation with specialized training for general translation, instruction following, speech translation, controlled dubbing, and long-document translation. It includes three model sizes, 2B, 9B, and 35B-A3B, and supports translation in 150 languages, with multilingual instruction following. Evaluations on general translation and complex translation instructions show that Index-Translate outperforms translation models of comparable size and achieves performance comparable to 100B-scale translation models and frontier models. Index-Echo provides end-to-end speech-to-text and speech-to-speech translation, outperforming existing end-to-end models and achieving performance comparable to frontier omni models. Index-Homura extends the family to syllable-controlled dubbing. Index-NativeLong introduces native long-document translation with a dedicated task formulation and benchmark. These capabilities support diverse translation tasks, including multilingual content production.",
+    "publicationDate": "2026-09-30T17:05:58.000Z",
+    "votes": 10,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "... translation. It includes three model sizes, 2B, 9B, and 35B\u2011A3B, and sup\u2011\nports translation in 150 languages, with multilingual instruction following. Evaluations on general translation\nand complex t..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Index\nIndex\u2011Translate: A Multilingual Translation Model\nFamily\nText, Speech, Controlled Dubbing, and Long\u2011Document Translation\nTianjiao Li\n*\n, Mengran Yu, Chenyu Shi, Lusheng Zhang\nQisi Chen, Yanshan ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.03311",
+    "title": "Evaluating LLM Trade-offs for Enterprise Automation: Lessons from Workflow Generation in a Production Enterprise Platform",
+    "abstract": "Enterprise compliance management requires rapid adaptation to evolving regulatory frameworks (e.g., DORA, AI RMF, FedRAMP) and tight remediation SLAs. Traditional static orchestrators often fail in hybrid cloud environments where event-driven assessments demand that automation code adapt to runtime context in seconds. This paper presents lessons learned from evaluating six large language models for AI-driven workflow generation in a production enterprise platform, benchmarked across 29 real-world IT automation scenarios, two generation pipeline architectures, and eight independent runs per prompt-model-pipeline configuration (2,784 runs total).\nOur initial pipeline used monolithic workflow generation, achieving 31.5-82.8% structural success rates (JSON schema validity and correct UI rendering), with most models struggling on complex JSON generation. We developed a redesigned piecewise pipeline that decomposes workflow construction into variable scaffolding, base block assembly, and nested block generation, raising structural success to 74.1-97.8% across all models.\nWe analyze production tradeoffs including cost (USD 0.008-0.20 per workflow), latency (under 50s for interactive use), and model selection. Piecewise decomposition enables smaller models (e.g., mistral-small at 95.7% structural success and USD 0.01 per workflow) to reach production viability, removing dependency on expensive frontier models. While mistral-medium-2505 and gpt-oss-120b achieved the highest structural success (96.1% and 97.8%), mistral-medium-2505 carries a 19x cost premium versus mistral-small. Our deployment lessons highlight the need to separate structural validity from semantic correctness (logical fulfillment of user intent) and provide a solution for model-agnostic, scalable automation in cloud engineering.",
+    "publicationDate": "2026-08-04T08:18:38.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "... adapt to runtime\ncontext in seconds. This paper presents lessons learned from\nevaluating six large language models for AI-driven workflow\ngeneration in a Production Enterprise Platform, benchmarked\na..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Evaluating LLM Trade-offs for Enterprise\nAutomation: Lessons from Workflow Generation in\na Production Enterprise Platform\nXavier Wrenn\nIBM\nxavier.wrenn1@ibm.com\nRadoslav Raykov\nIBM\nRadoslav.Raykov@ibm..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.12674",
+    "title": "Doc2FRC: Length-Consistent Document-Level Machine Translation via Fixed-Range Chunking",
+    "abstract": "Advanced large language models (LLMs) with long context windows can substantially reduce input truncation in document-level machine translation (DocMT). However, direct Doc2Doc translation remains prone to n-gram repetition and progressive quality degradation. A common remedy is to segment the document into finer-grained chunks. Nonetheless, conventional rule-based chunking approaches fail to handle the length distribution mismatch between training and inference. To address this, we introduce Fixed-Range Chunking (FRC), utilizing dynamic programming to partition documents into chunks within a predefined length interval. By consistently applying FRC during training and inference, the input documents of any length are mapped to the same length distribution, substantially reducing train-test length mismatch. Centered on FRC, we propose a lightweight dual-boundary matching algorithm for chunk alignment, alongside four distinct training strategies. Experimental results show that FRC-based fine-tuning substantially improves 7B LLMs over direct Doc2Doc fine-tuning and outperforms existing DocMT methods on IWSLT2017. We further construct GlobVDoc, a 10-language test set independent of mainstream DocMT training sources, and show that FRC improves out-of-distribution document translation.",
+    "publicationDate": "2026-09-11T10:17:55.000Z",
+    "votes": 5,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "..., shenzhan, hyanaka}@g.ecc.u-tokyo.ac.jp\n2\nlin.youyuan.73v@st.kyoto-u.ac.jp\nAbstract\nAdvanced large language models (LLMs) with\nlong context windows can substantially re-\nduce input truncation in docu..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "DOC2FRC: Length-Consistent Document-Level Machine Translation via\nFixed-Range Chunking\nXiaotian Wang\n1,3 \nYouyuan Lin\n2 \nZhan Shen\n1 \nHitomi Yanaka\n1,3,4\n1\nThe University of Tokyo \n2\nKyoto University ..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.17775",
+    "title": "SAGE: Governed Artifact Generation from Enterprise Guidelines",
+    "abstract": "Enterprise guideline documents mix narrative text, complex tables, and embedded images, and converting them into structured work artifacts still takes two to three days of manual effort each. Current language and vision-language models extract from such documents but offer no governed workflow beyond extraction: no validation, no consistency checking, no traceable artifact generation. We introduce SAGE, a governed multi-stage LLM pipeline organized around a shared versioned rule store with stable identifiers, schema-validated inter-stage contracts, and end-to-end provenance tracking. Extracted rules undergo deterministic structural validation and LLM-based semantic scoring, then a consistency module that removes duplicates, flags contradictions, and surfaces specification gaps; only uncertain or flagged items reach reviewers, while high-confidence outputs are auto-approved. On 120 documents, SAGE cuts turnaround from days to 20-100 minutes, achieving a 96% document-level success rate with 3.2% hallucination, extracting 3,896 rules and producing 812 artifacts ready for human review; without governance, hallucination rises to 15.7%.",
+    "publicationDate": "2026-09-15T19:37:46.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...hem into structured work ar-\ntifacts still takes two to three days of man-\nual effort each. Current language and vision-\nlanguage models extract from such documents\nbut offer no governed workflow beyo..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...ach. Current language and vision-\nlanguage models extract from such documents\nbut offer no governed workflow beyond extrac-\ntion: no validation, no consistency checking,\nno traceable artifact generati..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.12133",
+    "title": "GUIDE: Governed Unified Intelligence for Document-to-Artifact Generation in Enterprise Settings",
+    "abstract": "Enterprise guideline documents are heterogeneous and multimodal, combining narrative text, complex tables, and embedded images. Existing LLM and VLM systems face hallucinated content, table structure degradation, and lack governed workflows extending beyond extraction to validation and artifact generation. This leaves enterprises to perform this manually, consuming 2-3 days per document. To address this, we introduce GUIDE, a governed multi-agent framework built on a shared versioned rule store with schema-validated inter-agent contracts and end-to-end provenance tracking. Six specialized agents handle parsing, VLM-driven extraction, consistency checking, evaluation, human-in-the-loop (HITL) escalation, and persona-tailored artifact synthesis. Evaluated on 120 real-world enterprise guideline documents, GUIDE achieves 96% document success, extracts 3,896 rules with 71.4% auto-approved, produces 812 deployment-ready artifacts, and reduces turnaround to 40-125 minutes per document.",
+    "publicationDate": "2026-08-12T14:52:33.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...sting LLM and VLM systems face hallucinated content, table\nstructure degradation, and lack governed workflows extending be-\nyond extraction to validation and artifact generation. This leaves\nenterpris..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "GUIDE: Governed Unified Intelligence for Document-to-Artifact\nGeneration in Enterprise Settings\nShivali Dalmia\n\u2217\nCentific Research\nWashington, USA\nshivali.dalmia@centific.com\nSumukha Thoppanahalli\n\u2217\nC..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.05141",
+    "title": "SciDocBench: A Workflow-Centered Benchmark and Data Pipeline for Scientific Document Understanding",
+    "abstract": "Scientific papers require models to integrate evidence across text, equations, figures, tables, code, and datasets while preserving its provenance. Beyond answer correctness, scientific reading requires verifiable outputs from operations such as evidence localization, definition extraction, and consistency checking. We introduce SciDocBench, a workflow-centered benchmark targeting these operations through 124 expert-authored and difficulty-screened questions across seven research-assistant capability groups, 19 subtasks, and five scientific domains. Each question is instantiated in four matched settings formed by pairing its bilingual variants with the All Images First and Markdown Interleaved document representations, yielding 496 evaluation instances. The strongest evaluated model, Claude-Opus-5, scores 62.6 out of 100, with remaining gaps in evidence localization, structured information extraction, cross-document synthesis, and robustness to document representation. To convert these diagnostics into scalable training signals, we introduce SciDocIR, a structured representation of scientific document objects, layout and cross-reference relations, and provenance. Using SciDocIR, we construct SciDocDataset, which contains 4K supervised fine-tuning instances and 10K reinforcement-learning instances, built on 14 verifiable training subtasks. Post-training Qwen3.6-27B on task-aligned data improves its SciDocBench score from 40.03 to 45.33 with supervised fine-tuning and to 45.74 with subsequent reinforcement learning. Both adapted models preserve DocVQA and InfoVQA performance and improve ChartQA accuracy over the original model by 0.80 and 3.40 points, respectively. Together, SciDocBench, SciDocIR, and SciDocDataset connect capability diagnosis with verifiable training-data construction for scientific-document assistants.",
+    "publicationDate": "2026-09-04T13:39:48.000Z",
+    "votes": 17,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...y, structure, and provenance, while evaluation must distinguish task competence\nfrom sensitivity to language and document representation.\nExisting benchmarks cover document QA, layout analysis, scient..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "2026-9-29\nSciDocBench: A Workflow-Centered\nBenchmark and Data Pipeline for Scientific\nDocument Understanding\nShenxi Wu\n*1,2\n, Yuhong Liu\n*1,2\n, Haosong Zhang\n3\n, Tongjin Zou\n4\n, Yanxun Zhang\n4\n, Gaoch..."
+     }
+    ]
+   }
+  ]
+ },
+ "field-operations": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword field service technician workflow documentation mobile --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.28943",
+    "title": "Dependency- and Layer-Aware Microservice Workflow Offloading and Service Image Caching for Edge Environments",
+    "abstract": "The microservice architecture has been applied broadly in many mainstream computing environments. As one of the most prevalent environments, edge computing also widely employs microservices to handle diverse requests and tasks. In practical scenarios, microservices usually constitute workflows that are built based on service dependencies to execute tasks. This offers an opportunity to explore the offloading technology to better harness resources and accelerate task execution. Unfortunately, this problem has not been paid attention to by existing research, and thus some valuable resources (e.g., microservice image cache) remain obscure. To fill this gap, we innovatively study the problem of joint optimization for microservice workflow offloading and service image caching in edge. This problem is challenging due to several issues such as the complexity of its solution space, intricate relationships among shared image layers, long-range dependencies between workflow tasks, and the absence of a real-world collection of service images. To address these issues, this paper proposes an innovative dependency- and layer-aware workflow offloading and image caching framework for microservices. We collected a real-world collection of microservice image layer data and published both this collection and experimental codes on GitHub. Extensive results demonstrate that our framework achieves superior performances, for example, a 22. 38\\% reduction in average task completion time compared to baselines and significantly-increased image hit rates.",
+    "publicationDate": "2026-09-24T02:48:38.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...NS ON PARALLEL AND DISTRIBUTED SYSTEMS, VOL. XX, NO. XX, XX 2025 1\nDependency- and Layer-Aware Microservice\nWorkflow Offloading and Service Image Caching\nfor Edge Environments\nZhongxiao Wang, Yueshen ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...RALLEL AND DISTRIBUTED SYSTEMS, VOL. XX, NO. XX, XX 2025 1\nDependency- and Layer-Aware Microservice\nWorkflow Offloading and Service Image Caching\nfor Edge Environments\nZhongxiao Wang, Yueshen Xu*, Mem..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.16996",
+    "title": "Overcoming technical adoption barriers for mobile service robots in rehabilitation",
+    "abstract": "Many publications on robotic systems in healthcare describe early-stage work on low technology readiness levels. This paper describes how a mobile service robot approved as a medical device reaches higher technology readiness levels by adding peripheral functions and smaller improvements, which are pivotal for user acceptance in clinical environments and which often cannot be elicited by questioning users ex-ante as certain aspects only come in mind from testing the systems in clinical settings or operational environments. Especially developers of service robots in healthcare are advised to plan with such downstream developments, which can take significant implementation time, to obtain user acceptance and achieve widespread adoption of their robotic systems.",
+    "publicationDate": "2026-09-15T11:08:19.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "1\nOvercoming technical adoption barriers for mobile service robots in rehabilitation\nChristian Sternitzke\n1\n, Sebastian Blumenthal\n1\n, Lukas Kleed\u00f6rfer\n2\n, Verena Deserno\n1, \nAnke\nMayfarth\n1\n1 \nTEDIRO..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "1\nOvercoming technical adoption barriers for mobile service robots in rehabilitation\nChristian Sternitzke\n1\n, Sebastian Blumenthal\n1\n, Lukas Kleed\u00f6rfer\n2\n, Verena Deserno\n1, \nAnke\nMayfarth\n1\n1 \nTEDIRO..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.11022",
+    "title": "Workflow Cards: Structured Summaries of Workflow Executions Using Provenance Data",
+    "abstract": "Model Cards and Data Cards have demonstrated the value of structured, human-readable documentation for machine learning artifacts, capturing their context, parameters, limitations, and intended use. However, these practices remain focused on static artifacts (the datasets and trained models themselves) while overlooking the workflow executions that produce, transform, and evaluate them. Such executions hold critical details about data preparation, parameter choice, runtime behavior, resource use, and intermediate transformations, precisely where bias, performance variation, and reproducibility gaps tend to originate. To close this gap, we introduce Workflow Cards: structured summaries that condense the machine-readable provenance data of a workflow execution into a form both humans and large language models (LLMs) can read and analyze. This paper has two main parts. First, it defines a Workflow Card template informed by a representative set of provenance questions that surface from the execution-level data missing from Model and Data Cards. Second, it evaluates how effectively LLMs use Workflow Cards to understand workflow executions compared with querying provenance databases through a schema-based interface. Results show that Workflow Cards provide execution-level information absent from existing card types, such as Model Cards and Data Cards, thereby filling an important documentation gap; and that Workflow Cards nearly double answer quality compared with schema-based querying, consistently across LLM-as-a-Judge and human assessments.",
+    "publicationDate": "2026-08-11T15:02:11.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...venance questions\ndrawn from prior work [2], [21]\u2013[27] and from our experi-\nments, which reveal the fields that contribute workflow-level\nprovenance beyond what other card types, such as Model and\nDat..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Workflow Cards: Structured Summaries of\nWorkflow Executions Using Provenance Data\nNicola Giuseppe Marchioro\n+\u2217 \nGabriele Padovani\n+\u2217 \nAmal Gueroudji\n\u2020 \nRafael Ferreira da Silva\n\u2021\nWesley Brewer\n\u2021 \nVale..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.39976",
+    "title": "Richard: Voice-First Mobile Interaction for Persistent Tasks",
+    "abstract": "Mobile terminals need to provide application and network services while supporting users' control over their attention. We explore voice-first interaction organized around requests and delegated tasks, allowing users to leave a conversation and later inspect, revise, and retrieve the work. We present Richard, a system prototype that manages voice sessions, task execution, and result delivery separately, linking them through persistent request records. Conversation and task views provide visual feedback, while the backend coordinates immediate responses, dedicated service operations, and agent tasks. Request revisions, execution states, and notifications remain associated with the relevant task. We examine this design through Android functional records, controlled lifecycle verification, and execution records of a real programming request. Controlled verification reproduces revision, execution after confirmation, and result retention; deployed-service records show backend progress and failure feedback after client disconnection. These observations inform the design of task continuity, user control, and service integration in mobile voice interaction, providing an implementation basis for personal computing devices that accommodate intermittent user participation.",
+    "publicationDate": "2026-09-30T15:36:59.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ser extensions, identifying strategies including usage feedback and access restric-\ntions. [1] In a field experiment, Fitz et al. found that batching notifications three times daily improved\nparticipa..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...for Persistent Tasks\nXinYang Chen\nAbstract\nMobile terminals need to provide application and network services while supporting users\u2019 control\nover their attention. We explore voice-first interaction or..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2610.00971",
+    "title": "The Other Half of Workflow Portability: Evidence-Backed HPC Site Profiles with Agentic Discovery",
+    "abstract": "Moving a workflow developed and tested at one HPC site to another rarely succeeds without some amount of trial and error. Package managers rebuild software environments, containers ship whole filesystems, and workflow specifications such as backpacks package a workflow with its software, data, and resource requirements. These approaches address one half of workflow portability: what a workflow needs. But none describes how a given HPC site must be used, and that missing half is why even a portable workflow requires manual adjustment at each new site. That gap includes the site's resource shape, storage configuration, network permissions, and operating policies. This information may be explicit in the batch system, hidden in the prose of documentation, or buried deep within a router's configuration, making it difficult for an automated deployment tool to turn site knowledge into useful deployment decisions. We propose the HPC site profile, a structured, evidence-backed document that makes this knowledge actionable. We automatically construct it in three steps that mirror where the information lives: measuring the login node, extracting typed fields from documentation with a bounded language-model agent, and submitting pilot jobs for eligible unresolved fields. Every field is verified against its evidence or discarded, so a rule, not the model, decides what enters the profile. The profile then preflights a workflow into an execution plan or an early, explainable failure. We build profiles at Purdue Anvil, TACC Stampede3, and Notre Dame CRC and present a case study of preflighting a real workflow.",
+    "publicationDate": "2026-10-01T03:01:31.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...\nin three steps that mirror where the information lives: measuring\nthe login node, extracting typed fields from documentation with\na bounded language-model agent, and submitting pilot jobs\nfor eligibl..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "The Other Half of Workflow Portability:\nEvidence-Backed HPC Site Profiles\nwith Agentic Discovery\nMd Saiful Islam, Douglas Thain\nUniversity of Notre Dame, Notre Dame, IN, USA\n{mislam5, dthain}@nd.edu\nA..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.00296",
+    "title": "Toward Workflow-Aware Benchmarking for Healthcare NLP Agents",
+    "abstract": "Large language model (LLM) agents are increasingly proposed for healthcare tasks such as clinical documentation, evidence retrieval, patient messaging, and care coordination. Yet many evaluations remain limited to static medical question answering or one-shot generation, under-representing longitudinal state, interruptions, and human handoffs. We introduce an episode-level evaluation protocol for healthcare NLP agents. The protocol separates evidence across model, agent, and simulated-workflow behavior; specifies a five-field episode schema; and defines annotation and scoring for state continuity, evidence traceability, and escalation decisions. It is instantiated as four task templates: documentation update, evidence retrieval, patient messaging, and triage handoff. The protocol does not claim to measure clinical outcomes or deployment value. Instead, it supplies a reproducible intermediate evaluation layer between static benchmarks and prospective workflow studies, with an explicit cost-sensitive treatment of missed versus unnecessary escalation.",
+    "publicationDate": "2026-08-31T19:41:58.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...protocol separates evidence across model, agent, and simulated-\nworkflow behavior; specifies a five-field episode schema; and\ndefines annotation and scoring for state continuity, evidence\ntraceability..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Toward Workflow-Aware Benchmarking for\nHealthcare NLP Agents\nJunyi Yao\n\u2217\n, Baichuan Li\n\u2020\n, Zihao Zheng\n\u2217\n, Jiayu Long\n\u2217\n\u2217\nWashington University in St. Louis, USA\n{j.yao,z.zihaogary,jiayujacqueline}@wu..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.11629",
+    "title": "Easper: An Accessible ASR Pipeline for Language Documentation",
+    "abstract": "Audio transcription is a critical bottleneck in language documentation. While multilingual Automatic Speech Recognition (ASR) models like Whisper offer solutions, field linguists often lack the expertise to utilise them. We present Easper, an open-source, no-code workflow enabling linguists to iteratively fine-tune ASR models via cloud resources directly from ELAN annotations. Deploying ASR also raises a cold start problem: deciding which recordings to transcribe first to bootstrap an accurate model. Using Easper, we evaluate transcription prioritisation strategies on three Vanuatu languages (Bislama, Nafsan, Nguna). We fine-tune models by recording session, comparing Character Error Rate trajectories when prioritising acoustic cleanliness versus linguistic richness. We demonstrate that prioritising lexically rich narratives and increasing acoustic-phonetic repetition, even in noisy environments, leads to faster improvements in transcription quality.",
+    "publicationDate": "2026-08-12T04:25:08.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...ntation. While multilingual Automatic Speech Recognition\n(ASR) models like Whisper offer solutions, field linguists of-\nten lack the expertise to utilise them. We present Easper, an\nopen-source, no-co..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...ld linguists of-\nten lack the expertise to utilise them. We present Easper, an\nopen-source, no-code workflow enabling linguists to iteratively\nfine-tune ASR models via cloud resources directly from EL..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.28974",
+    "title": "From Analytics to Tumor Boards: An Evidence-Linked Multi-Agent Workflow for Oncology Feature Extraction",
+    "abstract": "Clinically relevant oncology information is distributed across heterogeneous, longitudinal documentation, creating substantial abstraction burden and requiring accurate attribution across specimens, tumors, biomarkers, and time points, while manual cancer-registry abstraction can require 27.2 minutes per case, highlighting the need for scalable methods that preserve clinical context while converting documentation into structured data. We evaluate an oncology information-extraction workflow in which OncoLens supplies multi-source, oncology-aware document selection, aggregation, and normalization from integrated EHRs, while the NimbleMind Multi-Agent System (nMAS) is a configurable oncology information-extraction workflow that extracts clinically relevant structured fields from fragmented oncology documentation. The extraction task uses a clinician-informed schema of 328 attributes spanning report metadata, diagnosis, staging, and cancer-type-specific information. nMAS separates clinician-defined field specifications from model execution and combines complexity-aware extraction, report-level consolidation, and source-grounded validation. The retrospective evaluation included 230 de-identified oncology documents from 40 patients and 418 clinician-reviewed document-field pairs containing 1,126 non-empty reference values. Evaluation focused on fields identified by clinicians as present in the source documents rather than exhaustively annotating all 328 schema fields. nMAS achieved a rank-weighted value-level precision of 82.6%, recall of 87.5%, and F1 of 85.0%, compared with an F1 of 66.4% for an independently implemented UMA-style MiniMax M2.5 comparator. These findings support the feasibility of using a configurable, source-grounded extraction workflow to convert fragmented oncology documentation into reusable structured data.",
+    "publicationDate": "2026-08-29T00:51:30.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...hine Learning for Health (ML4H) 2026\nFrom Analytics to Tumor Boards: An Evidence-Linked\nMulti-Agent Workflow for Oncology Feature Extraction\nDaniel Kang\nNimblemind\nMichelle Hu\nNimblemind\nSoorya Ram Sh..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...Abstract\nClinically relevant oncology information is\ndistributed across heterogeneous, longitudinal\ndocumentation, creating substantial abstrac-\ntion burden and requiring accurate attribution\nacross s..."
+     }
+    ]
+   }
+  ]
+ },
+ "safety-incident-reporting": {
+  "cmd": "/home/codespace/.local/bin/orx discover keyword workplace safety incident reporting analysis burden --limit 8",
+  "n": 8,
+  "data": [
+   {
+    "source": "alphaxiv",
+    "id": "2609.24515",
+    "title": "Beyond Predictable Paths: Redefining AI Security Incident Reporting for Agents",
+    "abstract": "AI agents are being deployed rapidly, accompanied by a growing number of AI-specific attacks and corresponding incidents. As incident reporting becomes increasingly important for legal compliance, governance, accountability, and security; current frameworks must be adapted to the unique characteristics of AI agents. In this paper, two editorial authors compare AI systems and AI agents and, drawing on input from 23 experts in academia and industry, identify the information required for reporting incidents where the security of AI agents is harmed. %involving AI agents. Potential reporting elements include, for example, agent memory and memory accesses, actual and potential levels of autonomy, and tool usage. Based on these findings, we identify several open research questions, including how to efficiently record incidents and how to determine whether vulnerabilities and incidents generalize. Expert feedback also highlighted potential reporting weaknesses, such as risks of data leakage and attacks targeting the reporting infrastructure itself, creating additional research needs. Lastly, we summarize privacy requirements and outline research directions for the secure and trustworthy deployment of AI agents.",
+    "publicationDate": "2026-09-21T12:53:51.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Beyond Predictable Paths: AI Security Incident Reporting for Compromised\nAgents\nAnastasia Pustozerova\n1*\n, Eugene Bagdasarian\n2\n, Luca Beurer-Kellner\n3\n, Battista Biggio\n4\n, Nico\nEbert\n5\n, David Filip..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Beyond Predictable Paths: AI Security Incident Reporting for Compromised\nAgents\nAnastasia Pustozerova\n1*\n, Eugene Bagdasarian\n2\n, Luca Beurer-Kellner\n3\n, Battista Biggio\n4\n, Nico\nEbert\n5\n, David Filip..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.19429",
+    "title": "CARES: A Conversational AI System for Regulation-Grounded Safety Reporting in Construction Education",
+    "abstract": "Construction safety reporting often relies on manual logs and static templates that provide limited feedback and leave daily activities disconnected from relevant regulations. This paper introduces CARES (Conversational AI Reporting for Enhanced Safety), a conversational AI system that integrates regulatory guidance into daily reporting to support construction safety education. CARES combines proactive multi-agent dialogue, retrieval-augmented generation (RAG), and automated report generation. The system guides users through reporting tasks, retrieves relevant regulatory passages using hybrid retrieval, and converts conversations into structured daily reports. Regulatory sources and the evolving report are displayed alongside the dialogue to support user review and correction. A preliminary evaluation involving 15 construction management students assessed retrieval quality, response faithfulness, and conversational relevance. CARES achieved an overall faithfulness score of 0.74 and an answer relevance score of 1.00, while initial retrieval ranking remained an area for improvement. These results provide preliminary evidence of the technical feasibility of regulation-grounded conversational reporting. The study highlights opportunities to integrate regulatory knowledge into routine documentation, with future work needed to evaluate effects on report quality, safety awareness, and learning outcomes.",
+    "publicationDate": "2026-09-16T21:08:05.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...itive documentation process\nas opposed to an active system in strengthening safety knowledge in the workplace. Promoting"
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "1\nCARES: A Conversational AI System for Regulation-Grounded Safety Reporting in\nConstruction Education\nFan Yang\n1\n; Jiabin Wu \n2\n; Yuan Tian \n3\n; and Jiansong Zhang, Ph.D., A.M.ASCE \n4\n1 \nSchool of Co..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.25527",
+    "title": "The Well-Being Palette: An Action-Word Selection Tool Designed for Low-Burden Reflection on Workplace Well-Being",
+    "abstract": "Background: Workplace well-being interventions need formats that can be used repeatedly with minimal disruption to daily work. We developed the Well-Being Palette, a web-based action-word selection tool designed for brief, low-burden reflection on workplace well-being. Methods: In a three-month exploratory field study at a private-sector corporate research institute in Japan, 88 analyzed participants selected up to three well-being-related action words after reflecting on positive actions or experiences from each workday. We examined application usage, PERMA Profiler scores, selected-word patterns across departments, selected-word diversity using Shannon entropy, and exploratory associations with sharing workshops. Results: During the formal intervention period, the application captured 3,480 input records and 10,104 selected words, and all 72 available action words were selected. Overall PERMA scores increased from baseline to post-intervention, and no clear decline was observed at the one-month follow-up among available cases. Application logs revealed departmental differences in selected-word categories. Cumulative selected-word diversity increased over time, and sharing workshops showed exploratory associations with more sustained PERMA patterns and broader cumulative selected-word diversity. Conclusion: The Well-Being Palette was feasible for repeated use in a real workplace and provided complementary log-based information on how workers recognized and labeled well-being-related experiences. The findings should be interpreted as exploratory and hypothesis-generating, because the study did not include a randomized control condition and did not directly measure perceived burden or completion time.",
+    "publicationDate": "2026-08-26T08:35:12.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...view.\n1\nThe Well-Being Palette: An Action-Word Selection Tool Designed\nfor Low-Burden Reflection on Workplace Well-Being\nNobuhiko Muramoto\n1\n, Takayuki Nagaya\n1\n, Tomoko Tanaka\n1\n, Koichiro Iwai\n1\n, K..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...orporate workplace. Ninety participants took part in the study, and 88 were included in the primary\nanalysis after excluding two participants with missing PERMA data. Participants used the application..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2607.05163",
+    "title": "Open Problems in AI Incident Governance",
+    "abstract": "AI systems may produce failures after deployment that pre-deployment safety assessments do not anticipate. Managing these failures requires what we refer to as adequate \\textit{AI incident governance}, where having good definitions, taxonomies, monitoring practices, reporting mechanisms, and incident analysis is essential. We examine existing frameworks related to AI incident governance by regulatory bodies and independent efforts, and find that while there are frameworks that describe how individual functions can be performed, there is a lack of consistency within the aspects of definitions, classification, monitoring, and reporting. These inconsistencies apply to the types of incident data that is collected and reported, the ways in which they are categorised, and as a result, the depth, representativeness, and accuracy of analysis that can be performed.",
+    "publicationDate": "2026-07-06T14:46:49.000Z",
+    "votes": 3,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...\nRokas Gipi\u02c7skis \n5 7\nAbstract\nAI systems may produce failures after deployment\nthat pre-deployment safety assessments do not an-\nticipate. Managing these failures requires what\nwe refer to as adequat..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Open Problems in AI Incident Governance\nHarleen Kaur Sidhu \n1 \nRebecca Scholefield \n1 \nNour Annan \n2 \nKevin Hernandez \n3 \nIsabel Nieh Hou \n4\nAbdulrahman Alshaikhi \n4 \nZe Shen Chin \n5 6 \nRokas Gipi\u02c7ski..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2607.24348",
+    "title": "DeepFaith: Evidence-Grounded LLMs for Faithful Incident Reporting in Multi-Stage APT Defense",
+    "abstract": "Advanced Persistent Threats (APTs) are difficult to detect and interpret due to their multi-stage and stealthy nature. While recent autonomous defense systems leverage provenance graphs and learning-based models for detection and mitigation, their outputs remain largely machine-oriented and difficult for analysts to interpret. Large language models (LLMs) offer a promising interface for report generation, but often produce hallucinated or weakly grounded content. In this paper, we propose DeepFaith, an evidence-grounded framework for faithful incident reporting in multi-stage APT defense. DeepFaith transforms structured outputs from autonomous defense and explainability modules into natural-language reports that are explicitly aligned with underlying system evidence. The framework integrates a unified evidence representation, evidence-grounded prompting, faithfulness-aware generation, and post-generation verification to ensure that all generated statements are supported. Experiments in a realistic enterprise testbed demonstrate that DeepFaith improves faithfulness from 0.68 to 0.92, reduces unsupported claims from 0.32 to 0.08, and increases temporal consistency from 0.6 to 0.88, while maintaining concise reports and lower error rates than existing template-based and LLM-based solutions. These results show that evidence-grounded generation enables reliable, interpretable, and actionable reporting for security operations centers.",
+    "publicationDate": "2026-07-27T12:27:17.000Z",
+    "votes": 5,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...at unconstrained LLMs\noften produce hallucinated or unverifiable content, especially\nin complex and safety-critical domains [9]. In the context of\ncyber defense, such errors can lead to incorrect conc..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "DeepFaith: Evidence-Grounded LLMs for Faithful\nIncident Reporting in Multi-Stage APT Defense\nTrung V. Phan\n\u2020\n, Tri Gia Nguyen\n\u00a7 \nand Thomas Bauschert\n\u2020\n\u2020\nChair of Communication Networks, Technische Un..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2606.31567",
+    "title": "FLARE-AI: Flaw Reporting for AI",
+    "abstract": "Flaw reporting for deployed AI systems is fundamental to identifying system failures and improving AI safety. Yet the AI reporting ecosystem is fragmented: researchers who identify flaws often do not know what or where to report, and groups who receive reports rarely share them with other relevant stakeholders. As a result, good-faith reporters duplicate effort by submitting many different forms, and recipients lack standardized, triage-ready information. We audit 12 reporting systems published by AI developers, cybersecurity groups, and AI flaw aggregators, identifying five recurring design challenges spanning discoverability, scope, information collection, coordination, and guidance for strict-liability cases. Building on this analysis and feedback from 49 experts across 32 organizations representing developers, security researchers, and ecosystem coordinators, we introduce FLARE-AI, an open-source AI flaw reporting system designed for interoperability with existing systems. FLARE-AI streamlines flaw report creation by collecting triage-relevant information through conditional logic and early classification, then enables optional dissemination of standardized, machine-readable reports to multiple developers, coordinators, and incident registries from a single submission. By lowering barriers to reporting AI flaws and improving interoperability across stakeholders, FLARE-AI helps break down silos and accelerate remediation across the AI ecosystem.",
+    "publicationDate": "2026-06-30T12:27:09.000Z",
+    "votes": 2,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "...eporting for deployed AI systems is fun-\ndamental to identifying system failures and im-\nproving AI safety. Yet the AI reporting ecosystem\nis fragmented: researchers who identify flaws of-\nten do not ..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...ents must be able to triage and\nrespond (McGregor, 2021; Cattell et al., 2024b).\nToday, AI flaw and incident reporting is neither streamlined\nnor interoperable (Longpre et al., 2025). Reporting channe..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2608.17184",
+    "title": "AISA: AI Safety Assistant Framework for Continuous Improvement of Highway Construction",
+    "abstract": "Job Safety Analysis (JSA) and pre-task planning can benefit from prior incident records, yet historical accident data is often stored as unstructured narratives that are difficult to consult at the point of planning. A novel framework centered on large language models (LLMs) for highway construction safety reporting and planning is proposed as a foundation for future agentic applications, prioritizing deterministic, local inferencing. The first aim is to enable classification and quality scoring of incident narratives for existing and future reporting purposes. The second is to evaluate retrieval of relevant historical accidents, related imagery, and trusted industry documents for incorporation into daily safety plans. Neural probes were trained to classify incidents along four multiclass and two binary Occupational Injury and Illness Classification System (OIICS) fields and to derive an overall quality score, evaluated on a test set of over 15,000 narratives and a held-out set of 100 author-labeled records, benchmarked against a majority-vote LLM ensemble. The retrieval of historical accidents, reference imagery, and industry documents was benchmarked across embedding models using standard information retrieval metrics. OIICS classification reached 75% held-out accuracy, though the two binary flags were degenerate. The quality score, while meaningful on one database, was distorted on out-of-distribution fatalities in the held-out dataset. Accident retrieval recovered relevant incidents far above chance, performing best on lexically distinct construction activities. On document question answering, an open-weight decoder embedding model surpassed proprietary models. Overall, this work provides a new framework rooted in local inferencing and text embedding models for future agentic applications, with emphasis on bridging external data to JSA reports.",
+    "publicationDate": "2026-08-17T22:48:01.000Z",
+    "votes": 0,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "AISA: AI SAFETY ASSISTANT FRAMEWORK FOR CONTINUOUS\nIMPROVEMENT OF HIGHWAY CONSTRUCTION\nMason Smetana\nDepartment of Civil and Environmental Engineering\nUniversity of Pittsburgh\nPittsburgh, PA 15213\nmrs..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "...1, 2026\nABSTRACT\nObjectives: Job Safety Analysis (JSA) and pre-task planning can benefit from prior incident records,\nyet historical accident data is often stored as unstructured narratives that are d..."
+     }
+    ]
+   },
+   {
+    "source": "alphaxiv",
+    "id": "2609.26470",
+    "title": "Frugal Collective Perception: Context-Aware Adaptive Reporting for Safety-Critical C-ITS",
+    "abstract": "Ensuring safety and scalability in Collective Perception Service (CPS) remains a key challenge for Cooperative Intelligent Transport Systems (C-ITS). Conventional CPS enhances perception by broadcasting Collective Perception Messages (CPMs). However, its reliance on transmitting a potentially large volume of context-irrelevant information at high frequency leads to network congestion, processing delays, and poor scalability. We propose a Context-Aware Adaptive Filter that dynamically adjusts CPM content and transmission frequency based on contextual relevance and situational criticality. By prioritizing safety-critical objects and interactions, the proposed approach prevents information overload while preserving timely updates for decision-making. An end-to-end SUMO--Artery simulation evaluates safety, decision-making efficiency, and communication cost under different computational capacity tiers and transmission rates. Results show that the proposed adaptive filtering mechanism achieves safety performance comparable to conventional CPMs transmitted at the maximum allowed frequency (10~Hz), while reducing communication volume by over 93\\% and preventing queue saturation. This demonstrates that context-aware adaptivity enables CPS to remain both scalable and safety-compliant across heterogeneous computing platforms.",
+    "publicationDate": "2026-09-22T14:17:50.000Z",
+    "votes": 1,
+    "snippets": [
+     {
+      "pageNumber": 1,
+      "snippet": "Frugal Collective Perception: Context-Aware Adaptive Reporting for\nSafety-Critical C-ITS\nRomain Tessier \n1,2\n, Bruno Monsuez\n1\n, Adriana Tapus\n1\n, Oyunchimeg Shagdar\n2\nAbstract\u2014 Ensuring safety and sc..."
+     },
+     {
+      "pageNumber": 1,
+      "snippet": "Frugal Collective Perception: Context-Aware Adaptive Reporting for\nSafety-Critical C-ITS\nRomain Tessier \n1,2\n, Bruno Monsuez\n1\n, Adriana Tapus\n1\n, Oyunchimeg Shagdar\n2\nAbstract\u2014 Ensuring safety and sc..."
+     }
+    ]
+   }
+  ]
+ }
+}

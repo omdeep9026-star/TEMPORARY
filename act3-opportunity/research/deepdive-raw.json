@@ -1,0 +1,272 @@
+{
+ "mt-quality-eval": [
+  {
+   "source": "alphaxiv",
+   "id": "2610.10918",
+   "title": "Large Language Models for Machine Translation Quality Annotation: Humans and Models Are Both Challenged",
+   "abstract": "Large Language Models (LLMs) are considered to be a more efficient and cost-effective alternative to human judgment for Machine Translation (MT) evaluation. With MT evaluation spanning a large number of language pairs, domains and levels of annotation granularity, LLMs must be thoroughly evaluated across these dimensions before being reliably used as alternatives to human evaluation. In this paper, we evaluate the performance of LLMs for two prominent MT quality evaluation schemes: Multidimensional Quality Metrics (MQM) and Error Span Annotation (ESA) by comparing their agreement with human annotators. We present results on a long-context test set of 70 language pairs and the publicly available WMT23 and WMT25 data, investigating both score and error span annotation agreement across a variety of language pairs and domains. Our results show that while LLM agreement with human annotators exceeds agreement between human annotators for some evaluation tasks, both vary substantially across annotation schemes, language pairs and domains and remain unreliable for most settings. Furthermore, we identify challenges facing both human and LLM annotators: humans are particularly challenged by fine-grained MQM annotations and low-resource language pairs, while LLMs struggle with minor errors, wrong language variants and error span annotation. Our results highlight the potential for improvement for both human and LLM annotation performance, possibly through human-LLM collaborative annotation pipelines that address the reliability issues identified in this work.",
+   "publicationDate": "2026-10-07T21:17:26.000Z",
+   "votes": 1,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "Large Language Models for Machine\nTranslation Quality Annotation:\nHumans and Models Are Both Challenged\nHala Almaghout, Christian Federmann, Qin Gao\nApple\nLarge Language Models (LLMs) are considered t..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "Large Language Models for Machine\nTranslation Quality Annotation:\nHumans and Models Are Both Challenged\nHala Almaghout, Christian Federmann, Qin Gao\nApple\nLarge Language Models (LLMs) are considered t..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2608.18655",
+   "title": "TranslatePsy-AfriSLM: High-Quality Data Scaling For Low-Resource Machine Translation",
+   "abstract": "The rapid progress in Artificial Intelligence has largely bypassed African languages, creating a digital divide that limits AI adoption on the continent. Recent open-source LLMs systematically underperform on African language machine translation, while the lack of large-scale, high-quality, open-source parallel data has constrained the development of competitive small language models (SLMs). We introduce TranslatePsy-AfriSLM, a collection of open-source machine translation resources for 19 Sub-Saharan African languages, including curated parallel data, African-specialized synthetic data, and a family of fine-tuned SLMs. Our empirical study shows that unified quality-estimation filtering removes up to 96% of training tokens without degrading quality, and that filtered synthetic data dominates the quality-efficiency Pareto frontier. Fine-tuned on the resulting data mixture, TranslatePsy-AfriSLMs outperform substantially larger systems, including TranslateGemma-27B and Qwen3.5-122B-A10B, with as few as 0.8B parameters.",
+   "publicationDate": "2026-08-19T08:00:40.000Z",
+   "votes": 3,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "TranslatePsy-AfriSLM: High-Quality Data Scaling\nFor Low-Resource Machine Translation\nMilan Gritta\n\u2217 \nand Patrik Lambert\n\u2217 \nand Jihye Back\n\u2217 \nand Amril Nazir\nTether AI Research\n{milan.gritta, patrik.la..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "TranslatePsy-AfriSLM: High-Quality Data Scaling\nFor Low-Resource Machine Translation\nMilan Gritta\n\u2217 \nand Patrik Lambert\n\u2217 \nand Jihye Back\n\u2217 \nand Amril Nazir\nTether AI Research\n{milan.gritta, patrik.la..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2606.21559",
+   "title": "Rubric-as-Experts: Case-Specific MQM Rubrics for Translation Error Span Detection",
+   "abstract": "Large language models (LLMs) have shown potential for reference-free span-level translation quality estimation (QE), yet existing approaches based on Multidimensional Quality Metrics (MQM) typically rely on fixed rubric configurations shared across translation instances. However, translation instances often differ substantially in error complexity, ambiguity, and required evaluation granularity, making static rubric allocation suboptimal for span-level error detection. We find that larger MQM subtype spaces improve error coverage but also introduce more false positives, while different translation instances prefer different rubric granularities, suggesting that evaluation spaces should be allocated dynamically for each case. Therefore, we propose a case-specific dynamic rubric framework that adaptively constructs MQM evaluation spaces for individual translation instances. Unlike methods that generate fully free-form rubrics, our framework remains grounded in the predefined MQM taxonomy while dynamically selecting suitable subtype spaces and evaluation granularity for different cases. Experiments on span-level QE benchmarks from the Conference on Machine Translation (WMT) across multiple model scales demonstrate that the proposed framework consistently improves F1 and Matthews Correlation Coefficient (MCC).",
+   "publicationDate": "2026-06-19T15:56:16.000Z",
+   "votes": 1,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "...gran-\nularity for different cases. Experiments on\nspan-level QE benchmarks from the Confer-\nence on Machine Translation (WMT) across\nmultiple model scales demonstrate that the\nproposed framework consi..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "Rubric-as-Experts: Case-Specific MQM Rubrics for Translation Error\nSpan Detection\nWeilu Xu, Yunzhi Shen, Xinye Wang, Renfei Dang, Shujian Huang\n*\nNational Key Laboratory for Novel Software Technology,..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2608.03577",
+   "title": "Looking under the Wrong Lamppost: On the Limitations of Automated Translation Quality Estimation",
+   "abstract": "Automation of Translation Quality Estimation (QE) has emerged as a widely discussed approach to managing translation quality at scale, and a growing number of tools and technologies have been released in pursuit of this goal. However, the proliferation of new QE systems has not always been accompanied by robust, transparent, and reproducible research and testing. This gap deserves critical scrutiny. This paper examines some fundamental limitations of the QE technology from both theoretical and empirical perspectives, arguing that current QE systems are structurally ill-equipped to serve as reliable standalone tools in real-world translation workflows. The reviewed evidence suggests that QE suffers from a range of interrelated and largely unresolved limitations. Most fundamentally, the evaluation of the quality of translation at the level of isolated segments is problematic because it tends to miss out on cohesion, coherence, and stylistic and rhetorical text features. In addition, empirical research documents several other limitations and flaws, including failure to generalize, systematic biases, overfitting and distribution collapse, performance gaps, error annotation challenges, and data scarcity. These are structural limitations arising from the complexity of human language and translation as a cognitive and communicative act - limitations that more data and better architectures have so far not overcome. Consequently, segment-level QE scores should not be used as a standalone basis for routing, release, or review bypass in production; we argue future work should focus on automating human evaluation grounded in MQM.",
+   "publicationDate": "2026-08-04T12:33:13.000Z",
+   "votes": 1,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "...ibution: users per-\nceive it as having capabilities that it does not pos-\nsess. The shortcomings of machine translation\n(MT) and AI-assisted translation are not always\nself-evident. They are often det..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "Looking under the Wrong Lamppost: On the Limitations of Automated\nTranslation Quality Estimation\nSerge Gladkoff\nLogrus Global LLC\nAngelika Vaasa\nEuropean Parliament,\nDG for Translation and Clear Langu..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2610.00096",
+   "title": "FACET at WMT 2026 Automated Translation Quality Evaluation Task",
+   "abstract": "Different error types in machine translation require different evidence. Whether meaning is preserved can be judged only against the source, while whether the target is well-formed, or whether it names one entity consistently, can be judged from the target alone. We present FACET, our reference-free submission to the WMT26 Automated Translation Quality Evaluation Task, which decomposes evaluation into Fluency, Accuracy, and Consistency passes and gives each pass only the context its error type requires. A single fixed model is prompted three times, and the merged error spans yield the three task outputs, error spans, quality scores, and error-free labels, with no trained components. We also submit FACET-C, which omits the Consistency pass. Without gold labels, we characterize the predictions of FACET. Its system rankings place post-edited human translation first, and the Consistency pass changes about a tenth of segment scores while leaving the ranking nearly unchanged.",
+   "publicationDate": "2026-09-08T14:49:27.000Z",
+   "votes": 0,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "...s\nSoongsil University\n{ahriikim,chanjun.park,seongheum}@ssu.ac.kr\nAbstract\nDifferent error types in machine translation\nrequire different evidence. Whether meaning\nis preserved can be judged only agai..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "FACET at WMT 2026 Automated Translation Quality Evaluation Task\nAhrii Kim\n1 \nChanjun Park\n2 \u22c6 \nSeong-heum Kim\n1,3 \u22c6\n1\nAI-Bio Convergence Research Inst. \n2\nSchool of Software \n3\nDept. of Intelligent Se..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.35017",
+   "title": "TermJudge: A Document-Level Metric Judging, Not Counting, Terminology in Machine Translation Evaluation",
+   "abstract": "Existing automatic metrics for evaluating terminological use in machine translation (MT) penalise any divergence from a fixed reference, conflating translation errors with the valid terminological variation that human translators routinely produce. We introduce TermJudge, a document-level terminology metric that assigns an interpretable verdict to every term occurrence: glossary-conforming occurrences are settled deterministically, while divergences are assessed under a two-step LLM-as-judge procedure using the full document context: the first detects and labels terminology errors; the second sorts valid document-level variations from inconsistencies. Validated against expert error annotations and document-level human MQM scores, TermJudge ranks first in both system- and segment-level meta-evaluation, ahead of glossary-conformity and quality-estimation baselines. When applied to eight systems translating academic documents, under two prompting conditions, we observe that glossary injection improves terminology translation in all paired comparisons, by removing genuine errors rather than valid variation. TermJudge is released as open-source code.",
+   "publicationDate": "2026-09-28T12:17:49.000Z",
+   "votes": 0,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "TERMJUDGE: A Document-Level Metric Judging, Not Counting,\nTerminology in Machine Translation Evaluation\nNicolas Dahan\n\u2662\u2660 \nFran\u00e7ois Yvon\n\u2660 \nRachel Bawden\n\u2662\n\u2662\nInria Paris, France\n\u2660\nSorbonne Universit\u00e9, ..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "TERMJUDGE: A Document-Level Metric Judging, Not Counting,\nTerminology in Machine Translation Evaluation\nNicolas Dahan\n\u2662\u2660 \nFran\u00e7ois Yvon\n\u2660 \nRachel Bawden\n\u2662\n\u2662\nInria Paris, France\n\u2660\nSorbonne Universit\u00e9, ..."
+    }
+   ]
+  }
+ ],
+ "loto-procedures": [
+  {
+   "source": "alphaxiv",
+   "id": "2608.12025",
+   "title": "From Safety Documentation to Safety Knowledge Support: An Evidence-Grounded LLM Framework for Medical Devices",
+   "abstract": "Medical devices are becoming more software-intensive, connected, and AI-enabled. Their development requires risk-management evidence aligned with ISO 14971 and, for software, IEC 62304. This evidence must be kept consistent across requirements, design decisions, software changes, verification results, complaints, and post-market data. These tasks are costly and depend on scarce safety and domain experts.\nLarge language models (LLMs) may reduce parts of this effort because medical-device safety work is highly document-based. However, current LLM-based safety-engineering studies often address isolated methods, rely on generic prompting or public examples, and provide limited support for source links, traceability, uncertainty handling, lifecycle updates, and recorded expert review. This limits their use in regulated medical-device development.\nThis paper argues that the central research problem is not safety-text generation, but source-linked safety-knowledge support. We propose an evidence-grounded framework that connects device artifacts, controlled knowledge storage and retrieval, method-specific generation of candidate safety items, critique and uncertainty checks, and recorded expert review. The framework prepares, links, checks, and updates candidate safety artifacts for expert decision-making. It does not decide whether a device is safe and does not provide regulatory approval. We also outline an evaluation strategy using non-public or newly built medical-device case studies and expert reference analyses to assess coverage, correctness, relevance, traceability, duplicate rate, unsupported claims, and review effort.",
+   "publicationDate": "2026-08-12T13:05:49.000Z",
+   "votes": 3,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "From Safety Documentation to Safety Knowledge\nSupport: An Evidence-Grounded LLM Framework\nfor Medical Devices\nTuhinangshu Gangopadhyay\nFraunhofer IESE\nRPTU Kaiserslautern-Landau\nKaiserslautern, German..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "From Safety Documentation to Safety Knowledge\nSupport: An Evidence-Grounded LLM Framework\nfor Medical Devices\nTuhinangshu Gangopadhyay\nFraunhofer IESE\nRPTU Kaiserslautern-Landau\nKaiserslautern, German..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2608.20195",
+   "title": "From Agent Behaviour to Agent-Friendly Documentation: An Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation",
+   "abstract": "Technical documentation is written for human developers, but an increasing share of software changes is now authored by autonomous coding agents. Which documents they consult, when, and what follows remain unknown. We conduct a behaviour-grounded study of agent-documentation interaction across two public datasets: 557 agentic coding sessions from SWE-chat, yielding 94,813 development events including 3,033 documentation interactions; and 33,097 agentic pull requests from AIDev, with 690,260 classified file-level change records. Four findings challenge current documentation practice. First, agents' documentation work is dominated by agent-facing artefacts: instruction files and working notes account for 60.5% of all documentation interactions, versus 10.6% for classical technical documentation and 1.3% for API references. Second, the link between consultation and code editing is unresolved: the adjacent transition probability is 0.002 and the unadjusted three-event lift 1.05, whereas a stage-adjusted model places it above unity (OR 1.33 [1.09, 1.62]); documentation creation is elevated unadjusted (lift 1.67) but its adjusted interval includes unity. Third, no explicit documentation-based validation sequence was observed, and consultation is associated with less immediate testing (lift 0.23, cluster CI 0.08-0.45; adjusted OR 0.39 [0.25, 0.60]). Fourth, consultation is self-initiated (70.2%) far more often than failure-driven (7.5%), and documentation trails code: among multi-commit pull requests changing both, code is touched first 4.7x more often. From these traces we derive a descriptive model of agent-documentation interaction as a two-lobed cycle rather than a linear journey, and show that two widely assumed properties of \"agent-friendly\" documentation - actionability and verifiability - lack consistent behavioural support. We release our pipeline, coding scheme, and event-level data.",
+   "publicationDate": "2026-08-20T15:51:54.000Z",
+   "votes": 13,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "From Agent Behaviour to Agent-Friendly Documentation\nAn Empirical Study of How Coding Agents Discover, Read, and Write Technical Documentation\nZhijun Gao\nPeking University\nBeijing, China\ngaozhijun@pku..."
+    },
+    {
+     "pageNumber": 2,
+     "snippet": "Gao and Chen\nDocumentation is nearly as often an output as an input.\nProduction (1,401 events) occurs at 0.87\u00d7 the rate of consultation\n(1,615 events), and 41.5% of agentic pull requests change docume..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2608.09158",
+   "title": "From Inaudible Inputs to Model Failures: Low-Frequency Safety Risks in LALMs",
+   "abstract": "Large audio-language models (LALMs) have demonstrated strong capabilities in understanding diverse audio inputs. This diversity includes low-frequency signals that are inaudible to humans but can still enter the model and influence its generation. However, the practical impact of such low-frequency inputs on LALMs remains largely unexplored. In this paper, we propose Intermittent Low-Frequency Lockout (ILL), an inaudible red teaming method that evaluates this risk using a universal waveform template in a black box setting. ILL uses Sentence Attention Scale Estimation to determine active intervals and Frequency Confusion Transfer to construct a low-frequency waveform with continuous phase from corpus spectral variation. To mitigate this risk, we propose Distributional Requery Guard (DRG) to detect low-frequency distribution shifts and conditionally request a second recording for semantic recovery. Across six LALMs and multiple audio understanding tasks, ILL reduces accuracy by up to 67 percentage points while receiving a mean human audibility rating of 1.33, close to 1.17 for clean audio; DRG raises mean attacked accuracy from 28.5\\% to 46.1\\% after clean reacquisition. These findings identify a previously overlooked safety risk for LALMs and provide a foundation for future research on robust audio understanding.",
+   "publicationDate": "2026-08-10T06:09:50.000Z",
+   "votes": 4,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "...cy\ninputs on LALMs remains largely unexplored. In this paper,\nwe propose Intermittent Low-Frequency Lockout (ILL), an\ninaudible red teaming method that evaluates this risk using\na universal waveform t..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "From Inaudible Inputs to Model Failures: Low-Frequency Safety Risks in LALMs\nYuanhe Zhang\n1,\n\u22c6\n, Weiliu Wang\n1,\n\u22c6\n, Jie Ren\n1\n, Liang Lin\n2\n, Zhenhong Zhou\n3\n,\nHaoran Gao\n4\n, Kun Wang\n3\n, Chen Li\n5\n, ..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2610.07502",
+   "title": "Closing Ambient Clinical Documentation Gaps with Automated Provider Queries",
+   "abstract": "Provider queries are clarifying requests sent by clinical documentation specialists to physicians to close gaps in the clinical note and ensure accurate billing. Prior work automates note drafting, ICD-10 coding, and order extraction assuming a complete transcript, leaving these gaps unaddressed. We study whether an LLM can automate the query loop, termed DAU (Draft, Ask, Update), across those three tasks. An audit of 3,000 real visits identifies the sources of missing documentation, from which we build five transcript-degradation benchmarks on public data. Analyzing 21k clarification turns on real conversations, we find useful-question predictors are task-specific: oracle confidence dominates, but note completeness needs only simple recall questions while ICD-10 coding needs harder, multi-option ones. About 9% of turns hurt performance, driven by redundant questions and non-answers that still trigger a rewrite. Deployment depends on learning \"when not\" as much as \"what to\" ask.",
+   "publicationDate": "2026-10-05T23:07:16.000Z",
+   "votes": 1,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "...5). An incomplete note can\nlead to miscoded diagnoses, mis-billed visits, and\nerrors in quality and safety reporting. Hospitals\nhave clinical documentation integrity (CDI) pro-\ngrams to catch issues a..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "Closing Ambient Clinical Documentation Gaps\nwith Automated Provider Queries\nJoseph Paul Cohen\nAmazon\njoseph@josephpcohen.com\nRaj Shah\nAmazon\nHan-Chin Shing\nAmazon\nFang Wang\nAmazon\nSusan Nguyen, RN\nAma..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2606.17904",
+   "title": "DiagFlowBench: Evaluating How Language Models Handle Off-Procedure Inputs in Grounded Diagnostic Dialogue",
+   "abstract": "Language models increasingly serve as advisory systems in maintenance operations. To prevent hallucination, established approaches ground these models in procedural documentation, constraining them to prescribed sequences. In practice, however, operators may stray from these steps, requiring models to recognise unscripted, off-procedure utterances. Current benchmarks rarely prioritise this capability. We introduce DiagFlowBench, a dataset of 50 industrial diagnostic flowcharts from a consumer manufacturer converted into 1,676 multi-turn conversations that contrast compliant with off-procedure utterances. Evaluating a panel of ten commercial and open-weight models reveals high variability in abstention rates, with models often selecting a real but contextually inadequate step rather than fabricating facts. The inherent plausibility and authority of this mapped but wrong advice exposes a challenging vulnerability for grounding systems. Code and data are released at this https URL.",
+   "publicationDate": "2026-06-16T13:28:55.000Z",
+   "votes": 1,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "DIAGFLOWBENCH: Evaluating How Language Models Handle\nOff-Procedure Inputs in Grounded Diagnostic Dialogue\nGuillermo Gil de Avalle\n1\n, Laura Maruster\n1\n, Shaina Raza\n2\n, Christos Emmanouilidis\n1\n1 \nUni..."
+    },
+    {
+     "pageNumber": 1,
+     "snippet": "...2023; Colabianchi et al., 2024),\nhelping operators through natural language to con-\nsult procedural documentation to propose the next\naction based on provided observations (Turner\net al., 2019; Deng e..."
+    }
+   ]
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.39909",
+   "title": "DoGBench: Can Agents Meet Expert Standards for User-Facing Documentation?",
+   "abstract": "We introduce DoGBENCH (Documentation Generation Benchmark), to our knowledge, the first benchmark for generating and maintaining real user-facing software documentation. It asks whether an agent can produce documentation that experienced technical writers would accept in review. The benchmark contains 292 items from open source projects, including Helm, PostHog, and Mautic. Each item gives the agent a pre-change repository and a trigger, such as a code pull request or a reported documentation gap. The agent must first decide whether the documentation needs an update. For items that need one, the agent must produce an acceptable patch in one attempt. For items that do not need updates, the agent must abstain. Task-specific rubrics, validated with project maintainers, score each patch on accuracy, completeness, reader guidance, placement, and repository conventions. The composite score combines patch quality with correct abstention, and a score of 100 means an agent meets every requirement for the task. Scores should not be interpreted as a percentage of an expert's capability. We evaluated seven agents. The highest-scoring agent reached 47.3 out of 100 on the 117-item held-out split. In a separate audit of 1,267 patches, the most common failure modes were task-completion gaps (45.5%), technical inaccuracies (36.6%), and incomplete conceptual or reference coverage (32.5%). Analysis of the corresponding trajectories identified three key patterns associated with these failures: (1) describing interfaces without examining how readers use them (36.0%), (2) missing decisive evidence and filling the gaps with plausible assumptions (33.1%), and (3) stopping after finding the first plausible documentation surface and leaving other affected pages stale (30.1%).",
+   "publicationDate": "2026-09-30T15:04:31.000Z",
+   "votes": 0,
+   "snippets": [
+    {
+     "pageNumber": 1,
+     "snippet": "DOGBENCH: Can Agents Meet Expert Standards for User-Facing\nDocumentation?\nFrances Liu\n* \nManny Silva Paige Calvert Ayu Adiati Sarah Sanders\nPROMPTLESS PROMPTLESS / DOC DETECTIVE HELM MAUTIC POSTHOG\nAb..."
+    },
+    {
+     "pageNumber": 2,
+     "snippet": "... gives an agent\na pre-change repository and a trigger, which is either a pull request or a reported documentation gap. The\nagent first decides whether the trigger calls for a documentation change. For..."
+    }
+   ]
+  }
+ ],
+ "doc-verification-agents": [
+  {
+   "source": "alphaxiv",
+   "id": "2610.09581",
+   "title": "Correct Answers, Unsupported Findings: Evidence Binding in Forensic Reconstruction of LLM Agent Logs",
+   "abstract": "Forensic reconstruction of LLM-agent actions requires not only recovering the correct value, but establishing which preserved record supports that finding. Tool logs, generated explanations, and local citation identifiers capture different parts of this evidence, yet a citation identifier does not establish a source unless its binding to a record is preserved. We audit this distinction using 64 mechanically checkable cases from saved AgentDojo Banking executions. Two LLM readers reconstruct source relationships under controlled variations in visible evidence and identifier-to-record bindings. We separately evaluate complete-record agreement, evidence-grounded findings, justified abstention, and unsupported assertions. With original identifiers and no binding table, Sonnet recovered every literal source location but made unsupported citation-source assertions in 26 of 28 cases requiring the missing relation; 22 nevertheless matched the complete reference. Adding explicit bindings improved grounded reconstruction for both readers, whereas identifier renaming alone provided no consistent remedy. A deterministic same-packet comparator correctly resolved the bounded task or abstained throughout. These results show that factual agreement alone is insufficient for evaluating forensic reconstruction of agent logs and motivate preserving explicit record bindings to distinguish supported findings from correct guesses.",
+   "publicationDate": "2026-10-07T07:26:33.000Z",
+   "votes": 1
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2610.01345",
+   "title": "ARCCS: An Automated Regulatory Compliance Checking System",
+   "abstract": "Regulatory compliance checking - deciding whether a target document satisfies the obligations of a regulation - requires interpreting dense legal text, identifying which provisions apply, and grounding each decision in explicit evidence. We present ARCCS, an end-to-end, automated, agentic, and regulation-agnostic Legal NLP system for compliance checking. ARCCS decomposes raw regulatory text into atomic, traceable requirements and evaluates a target document against them using retrieved evidence, confidence scores, and human-interpretable justifications. This design decouples compliance assessment from any fixed regulatory template or predefined rule set, enabling the pipeline to operate over regulations of varying size and structure. We evaluate ARCCS in two complementary settings. First, in a GDPR policy-document evaluation, LLM-based judges find its decisions and justifications legally and evidentially consistent in up to 96.67% of the assessed cases. Second, on an EU public-procurement benchmark comprising more than 1,200 individual rule checks, the system attains 98.8% accuracy in violation detection. ARCCS is, to our knowledge, the first fully open-source system for end-to-end regulatory compliance checking and auditable report generation.",
+   "publicationDate": "2026-10-01T09:17:22.000Z",
+   "votes": 0
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.29145",
+   "title": "Claim-Gated Source-Risk Auditing for Generative Search",
+   "abstract": "A generative search answer can cite a supported passage yet omit a source relationship that changes its interpretation. We specify a claim-gated audit of the query-source-answer tuple. An omission is resolved only when relationship evidence, answer adoption, materiality, and disclosure are all observed; incomplete evidence remains unresolved rather than being treated as independence. The specification separates this endpoint from citation support and review priority, and binds decisions to versioned evidence spans. A reference checker makes the record contract executable. On an exhaustive synthetic suite, it reproduces all 81 three-state predicate combinations and rejects 192 deliberately malformed records. Common-guard baselines and predicate ablations isolate endpoint logic from missing-evidence handling, while controlled transitions check support separation and evidence removal. These are finite contract-conformance results, not detector accuracy or evidence of improved user outcomes. We define the independent annotation, held-out evaluation, and paired utility tests still required to establish semantic validity and deployment benefit.",
+   "publicationDate": "2026-09-24T07:22:14.000Z",
+   "votes": 1
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.13389",
+   "title": "RFCLLM: Evaluating LLMs' Reasoning Ability of Network Protocol State Machines",
+   "abstract": "Mapping textual specifications into formal representations is essential for ensuring the correctness of protocol designs and implementations. LLM-generated mappings, used for networking security or testing, are assumed to capture a perfect understanding of the specification, which may not hold in practice. The goal of this paper is to assess the extent to which LLMs can interpret the specification correctly. We examine the degree to which an LLM's implicit representation of a finite-state transition system-defined via natural language descriptions-aligns with a manually generated ground-truth model. We designed 4 tasks and 1482 task queries for 16 protocols. We evaluated different judge biases, observed the inherent difficulty gaps between tasks, looked into the effect of 4 context types, and the influence of protocol characteristics. Our work contributes to a step toward verifying whether LLMs can really be trusted in FSM (Finite State Machine) reasoning of protocol specifications.",
+   "publicationDate": "2026-09-11T18:00:16.000Z",
+   "votes": 5
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.14017",
+   "title": "Deterministic Temporal Reconciliation for Effective-Dated Identity Lifecycle Events",
+   "abstract": "Identity lifecycle automation processes workforce changes that carry two distinct notions of time: when a business fact becomes effective and when an authoritative source last revised it. Corrections, cancellations, future-dated changes, duplicate delivery, and out-of-order arrival can therefore produce divergent account states when processors rely on transport order or effective time alone. This paper presents a deterministic temporal reconciliation method for effective-dated identity events. The method separates logical business facts from their physical revisions, deduplicates exact replays, selects the authoritative revision of each fact using transaction-time freshness, removes canceled facts, and then applies surviving facts in valid-time order. We establish permutation invariance, replay idempotence, revision dominance, and deterministic snapshot construction under explicit source assumptions. A reproducible synthetic fault-injection benchmark compares the method with arrival-order, effective-time, and transaction-time processing. Across 250,000 generated identity histories and 1,585,589 delivered records, the proposed method reconstructed the separately retained authoritative final state in all tested cases. At 75% delivery disorder, exact-state accuracy was 42.35% for arrival-order processing, 85.38% for effective-time sorting, 76.61% for transaction-time sorting, and 100% for the proposed method. A separate 40,000-permutation experiment produced the same final state for every tested permutation under the proposed reconciliation contract.",
+   "publicationDate": "2026-09-12T16:03:12.000Z",
+   "votes": 0
+  },
+  {
+   "source": "alphaxiv",
+   "id": "2609.12156",
+   "title": "A decision-basis contract for auditable LLM-assisted medical billing verification: deterministic rules, verbatim evidence, and fail-closed abstention",
+   "abstract": "This work presents a proof of concept for auditable LLM-assisted medical billing verification based on a decision-basis contract. The contract separates deterministic checks of versioned fee-catalog rules from LLM-based assessment of free-text documentation. The deterministic layer resolves the applicable catalog release and checks code availability, quantity limits, and exclusions. The semantic layer classifies each claimed item as supported, contradicted, or missing required information. Support and contradiction require a verbatim evidence span; unavailable rule context, unsuccessful assessment, or missing required evidence prevents support through fail-closed abstention. We evaluated four locally run open-weight models on a synthetic catalog and 36 curated cases under the contract, an ablation without explicit documentation requirements, and an end-to-end baseline. Outcome agreement varied across models and showed no consistent advantage over the baseline. Explicit documentation requirements improved identification of missing information for all four models. The evidence gate also exposed cases in which correct raw judgments lacked valid evidence and were converted to incomplete decision-basis entries. The results show how explicit decision records can make rule findings, documentation judgments, and abstention reasons inspectable. Evaluation on real catalogs, independently annotated documentation, and with human reviewers is required to assess practical value.",
+   "publicationDate": "2026-09-10T19:43:39.000Z",
+   "votes": 0
+  }
+ ]
+}
