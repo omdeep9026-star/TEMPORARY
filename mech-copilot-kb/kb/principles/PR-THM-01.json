@@ -1,0 +1,34 @@
+{
+ "id": "PR-THM-01",
+ "level": "advanced",
+ "category": "thermal",
+ "title": "Thermal expansion and material pairing",
+ "simple": "Materials grow when heated, each at its own rate. Joining two different materials means the joint sees the difference.",
+ "equations": [
+  "dL = alpha*L*dT"
+ ],
+ "variables": {
+  "alpha": "CTE (um/m-K)",
+  "dT": "temperature change (K)"
+ },
+ "visual": "assets/diagrams/PR-THM-01.svg",
+ "failure_modes": [
+  "aluminium bolted to steel - bolt loosens when hot",
+  "bearing housing shrink fit lost when hot",
+  "glass-metal seals crack"
+ ],
+ "example": "An aluminium plate on a steel frame 1 m long and 50 K hotter is 0.55 mm longer - enough to bind slides.",
+ "agent_use": "Cross-material interfaces with expected dT > 30 K trigger a CTE comparison and a slip-joint/slot suggestion.",
+ "limits": "Uniform-temperature assumption; gradients need heat-transfer analysis.",
+ "verify_with": [
+  "CTE table (KB)",
+  "thermal FEA (future)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

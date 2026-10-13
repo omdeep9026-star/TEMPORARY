@@ -1,0 +1,48 @@
+{
+ "asset": {
+  "step": "assets/cad/housing-plate.step",
+  "stl": "assets/cad/housing-plate.stl",
+  "preview_glb": "assets/previews/housing-plate.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   40.0,
+   40.0,
+   8.0
+  ],
+  "volume_mm3": 9731.2
+ },
+ "parameters": {
+  "plate_mm": [
+   40,
+   40,
+   8
+  ],
+  "seat_dia_mm": 22.0
+ },
+ "id": "housing-plate",
+ "type": "component",
+ "category": "bearings",
+ "label": "Bearing housing plate",
+ "summary": "Plate with a 608 seat for the gear-train demo.",
+ "interfaces": [],
+ "connections": {
+  "accepts": [
+   "bearing-608zz"
+  ],
+  "mates_with": [],
+  "joint": "press-seat"
+ },
+ "governing": {
+  "principles": [
+   "PR-BRG-01"
+  ]
+ },
+ "checks": [
+  "seat tolerance H7 assumed - verify before fit claims"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

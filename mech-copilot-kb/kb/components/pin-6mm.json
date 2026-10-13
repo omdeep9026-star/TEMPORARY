@@ -1,0 +1,44 @@
+{
+ "asset": {
+  "step": "assets/cad/pin-6mm.step",
+  "stl": "assets/cad/pin-6mm.stl",
+  "preview_glb": "assets/previews/pin-6mm.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   6.0,
+   6.0,
+   25.0
+  ],
+  "volume_mm3": 706.9
+ },
+ "parameters": {
+  "diameter_mm": 6.0,
+  "length_mm": 25.0
+ },
+ "id": "pin-6mm",
+ "type": "component",
+ "category": "fasteners",
+ "label": "Clevis pin 6 mm",
+ "summary": "Plain pin used as linkage pivot.",
+ "interfaces": [],
+ "connections": {
+  "accepts": [],
+  "mates_with": [
+   "lever-arm-80",
+   "coupler-link-120"
+  ],
+  "joint": "sliding-pin"
+ },
+ "governing": {
+  "principles": [
+   "PR-ASM-01",
+   "PR-FST-01"
+  ]
+ },
+ "checks": [],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

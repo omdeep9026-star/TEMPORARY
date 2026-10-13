@@ -1,0 +1,60 @@
+{
+ "asset": {
+  "step": "assets/cad/pipe-flange-dn25.step",
+  "stl": "assets/cad/pipe-flange-dn25.stl",
+  "preview_glb": "assets/previews/pipe-flange-dn25.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   41.0,
+   41.0,
+   51.0
+  ],
+  "volume_mm3": 31273.8
+ },
+ "parameters": {
+  "DN": 25,
+  "length_mm": 40.0,
+  "flange_thickness_mm": 8.0,
+  "bolt_dia_mm": 6.0
+ },
+ "id": "pipe-flange-dn25",
+ "type": "component",
+ "category": "piping",
+ "label": "Pipe stub with flange DN25 (demo)",
+ "summary": "DN25 pipe stub with 4-bolt flange for the pipe-and-valve demo assembly. Simplified flange geometry (no standard traceability).",
+ "interfaces": [
+  {
+   "kind": "flange_face",
+   "spec": {
+    "DN": 25,
+    "bolt_pattern": 4,
+    "bolt_dia_mm": 6.0,
+    "for": "valve-body-dn25 or another flange"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [
+   "valve-body-dn25"
+  ],
+  "mates_with": [
+   "valve-body-dn25"
+  ],
+  "joint": "bolted-flange + gasket"
+ },
+ "governing": {
+  "principles": [
+   "PR-ASM-01",
+   "PR-FST-01"
+  ]
+ },
+ "checks": [
+  "real installations must use the applicable flange standard (e.g. EN 1092) - this part is demo-only"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0",
+  "note": "not a standard-traceable flange"
+ }
+}

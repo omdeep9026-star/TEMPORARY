@@ -1,0 +1,32 @@
+{
+ "id": "PR-ASM-01",
+ "level": "foundation",
+ "category": "assembly",
+ "title": "Assembly order and disassembly dependencies",
+ "simple": "Assemblies have an order: what must be inside goes in first. Disassembly is the reverse, and hidden retainers (circlips, set screws, threadlocker) block parts.",
+ "equations": [],
+ "variables": {
+  "BOM": "bill of materials",
+  "precedence": "which part before which"
+ },
+ "visual": "assets/diagrams/PR-ASM-01.svg",
+ "failure_modes": [
+  "bearing trapped behind a shoulder with no puller access",
+  "fastener unreachable after next step",
+  "gasket omitted - leak"
+ ],
+ "example": "Press bearing into housing BEFORE inserting the shaft; afterwards the shoulder blocks the press.",
+ "agent_use": "The KB assembly graph stores install_order and blockers; any proposed modification must preserve a valid topological order or list the required full teardown.",
+ "limits": "Graph is static; actual service procedure should follow the OEM manual for real equipment.",
+ "verify_with": [
+  "assembly graph check (agent)",
+  "human service manual"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

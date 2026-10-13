@@ -1,0 +1,45 @@
+{
+ "asset": {
+  "step": "assets/cad/lever-arm-80.step",
+  "stl": "assets/cad/lever-arm-80.stl",
+  "preview_glb": "assets/previews/lever-arm-80.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   6.0,
+   6.0,
+   80.0
+  ],
+  "volume_mm3": 2261.9
+ },
+ "parameters": {
+  "length_mm": 80.0,
+  "pivot_dia_mm": 6.0
+ },
+ "id": "lever-arm-80",
+ "type": "component",
+ "category": "linkages",
+ "label": "Lever arm 80 mm",
+ "summary": "Rigid lever arm for the four-bar demo.",
+ "interfaces": [],
+ "connections": {
+  "accepts": [
+   "shaft-6mm"
+  ],
+  "mates_with": [
+   "lever-arm-80"
+  ],
+  "joint": "revolute-pins"
+ },
+ "governing": {
+  "principles": [
+   "PR-LVR-01",
+   "PR-FBD-01"
+  ]
+ },
+ "checks": [],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

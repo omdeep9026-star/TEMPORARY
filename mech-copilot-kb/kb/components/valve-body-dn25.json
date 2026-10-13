@@ -1,0 +1,55 @@
+{
+ "id": "valve-body-dn25",
+ "type": "component",
+ "category": "piping",
+ "label": "Valve body DN25 (demo)",
+ "summary": "Simplified valve body for the pipe-and-valve demo: flanged both ends, DN25 bore.",
+ "interfaces": [
+  {
+   "kind": "flange_face",
+   "spec": {
+    "DN": 25,
+    "bolt_pattern": 4,
+    "for": "pipe-flange-dn25"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [
+   "pipe-flange-dn25"
+  ],
+  "mates_with": [
+   "pipe-flange-dn25"
+  ],
+  "joint": "bolted-flange + gasket"
+ },
+ "geometry": {
+  "bbox_mm": [
+   46.0,
+   34.0,
+   30.0
+  ],
+  "volume_mm3": 32193.8
+ },
+ "parameters": {
+  "DN": 25,
+  "face_to_face_mm": 60.0
+ },
+ "asset": {
+  "step": "assets/cad/valve-body-dn25.step",
+  "stl": "assets/cad/valve-body-dn25.stl",
+  "preview_glb": "assets/previews/valve-body-dn25.glb"
+ },
+ "governing": {
+  "principles": [
+   "PR-ASM-01"
+  ]
+ },
+ "checks": [
+  "demo part only"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

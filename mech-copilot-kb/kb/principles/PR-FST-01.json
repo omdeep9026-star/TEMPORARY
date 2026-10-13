@@ -1,0 +1,37 @@
+{
+ "id": "PR-FST-01",
+ "level": "foundation",
+ "category": "fasteners",
+ "title": "Fasteners and preload",
+ "simple": "A tightened bolt stretches like a spring; the stretch clamps the parts. Most bolted joints fail by loosening or by overtightening, not by breaking.",
+ "equations": [
+  "T = K*F*d (K ~ 0.2 dry)",
+  "clamp < 75% proof load"
+ ],
+ "variables": {
+  "T": "torque (N*m)",
+  "F": "preload (N)",
+  "d": "nominal dia (m)",
+  "K": "nut factor"
+ },
+ "visual": "assets/diagrams/PR-FST-01.svg",
+ "failure_modes": [
+  "vibration loosening - use lock feature",
+  "thread galling (stainless)",
+  "over-torque strip"
+ ],
+ "example": "M5 bolt torqued to ~5 N*m (dry K=0.2) gives ~5 kN clamp - enough for most small brackets.",
+ "agent_use": "When a fastener change is proposed, check diameter class and mate's hole size; flag any torque requirement as human-verified.",
+ "limits": "K varies 0.1-0.3 with lubrication; threaded-joint standards (VDI 2230) needed for real design.",
+ "verify_with": [
+  "torque tables (human)",
+  "QCAD library hole sizes"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

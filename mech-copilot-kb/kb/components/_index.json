@@ -1,0 +1,66 @@
+{
+ "schema": "0.1",
+ "count": 12,
+ "components": [
+  {
+   "id": "spur-gear-18t-m2",
+   "label": "Spur gear 18T module 2",
+   "category": "gears"
+  },
+  {
+   "id": "spur-gear-30t-m2",
+   "label": "Spur gear 30T module 2",
+   "category": "gears"
+  },
+  {
+   "id": "shaft-6mm",
+   "label": "Shaft dia 6 mm",
+   "category": "shafts"
+  },
+  {
+   "id": "bearing-608zz",
+   "label": "Ball bearing 608ZZ (8x22x7)",
+   "category": "bearings"
+  },
+  {
+   "id": "pulley-gt2-16t",
+   "label": "GT2 timing pulley 16T (6 mm belt)",
+   "category": "drives"
+  },
+  {
+   "id": "pipe-flange-dn25",
+   "label": "Pipe stub with flange DN25 (demo)",
+   "category": "piping"
+  },
+  {
+   "id": "valve-body-dn25",
+   "label": "Valve body DN25 (demo)",
+   "category": "piping"
+  },
+  {
+   "id": "spring-stub",
+   "label": "Compression spring stub",
+   "category": "springs"
+  },
+  {
+   "id": "lever-arm-80",
+   "label": "Lever arm 80 mm",
+   "category": "linkages"
+  },
+  {
+   "id": "coupler-link-120",
+   "label": "Coupler link 120 mm",
+   "category": "linkages"
+  },
+  {
+   "id": "housing-plate",
+   "label": "Bearing housing plate",
+   "category": "bearings"
+  },
+  {
+   "id": "pin-6mm",
+   "label": "Clevis pin 6 mm",
+   "category": "fasteners"
+  }
+ ]
+}

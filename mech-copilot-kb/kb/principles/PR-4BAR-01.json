@@ -1,0 +1,34 @@
+{
+ "id": "PR-4BAR-01",
+ "level": "advanced",
+ "category": "linkages",
+ "title": "Four-bar linkages and motion transmission",
+ "simple": "Four bars, four pins: fix one bar (ground) and the others move in a determined path. Grashof's rule says which link can fully rotate.",
+ "equations": [
+  "Grashof: s + l <= p + q"
+ ],
+ "variables": {
+  "s,l": "shortest/longest link",
+  "p,q": "other two"
+ },
+ "visual": "assets/diagrams/PR-4BAR-01.svg",
+ "failure_modes": [
+  "non-Grashof crank cannot pass through dead points",
+  "transmission angle < 40 deg - high joint forces",
+  "coupler path has cusps"
+ ],
+ "example": "Windshield wiper: crank-rocker converts motor rotation into a sweep.",
+ "agent_use": "When link lengths change, re-check Grashof and keep the transmission angle above ~40 deg through the working arc; else flag as unverified geometry.",
+ "limits": "Position kinematics only; velocities/accelerations need solving over the cycle (Pyslvs or numeric).",
+ "verify_with": [
+  "Grashof + angle check (agent)",
+  "Pyslvs path solve (optional, AGPL)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

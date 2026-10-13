@@ -1,0 +1,107 @@
+{
+ "schema": "0.1",
+ "rules": [
+  {
+   "id": "R-GEAR-MODULE",
+   "applies_to": "gear_mesh edges",
+   "check": "module_a == module_b",
+   "on_fail": "block + explain tooth-size mismatch",
+   "refs": [
+    "PR-GTR-01"
+   ]
+  },
+  {
+   "id": "R-GEAR-CENTRE",
+   "applies_to": "gear_mesh edges",
+   "check": "|centre_distance - m*(za+zb)/2| <= 0.05 mm",
+   "on_fail": "block + suggest centre distance",
+   "refs": [
+    "PR-GTR-01"
+   ]
+  },
+  {
+   "id": "R-BORE-FIT",
+   "applies_to": "bore interfaces",
+   "check": "shaft_dia <= bore_dia + 0.1 mm",
+   "on_fail": "block; explain interference needs press spec",
+   "refs": [
+    "PR-TOL-01"
+   ]
+  },
+  {
+   "id": "R-GRASHOF",
+   "applies_to": "four-bar parameter changes",
+   "check": "report s+l vs p+q; warn if crank rotation required and non-Grashof",
+   "on_fail": "warn + suggest which link to re-ground",
+   "refs": [
+    "PR-4BAR-01"
+   ]
+  },
+  {
+   "id": "R-DOF",
+   "applies_to": "assembly graph edits",
+   "check": "DOF of mechanism unchanged unless user asked",
+   "on_fail": "warn with DOF count before/after",
+   "refs": [
+    "PR-DOF-01"
+   ]
+  },
+  {
+   "id": "R-GASKET",
+   "applies_to": "bolted flange joints",
+   "check": "gasket part present in requires list",
+   "on_fail": "block + cite SC-VALVE-LEAK-01",
+   "refs": [
+    "PR-FST-01"
+   ]
+  },
+  {
+   "id": "R-MATERIAL-KNOWN",
+   "applies_to": "material fields",
+   "check": "material in KB materials table",
+   "on_fail": "refuse to quote strength numbers; request datasheet",
+   "refs": [
+    "PR-MAT-01"
+   ]
+  },
+  {
+   "id": "R-SPRING-RATE",
+   "applies_to": "springs",
+   "check": "rate is null unless wire dia + coils + material given",
+   "on_fail": "keep null; show formula",
+   "refs": [
+    "PR-SPR-01"
+   ]
+  },
+  {
+   "id": "R-LOAD-CLAIMS",
+   "applies_to": "any force/stress/life claim",
+   "check": "must be either (a) exact arithmetic shown, or (b) labeled estimate, or (c) solver output with job files",
+   "on_fail": "strip claim; emit unverified label",
+   "refs": [
+    "PR-FBD-01",
+    "PR-FAT-01"
+   ]
+  },
+  {
+   "id": "R-ASSEMBLY-ORDER",
+   "applies_to": "graph edits",
+   "check": "install_order remains a valid topological order",
+   "on_fail": "block + show conflicting edge",
+   "refs": [
+    "PR-ASM-01"
+   ]
+  }
+ ],
+ "labeling_policy": {
+  "verified-arithmetic": "exact algebra/geometry derived from parameters - shown with the formula",
+  "estimate": "closed-form approximations with stated assumptions (belt length, bolt torque via K=0.2)",
+  "solver-verified": "produced by CalculiX/PyNite run; job files retained",
+  "unverified-proposal": "everything else; MUST be labeled in UI and responses",
+  "never-do": "invent load ratings, material strengths, torque values, or simulation results"
+ },
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0"
+ }
+}

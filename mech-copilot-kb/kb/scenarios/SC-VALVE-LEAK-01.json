@@ -1,0 +1,46 @@
+{
+ "id": "SC-VALVE-LEAK-01",
+ "assembly": "ASM-PIPEVALVE-01",
+ "symptom": "Weeping at flange joint after valve replacement.",
+ "probable_causes": [
+  {
+   "cause": "gasket not replaced or wrong thickness",
+   "evidence_to_collect": "check gasket; 2 mm spec",
+   "kb_refs": [
+    "PR-TOL-01"
+   ]
+  },
+  {
+   "cause": "uneven bolt torque - flange cocked",
+   "evidence_to_collect": "measure flange gap at 4 points",
+   "kb_refs": [
+    "PR-FST-01"
+   ]
+  },
+  {
+   "cause": "flange face damage (scored)",
+   "evidence_to_collect": "visual + feel",
+   "kb_refs": [
+    "PR-ASM-01"
+   ]
+  }
+ ],
+ "procedures": [
+  "1. depressurize and drain",
+  "2. break joint; inspect faces; replace gasket ALWAYS",
+  "3. clean faces; no old gasket fragments",
+  "4. finger-tight all bolts, then torque in cross sequence in 3 steps",
+  "5. torque values from a human-verified table - agent must not invent them"
+ ],
+ "verification": "pressure test per site procedure before returning to service",
+ "safety_notes": "line contents may be hazardous; verify zero energy before breaking joint",
+ "kb_refs": [
+  "PR-FST-01",
+  "PR-TOL-01",
+  "PR-ASM-01"
+ ],
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0"
+ }
+}

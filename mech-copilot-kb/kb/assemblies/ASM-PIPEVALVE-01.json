@@ -1,0 +1,112 @@
+{
+ "id": "ASM-PIPEVALVE-01",
+ "type": "assembly",
+ "label": "Pipe-and-valve demo (DN25 flanged)",
+ "category": "piping",
+ "summary": "Two DN25 pipe stubs bolted to a DN25 valve body through gaskets. Demonstrates bolted joints, gasket dependencies and flange compatibility.",
+ "parameters": {
+  "DN": {
+   "value": 25
+  },
+  "gasket_thickness_mm": {
+   "value": 2.0,
+   "note": "consumable; drives tolerance stack"
+  },
+  "bolt_count_per_joint": {
+   "value": 4
+  },
+  "flange_gap_worst_case_mm": {
+   "value": 0.35,
+   "equation": "stack of flange tolerances",
+   "verified": "illustrative stack, not measured"
+  }
+ },
+ "graph": {
+  "parts": [
+   {
+    "part": "pipe-flange-dn25",
+    "quantity": 2,
+    "role": "pipe"
+   },
+   {
+    "part": "valve-body-dn25",
+    "quantity": 1,
+    "role": "valve"
+   },
+   {
+    "part": "gasket-dn25",
+    "quantity": 2,
+    "role": "seal",
+    "note": "virtual part: no geometry, thickness 2 mm"
+   },
+   {
+    "part": "bolt-M6x40",
+    "quantity": 16,
+    "role": "fastener",
+    "note": "4 per flange joint, 2 joints"
+   }
+  ],
+  "edges": [
+   {
+    "from": "pipe-flange-dn25",
+    "rel": "bolts to",
+    "to": "valve-body-dn25",
+    "interface": "flange-DN25",
+    "requires": [
+     "gasket-dn25",
+     "bolt-M6x40"
+    ]
+   },
+   {
+    "from": "gasket-dn25",
+    "rel": "sandwiched by",
+    "to": "flange faces",
+    "interface": "flange-DN25"
+   }
+  ],
+  "install_order": [
+   "valve-body-dn25",
+   "gasket-dn25",
+   "pipe-flange-dn25",
+   "bolt-M6x40 (finger tight all, then torque sequence)"
+  ],
+  "disassembly_blockers": [
+   "gasket destroyed on removal - replace on reassembly",
+   "bolt torque sequence required on rebuild"
+  ]
+ },
+ "checks": [
+  {
+   "id": "CHK-DN-MATCH",
+   "rule": "all mated flanges share DN",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-GASKET-PRESENT",
+   "rule": "every bolted flange joint lists a gasket",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-PRESSURE-RATING",
+   "rule": "PN class >= line pressure with margin",
+   "status": "requires-standard-or-datasheet"
+  },
+  {
+   "id": "CHK-TORQUE-SEQ",
+   "rule": "torque sequence and values",
+   "status": "human-verified"
+  }
+ ],
+ "repair_scenarios": [
+  "SC-VALVE-LEAK-01"
+ ],
+ "view": {
+  "layered_diagram": "section view: pipe-flange | gasket | valve-face, bolts crossing stack",
+  "animation": "exploded view steps through install_order"
+ },
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0",
+  "note": "flange geometry is demo-only, NOT standard-traceable (EN 1092 / ASME B16.5)"
+ }
+}

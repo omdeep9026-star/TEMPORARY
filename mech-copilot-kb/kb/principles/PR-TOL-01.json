@@ -1,0 +1,36 @@
+{
+ "id": "PR-TOL-01",
+ "level": "foundation",
+ "category": "manufacturing",
+ "title": "Tolerances, fits and stack-up",
+ "simple": "No dimension is exact. Stacked tolerances add up; fit classes (H7/g6 etc.) decide whether parts slide, locate or press.",
+ "equations": [
+  "worst case = sum of |t_i|",
+  "RSS = sqrt(sum t_i^2)"
+ ],
+ "variables": {
+  "t_i": "individual tolerance",
+  "H7": "hole tolerance class",
+  "g6": "shaft class (sliding fit)"
+ },
+ "visual": "assets/diagrams/PR-TOL-01.svg",
+ "failure_modes": [
+  "all tolerances stacked - interference impossible to assemble",
+  "3D-printed holes shrink - use polyholes/undersize",
+  "tolerance on both flanges of a gasket - leak path"
+ ],
+ "example": "Two flanges each +/-0.1 mm with a 0.15 mm gasket may leak at worst case; spec the gasket first.",
+ "agent_use": "Any added interface adds tolerance to the stack; run the stack check on the assembly's critical dimension and warn before worst case exceeds the gap.",
+ "limits": "Simple 1D stacks only; 2D/3D stacks and GD&T need CAD-level analysis.",
+ "verify_with": [
+  "stack check (agent)",
+  "fit tables (KB)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "id": "spur-gear-18t-m2",
+ "asset": {
+  "step": "assets/cad/spur-gear-18t-m2.step",
+  "stl": "assets/cad/spur-gear-18t-m2.stl",
+  "preview_glb": "assets/previews/spur-gear-18t-m2.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   38.222,
+   38.279,
+   6.0
+  ],
+  "volume_mm3": 5074.7
+ },
+ "parameters": {
+  "teeth": 18,
+  "module_mm": 2.0,
+  "thickness_mm": 6.0,
+  "bore_dia_mm": 6.0
+ },
+ "type": "component",
+ "category": "gears",
+ "label": "Spur gear 18T module 2",
+ "summary": "External spur gear, 18 teeth, module 2 mm. Meshes with any module-2 spur gear; centre distance = m*(z1+z2)/2.",
+ "interfaces": [
+  {
+   "kind": "bore",
+   "spec": {
+    "diameter_mm": 6.0,
+    "fit": "H7/k6 nominal",
+    "for": "shaft-6mm"
+   }
+  },
+  {
+   "kind": "gear_mesh",
+   "spec": {
+    "module_mm": 2.0,
+    "pressure_angle_deg": 20,
+    "for": "any module-2 external spur gear"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [
+   "shaft-6mm"
+  ],
+  "mates_with": [
+   "spur-gear-30t-m2"
+  ],
+  "joint": "rigid-to-shaft + mesh-contact"
+ },
+ "governing": {
+  "principles": [
+   "PR-GTR-01"
+  ],
+  "equations": [
+   "centre_distance = m*(z1+z2)/2",
+   "ratio = z2/z1",
+   "torque_out = torque_in * (z2/z1) * efficiency"
+  ]
+ },
+ "checks": [
+  "centre distance must equal m*(z1+z2)/2",
+  "efficiency 0.94-0.97 per mesh (lubricated steel)"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0",
+  "note": "tooth profile simplified, not involute"
+ }
+}

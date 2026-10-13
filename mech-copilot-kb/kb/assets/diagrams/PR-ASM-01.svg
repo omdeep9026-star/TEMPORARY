@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Assembly sequence / disassembly dependencies</text>
+
+<rect x="60" y="40" width="100" height="36" fill="#1d2c45" stroke="#cde"/><text x="110" y="63" fill="#cde" font-size="12" text-anchor="middle">1. housing</text>
+<rect x="190" y="40" width="100" height="36" fill="#1d2c45" stroke="#cde"/><text x="240" y="63" fill="#cde" font-size="12" text-anchor="middle">2. bearing in</text>
+<rect x="320" y="40" width="100" height="36" fill="#1d2c45" stroke="#cde"/><text x="370" y="63" fill="#cde" font-size="12" text-anchor="middle">3. shaft in</text>
+<rect x="125" y="110" width="100" height="36" fill="#1d2c45" stroke="#ffd166"/><text x="175" y="133" fill="#ffd166" font-size="12" text-anchor="middle">4. gear on</text>
+<rect x="255" y="110" width="100" height="36" fill="#1d2c45" stroke="#ffd166"/><text x="305" y="133" fill="#ffd166" font-size="12" text-anchor="middle">5. retention</text>
+<line x1="160" y1="76" x2="185" y2="110" stroke="#8899aa"/><line x1="290" y1="76" x2="270" y2="110" stroke="#8899aa"/>
+<line x1="370" y1="76" x2="320" y2="110" stroke="#8899aa"/><line x1="225" y1="146" x2="255" y2="146" stroke="#8899aa"/>
+<text x="240" y="195" fill="#ffd166" font-size="13" text-anchor="middle">disassembly = reverse order; check hidden retainers</text>
+
+</svg>

@@ -1,0 +1,63 @@
+{
+ "id": "spur-gear-30t-m2",
+ "asset": {
+  "step": "assets/cad/spur-gear-30t-m2.step",
+  "stl": "assets/cad/spur-gear-30t-m2.stl",
+  "preview_glb": "assets/previews/spur-gear-30t-m2.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   62.222,
+   62.257,
+   6.0
+  ],
+  "volume_mm3": 15306.5
+ },
+ "parameters": {
+  "teeth": 30,
+  "module_mm": 2.0,
+  "thickness_mm": 6.0,
+  "bore_dia_mm": 6.0
+ },
+ "type": "component",
+ "category": "gears",
+ "label": "Spur gear 30T module 2",
+ "summary": "Output gear for the 18T/30T demo train. Ratio 30/18 = 1.667, centre distance 48 mm.",
+ "interfaces": [
+  {
+   "kind": "bore",
+   "spec": {
+    "diameter_mm": 6.0,
+    "for": "shaft-6mm"
+   }
+  },
+  {
+   "kind": "gear_mesh",
+   "spec": {
+    "module_mm": 2.0,
+    "for": "spur-gear-18t-m2"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [
+   "shaft-6mm"
+  ],
+  "mates_with": [
+   "spur-gear-18t-m2"
+  ],
+  "joint": "rigid-to-shaft + mesh-contact"
+ },
+ "governing": {
+  "principles": [
+   "PR-GTR-01"
+  ]
+ },
+ "checks": [
+  "centre distance 48.0 mm"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

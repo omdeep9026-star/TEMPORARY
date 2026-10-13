@@ -1,0 +1,99 @@
+Sources:
+[1] https://github.com/looooo/freecad.gears — GitHub - looooo/freecad.gears: a gear module for freecad
+[2] http://github.com/FreeCAD/FreeCAD/commit/587f6b220b — add fcgear · FreeCAD/FreeCAD@587f6b2
+[3] https://github.com/looooo/freecad.gears/blob/master/README.md — freecad.gears/README.md at master · looooo/freecad.gears
+[4] https://awesome.ecosyste.ms/projects/github.com%2Flooooo%2Ffreecad.gears — Ecosyste.ms: Awesome
+[5] https://github.com/vedderb/freecad.gears — GitHub - vedderb/freecad.gears: a gear module for freecad
+[6] https://github.com/looooo/freecad.gears/commit/e1c80bd96392f9be524e1802f04969f3f0299752 — add spicy dependency · looooo/freecad.gears@e1c80bd
+[7] https://github.com/looooo/freecad.gears/blob/master/freecad/gears/init_gui.py — freecad.gears/freecad/gears/init_gui.py at master · looooo/freecad.gears
+[8] https://github.com/gabrielantao/FCGear — GitHub - gabrielantao/FCGear: a gear module for freecad
+[9] https://boltsparts.github.io/en/docs/0.4/document/general/licensing.html — Documentation
+[10] https://boltsparts.github.io/en/index.html — Home
+[11] https://boltsparts.github.io/en/docs/0.4/document/general/introduction.html — Documentation
+[12] https://boltsparts.github.io/en/docs/0.3/document/freecad/basefcstd.html — Documentation
+[13] https://github.com/boltsparts/BOLTS_archive/releases — Releases · boltsparts/BOLTS_archive · GitHub
+[14] https://github.com/boltsparts/boltsparts — boltsparts/boltsparts
+[15] https://github.com/FreeCAD/FreeCAD-library — A library of Parts for FreeCAD. WARNING
+[16] https://boltsparts.github.io/en/docs/0.3/document/general/introduction.html — Documentation
+[17] https://qcad.org/doc/qcad/2.2/reference/en/chapter30.html — QCad User Reference Manual - Part Library
+[18] https://www.qcad.org/en/90-dxflib — QCAD - dxflib
+[19] https://www.qcad.org/en/tutorial-working-with-the-part-library — QCAD - Tutorial: Working with the Part Library
+[20] https://www.qcad.org/doc/qcad/latest/reference/en/scripts/Widgets/LibraryBrowser/doc/LibraryBrowser_en.html — Library Browser - QCad
+[21] https://github.com/qcad/qcad/tree/master/libraries — qcad/libraries at master · qcad/qcad · GitHub
+[22] https://gitee.com/mytool/qcad — qcad: QCAD - The Open Source 2D CAD. QCAD is a crossplatform CAD solution for Windows, Mac OS X and Linux. It supports the DXF format and optionally the DWG format (through a proprietary plugin).
+[23] https://qcad.org/en/78-qcad — QCAD - 2D CAD for Windows, Linux and Mac
+[24] https://github.com/qcad/qcad — GitHub - qcad/qcad: QCAD - The Open Source 2D CAD. QCAD is a cross-platform CAD solution for Windows, macOS and Linux. It supports the DXF format and optionally the DWG format (through a proprietary plugin). · GitHub
+[25] https://asmedigitalcollection.asme.org/mechanicaldesign/article/106/4/458/433949/The-Development-of-an-Atlas-of-the-Kinematic — The Development of an Atlas of the Kinematic Structures of Mechanisms
+[26] https://link.springer.com/article/10.1007/s11012-010-9374-0 — Atlas motion platform generalized kinematic model | Meccanica
+[27] https://www.youtube.com/watch?v=qDeckdX2WCg — Kinematics of Mechanisms Test 1 Review - YouTube
+[28] https://www.scribd.com/document/347206829/Mechanism-Atlas — An Atlas of Structures, Mechanisms, and Robots | PDF | Machines - Scribd
+[29] https://www.mechref.org/md — Mechanism design
+[30] https://psmotion.com/mechdesigner/feature/kinematics-analysis-and-simulation-software-0 — Kinematics Analysis and Simulation Software | PS Motion - MechDesigner
+[31] https://people.ohio.edu/williams/html/PDF/MechanismAtlas.pdf — [PDF] An Atlas of Structures, Mechanisms, and Robots - Ohio University
+[32] https://arxiv.org/html/2510.03308v1 — Creative Synthesis of Kinematic Mechanisms - arXiv
+[33] https://doi.org/10.1007/978-1-4842-2583-7 — Building a 2D Game Physics Engine: Using HTML5 and JavaScript
+[34] https://www.youtube.com/watch?v=euypZDssYxE — 22 - How to write a rigid body simulator
+[35] https://github.locker/topics/physics — Physics projects on GitHub
+[36] https://developer.ibm.com/tutorials/wa-build2dphysicsengine — Build a simple 2D physics engine for JavaScript games
+[37] https://dokumen.pub/download/building-a-2d-game-physics-engine-using-html5-and-javascript-1st-ed-9781484225820-9781484225837-1484225821-148422583x.html — Building a 2D Game Physics Engine Using HTML5 and JavaScript [1st ed] 9781484225820, 9781484225837, 1484225821, 148422583X - DOKUMEN.PUB
+[38] https://besthub.dev/articles/choosing-and-evaluating-2d-physics-engines-for-mechanics-experiments-issues-and-solutions-40daabb9bb3f — Choosing and Evaluating 2D Physics Engines for Mechanics Experiments: Issues and Solutions
+[39] https://github.com/phetsims/masses-and-springs — PhET Masses and Springs (GPL-3.0)
+[40] https://phet.colorado.edu/en/licenses — PhET licensing
+[41] https://github.com/liabru/matter-js — matter.js 2D physics engine (MIT)
+[42] https://brm.io/matter-js/docs/classes/Constraint.html — matter.js Constraint API (pin joints/springs)
+[43] http://design-simulation.com/Documents/WM/success/wm2dsoftwarereview.pdf — Working Model 2D software review (ASME)
+[44] https://wired.com/1993/04/addicted-to-the-real-world — Wired 1993: Working Model review
+[45] https://handwiki.org/wiki/Software:Working_Model — Working Model history (HandWiki)
+[46] https://en.wikipedia.org/wiki/Claris_CAD — Claris CAD - Wikipedia
+[47] https://ashlar.com/ashlar-vellum/ashlar-vellum-cad-and-3d-modeling-news.html?n_year=2004 — Ashlar-Vellum patent news 2004
+[48] https://pyslvs-ui.readthedocs.io/en/stable/references — Pyslvs docs + AGPL-3.0 license
+[49] https://github.com/KmolYuan/Pyslvs-UI — Pyslvs-UI planar linkage simulator
+[50] https://507movements.com — 507 Mechanical Movements (Brown 1868, animated)
+[51] https://www.exploratorium.edu/tinkering/blog/2015/09/01/507-mechanical-movements-animated- — Exploratorium on 507 movements
+[52] https://github.com/FreeCAD/FreeCAD-documentation/blob/main/wiki/Release_notes_1.0.md — FreeCAD 1.0 release notes (assembly workbench)
+[53] https://github.com/FreeCAD/FreeCAD/releases/tag/1.0.0 — FreeCAD 1.0.0 release
+[54] https://www.ondsel.com/blog/goodbye — Ondsel shutdown + upstream contributions
+[55] https://www.ondsel.com/handbook/Operation/freecad-contributions — Ondsel contributions: assembly workbench, joints, exploded views
+[56] https://openscad.org/about.html — OpenSCAD about + license (GPLv2)
+[57] https://pypi.org/project/build123d — build123d (Apache-2.0) on PyPI
+[58] https://github.com/CadQuery/ocp-build-system — OCP wheels build system (Apache-2.0)
+[59] https://gmsh.info — Gmsh - GPL v2+ mesh generator
+[60] https://elmerfem.org/blog/license — Elmer FEM licensing (GPL/LGPL)
+[61] https://calculix.de — CalculiX - GPL-2.0 structural FEA
+[62] https://rocm.docs.amd.com/projects/rocALUTION/en/latest/what-is-rocalution.html — rocALUTION sparse solvers on AMD GPUs
+[63] https://rocm.docs.amd.com/en/latest/components/math-and-compute-libs.html — ROCm math and compute libraries
+[64] https://rocm.docs.amd.com/en/latest/components/core.html — ROCm core SDK components (HIP)
+[65] https://github.com/bernhard-42/three-cad-viewer — three-cad-viewer (three.js CAD viewer, MIT)
+[66] https://github.com/mikedh/trimesh — trimesh (MIT) mesh library
+[67] https://konvajs.org — Konva.js 2D canvas library (MIT)
+[68] https://github.com/konvajs/konva/blob/master/LICENSE — Konva MIT license text
+[69] https://docs.ollama.com/gpu — Ollama GPU support: AMD ROCm
+[70] https://github.com/BelfrySCAD/BOSL2/blob/master/LICENSE — BOSL2 BSD-2-Clause license
+[71] https://github.com/nophead/NopSCADlib — NopSCADlib (GPL-3.0) parts library
+[72] https://openscad.org/libraries.html — OpenSCAD official libraries list w/ licenses
+[73] https://507movements.com/about.html — 507movements.com about + copyright note
+[74] https://commons.wikimedia.org/wiki/File:Henry_T._Brown._Five_hundred_and_seven_mechanical_movements,_1908.djvu — Brown 1908 507 movements - public domain (Wikimedia)
+[75] https://archive.org/details/507mechanicalmov0000brow — 507 mechanical movements on Internet Archive
+[76] https://wiki.freecad.org/FEM_CalculiX — FreeCAD FEM CalculiX integration docs
+[77] https://wiki.freecad.org/FEM_Workbench — FreeCAD FEM Workbench docs
+[78] https://pypi.org/project/PyNiteFEA — PyNiteFEA (MIT) structural FEA
+[79] https://www.salome-platform.org/?page_id=2622 — SALOME platform license (LGPL-2.1)
+[80] https://ocw.mit.edu/courses/2-007-design-and-manufacturing-i-spring-2009 — MIT OCW 2.007 Design and Manufacturing I (CC BY-NC-SA)
+[81] https://support.khanacademy.org/hc/en-us/articles/202262954-Can-I-use-Khan-Academy-s-videos-name-materials-links-in-my-project — Khan Academy content usage policy (CC BY-NC-SA)
+[82] https://en.wikibooks.org/wiki/OpenSCAD_User_Manual — OpenSCAD User Manual (Wikibooks, CC-BY-SA)
+[83] https://wiki.freecad.org/Assembly_Workbench — FreeCAD Assembly Workbench (Ondsel solver)
+[84] https://github.com/ggml-org/llama.cpp/blob/master/docs/build.md — llama.cpp build docs: HIP/Vulkan AMD backends
+[85] https://rocm.docs.amd.com/projects/radeon-ryzen/en/latest/docs/advanced/advancedrad/windows/llm/llamacpp.html — AMD-validated llama.cpp prebuilt binaries
+[86] https://github.com/openscad/openscad-playground — openscad-playground WASM (GPLv2+)
+[87] https://pypi.org/project/PySide6 — PySide6 (LGPLv3/GPL)
+[88] https://github.com/mrdoob/three.js/blob/dev/LICENSE — three.js MIT license
+[89] https://github.com/jupytercad/JupyterCAD — JupyterCAD (BSD-3-Clause)
+[90] https://pyvista.org — PyVista (MIT) 3D plotting
+[91] https://roblox.fandom.com/wiki/Knowledge_Revolution — Knowledge Revolution history (Interactive Physics, Working Model)
+[92] https://www.sec.gov/Archives/edgar/data/1315098/000119312521005357/d87104ds1a.htm — Roblox S-1: Interactive Physics 1989 origin
+[93] https://forum.freecad.org/viewtopic.php?t=102806 — FreeCAD forum: hardware/CPU vs GPU for CAD
+[94] http://www.dhondt.de — CalculiX official site (PaStiX/CUDA notes)
+[95] https://github.com/FreeCAD/FreeCAD — FreeCAD repo (LGPL-2.1+), inspected via API
+[96] https://github.com/CadQuery/cadquery — CadQuery repo (Apache-2.0), local clone inspected
+[97] https://github.com/gumyr/build123d — build123d repo (Apache-2.0), local clone inspected
+[98] https://github.com/Dhondtguido/CalculiX — CalculiX source repo (GPL-2.0), inspected via API

@@ -1,0 +1,61 @@
+{
+ "id": "shaft-6mm",
+ "asset": {
+  "step": "assets/cad/shaft-6mm.step",
+  "stl": "assets/cad/shaft-6mm.stl",
+  "preview_glb": "assets/previews/shaft-6mm.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   6.0,
+   6.0,
+   40.0
+  ],
+  "volume_mm3": 1131.0
+ },
+ "parameters": {
+  "diameter_mm": 6.0,
+  "length_mm": 40.0
+ },
+ "type": "component",
+ "category": "shafts",
+ "label": "Shaft dia 6 mm",
+ "summary": "Plain transmission shaft, 6 mm dia. Fits gear bores and 608ZZ inner race (via 6 mm sleeve).",
+ "interfaces": [
+  {
+   "kind": "cylindrical",
+   "spec": {
+    "diameter_mm": 6.0,
+    "length_mm": 40.0,
+    "for": "gear bores, bearing 608ZZ (with sleeve)"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [],
+  "mates_with": [
+   "spur-gear-18t-m2",
+   "spur-gear-30t-m2",
+   "bearing-608zz"
+  ],
+  "joint": "revolute-in-bearing"
+ },
+ "governing": {
+  "principles": [
+   "PR-SFT-01",
+   "PR-BRG-01"
+  ],
+  "equations": [
+   "torsion: tau = 16*T/(pi*d^3)",
+   "bending: sigma = 32*M/(pi*d^3)"
+  ]
+ },
+ "checks": [
+  "d/dt stress check before load claims",
+  "bear at two points; cantilever mount raises deflection fast"
+ ],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

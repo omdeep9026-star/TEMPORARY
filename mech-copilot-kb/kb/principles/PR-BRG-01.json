@@ -1,0 +1,35 @@
+{
+ "id": "PR-BRG-01",
+ "level": "foundation",
+ "category": "bearings",
+ "title": "Bearings and supported rotation",
+ "simple": "A bearing lets a shaft rotate while holding it radially (and often axially). Life scales with (load rating / applied load)^3 for ball bearings.",
+ "equations": [
+  "L10 = (C/P)^3 million revs"
+ ],
+ "variables": {
+  "C": "dynamic load rating (N, from datasheet)",
+  "P": "equivalent applied load (N)"
+ },
+ "visual": "assets/diagrams/PR-BRG-01.svg",
+ "failure_modes": [
+  "contamination -> brinelling",
+  "overload -> spalling",
+  "electrical arcing (VFDs)",
+  "press-fit too tight -> lost internal clearance"
+ ],
+ "example": "608ZZ in a printed housing: printed seat is usually slightly oversize; a too-tight seat preloads the bearing to early failure.",
+ "agent_use": "Never invent a C rating. If the user asks for life, require a datasheet value; otherwise present the formula with P only.",
+ "limits": "Catalogue-dependent. Lubrication condition and temperature change everything.",
+ "verify_with": [
+  "datasheet lookup (human)",
+  "formula check (agent)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "id": "SC-LINKAGE-BIND-01",
+ "assembly": "ASM-FOURBAR-01",
+ "symptom": "Mechanism binds mid-stroke; motor stalls at same position every cycle.",
+ "probable_causes": [
+  {
+   "cause": "transmission angle too small at that crank position",
+   "evidence_to_collect": "measure crank angle at stall; compute transmission angle",
+   "kb_refs": [
+    "PR-4BAR-01"
+   ]
+  },
+  {
+   "cause": "pivot pin seized / no lubrication",
+   "evidence_to_collect": "disconnect coupler; check each joint moves freely",
+   "kb_refs": [
+    "PR-FRI-01"
+   ]
+  },
+  {
+   "cause": "bent link changed effective length",
+   "evidence_to_collect": "compare link lengths to 60/120/80",
+   "kb_refs": [
+    "PR-4BAR-01",
+    "PR-MAT-01"
+   ]
+  }
+ ],
+ "procedures": [
+  "1. mark stall position",
+  "2. disconnect coupler pins one at a time to isolate the stiff joint",
+  "3. clean + lubricate pivot pins",
+  "4. if binding is positional, redesign link ratio (agent can recompute Grashof + angles)"
+ ],
+ "verification": "full rotation by hand without stall; motor current flat over cycle",
+ "safety_notes": "store energy in mechanism may snap when freed",
+ "kb_refs": [
+  "PR-4BAR-01",
+  "PR-FRI-01",
+  "PR-DOF-01"
+ ],
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0"
+ }
+}

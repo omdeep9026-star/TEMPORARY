@@ -1,0 +1,35 @@
+{
+ "id": "PR-LVR-01",
+ "level": "foundation",
+ "category": "statics",
+ "title": "Levers and moment balance",
+ "simple": "A lever trades distance for force. Force times distance from the pivot must balance on both sides.",
+ "equations": [
+  "F1*d1 = F2*d2",
+  "MA = d1/d2"
+ ],
+ "variables": {
+  "F": "force (N)",
+  "d": "perpendicular distance to pivot (mm)",
+  "MA": "mechanical advantage"
+ },
+ "visual": "assets/diagrams/PR-LVR-01.svg",
+ "failure_modes": [
+  "pivot placed at the load point - no advantage",
+  "ignoring the lever's own bending",
+  "pivot bearing not sized for the reaction force"
+ ],
+ "example": "Bolt cutter: 25 mm handle to 5 mm jaw gives MA 5; pivot pin carries the full combined reaction.",
+ "agent_use": "When modifying link geometry, recompute the pivot reaction; larger MA means larger pivot load, not a free lunch.",
+ "limits": "Rigid-body assumption; real links flex and pivots have friction.",
+ "verify_with": [
+  "static moment calc"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

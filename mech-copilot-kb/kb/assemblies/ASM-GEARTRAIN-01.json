@@ -1,0 +1,139 @@
+{
+ "id": "ASM-GEARTRAIN-01",
+ "type": "assembly",
+ "label": "Parallel-shaft gear train (18T -> 30T)",
+ "category": "drives",
+ "summary": "Two spur gears on parallel shafts in a housing plate. Demonstrates ratio, centre-distance and bearing constraints. Built from KB components; tooth geometry simplified.",
+ "parameters": {
+  "centre_distance_mm": {
+   "value": 48.0,
+   "equation": "m*(z1+z2)/2",
+   "tolerance": "\u00b10.05 mm",
+   "verified": "exact arithmetic"
+  },
+  "ratio": {
+   "value": 1.667,
+   "equation": "z2/z1 = 30/18",
+   "verified": "exact arithmetic"
+  },
+  "efficiency_per_mesh": {
+   "value": null,
+   "range": [
+    0.94,
+    0.97
+   ],
+   "note": "literature range for lubricated steel spur gears; not measured",
+   "verified": false
+  }
+ },
+ "graph": {
+  "parts": [
+   {
+    "part": "housing-plate",
+    "quantity": 1,
+    "role": "ground"
+   },
+   {
+    "part": "bearing-608zz",
+    "quantity": 2,
+    "role": "support",
+    "note": "one per gear axis"
+   },
+   {
+    "part": "shaft-6mm",
+    "quantity": 2,
+    "role": "shaft"
+   },
+   {
+    "part": "spur-gear-18t-m2",
+    "quantity": 1,
+    "role": "driver"
+   },
+   {
+    "part": "spur-gear-30t-m2",
+    "quantity": 1,
+    "role": "driven"
+   }
+  ],
+  "edges": [
+   {
+    "from": "spur-gear-18t-m2",
+    "rel": "press onto",
+    "to": "shaft-6mm",
+    "interface": "bore-6"
+   },
+   {
+    "from": "spur-gear-30t-m2",
+    "rel": "press onto",
+    "to": "shaft-6mm",
+    "interface": "bore-6"
+   },
+   {
+    "from": "shaft-6mm",
+    "rel": "rotates in",
+    "to": "bearing-608zz",
+    "interface": "bore-8-sleeved"
+   },
+   {
+    "from": "bearing-608zz",
+    "rel": "seated in",
+    "to": "housing-plate",
+    "interface": "seat-22H7"
+   },
+   {
+    "from": "spur-gear-18t-m2",
+    "rel": "meshes with",
+    "to": "spur-gear-30t-m2",
+    "interface": "gear-mesh-m2"
+   }
+  ],
+  "install_order": [
+   "housing-plate",
+   "bearing-608zz",
+   "shaft-6mm",
+   "spur-gear-18t-m2",
+   "spur-gear-30t-m2"
+  ],
+  "disassembly_blockers": [
+   "gear press-fit on shaft requires puller",
+   "bearing seat may need bearing puller"
+  ]
+ },
+ "checks": [
+  {
+   "id": "CHK-CENTRE-DIST",
+   "rule": "centre_distance == m*(z1+z2)/2 \u00b10.05",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-MODULE-MATCH",
+   "rule": "all meshing gears share module",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-BEARING-COUNT",
+   "rule": "each loaded shaft supported by >=2 bearings OR 1 bearing + moment-free mount",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-TORQUE-RATING",
+   "rule": "tooth strength vs torque",
+   "status": "requires-real-solver-or-datasheet"
+  }
+ ],
+ "repair_scenarios": [
+  "SC-GEAR-NOISE-01"
+ ],
+ "view": {
+  "layered_diagram": "layer side view: two circles tangent at centre distance; exploded view: housing z=0, bearing z=8, gears z=20",
+  "animation": "rotate driver; driven spins at -z2/z1 * w1"
+ },
+ "provenance": {
+  "source": "authored; components as listed",
+  "license": "CC0-1.0 (KB metadata)",
+  "component_licenses": [
+   "CC0-1.0",
+   "CC-BY-3.0 (608ZZ geometry)"
+  ]
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "id": "PR-GTR-01",
+ "level": "foundation",
+ "category": "gears",
+ "title": "Gears, ratios and centre distance",
+ "simple": "Meshing gears must share the same module (tooth size). Speed ratio is the inverse tooth ratio; torque scales the other way.",
+ "equations": [
+  "C = m*(z1+z2)/2",
+  "i = z2/z1",
+  "torque_out = torque_in * i * eta"
+ ],
+ "variables": {
+  "m": "module (mm)",
+  "z": "tooth count",
+  "C": "centre distance (mm)",
+  "eta": "mesh efficiency ~0.94-0.97"
+ },
+ "visual": "assets/diagrams/PR-GTR-01.svg",
+ "failure_modes": [
+  "mixing modules - teeth destroy each other",
+  "wrong centre distance - interference or backlash",
+  "undercut on small pinions (z < 17 at 20 deg PA)"
+ ],
+ "example": "18T driving 30T at module 2: ratio 1.667, centre distance 48 mm exactly.",
+ "agent_use": "Any change to z or m must update centre distance and check every meshing partner in the assembly graph. Use the KB compatibility rule: modules must match exactly.",
+ "limits": "Kinematics and ratio only. Tooth strength (Lewis), contact stress and lubrication need real calculation or datasheets.",
+ "verify_with": [
+  "centre-distance check (agent-side)",
+  "FCGear/KISSsoft for tooth geometry",
+  "datasheet for ratings"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

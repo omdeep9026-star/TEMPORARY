@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Material: stress-strain behaviour</text>
+
+<line x1="70" y1="210" x2="420" y2="210" stroke="#8899aa" stroke-width="2"/>
+<line x1="70" y1="210" x2="70" y2="40" stroke="#8899aa" stroke-width="2"/>
+<polyline points="70,205 150,140 200,110 260,100 380,70" fill="none" stroke="#ffd166" stroke-width="3"/>
+<circle cx="150" cy="140" r="5" fill="#ff6b6b"/>
+<text x="160" y="150" fill="#ff6b6b" font-size="12">yield sigma_y</text>
+<circle cx="380" cy="70" r="5" fill="#7fd4ff"/>
+<text x="372" y="60" fill="#7fd4ff" font-size="12" text-anchor="end">UTS (fracture)</text>
+<text x="240" y="235" fill="#8899aa" font-size="12" text-anchor="middle">strain</text>
+<text x="30" y="130" fill="#8899aa" font-size="12">stress</text>
+<text x="240" y="45" fill="#ffd166" font-size="12">E = slope (stiffness) - same for steel in tension/compression</text>
+
+</svg>

@@ -1,0 +1,35 @@
+{
+ "id": "PR-DOF-01",
+ "level": "foundation",
+ "category": "kinematics",
+ "title": "Degrees of freedom and constraints",
+ "simple": "Every free body in a plane has 3 DOF (x, y, rotation). Each joint removes some. Fully-constrained means zero DOF left; a mechanism keeps exactly the motion you want.",
+ "equations": [
+  "Gruebler (planar): DOF = 3(n-1) - 2*j1 - j2"
+ ],
+ "variables": {
+  "n": "links incl. ground",
+  "j1": "full joints (revolute/prismatic)",
+  "j2": "half joints (cam/slider contact)"
+ },
+ "visual": "assets/diagrams/PR-DOF-01.svg",
+ "failure_modes": [
+  "under-constrained assembly drifts",
+  "over-constrained assembly cannot be built or binds",
+  "two bearings on one shaft misaligned -> binding"
+ ],
+ "example": "A drawer on two slides is over-constrained if the slides are not parallel - it jams.",
+ "agent_use": "Count DOF after adding/removing any joint. build123d Joint ranges give the intended motion; a modification that removes a needed DOF or adds a conflict must be flagged.",
+ "limits": "Rigid-body kinematics. Elastic deformation, clearances and manufacturing error require measurement or simulation.",
+ "verify_with": [
+  "build123d joint graph",
+  "FreeCAD Assembly solver (Ondsel)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

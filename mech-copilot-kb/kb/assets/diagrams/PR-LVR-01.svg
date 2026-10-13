@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Lever: moment balance about fulcrum</text>
+
+<line x1="80" y1="160" x2="400" y2="140" stroke="#cde" stroke-width="8" stroke-linecap="round"/>
+<path d="M 240 150 L 240 200 L 252 185 L 228 185 Z" fill="#8899aa"/>
+<line x1="120" y1="120" x2="120" y2="150" stroke="#ff6b6b" stroke-width="3"/><polygon points="120,150 116.52027572711016,142.7964231811786 123.47972427288984,142.7964231811786" fill="#ff6b6b"/><text x="120.0" y="127.0" fill="#ff6b6b" font-size="12" text-anchor="middle">F1</text>
+<line x1="380" y1="105" x2="380" y2="138" stroke="#7fd4ff" stroke-width="3"/><polygon points="380,138 376.5202757271102,130.7964231811786 383.4797242728898,130.7964231811786" fill="#7fd4ff"/><text x="380.0" y="113.5" fill="#7fd4ff" font-size="12" text-anchor="middle">F2</text>
+<text x="120" y="110" fill="#ff6b6b" font-size="12" text-anchor="middle">d1</text>
+<text x="380" y="95" fill="#7fd4ff" font-size="12" text-anchor="middle">d2</text>
+<text x="240" y="230" fill="#ffd166" font-size="13" text-anchor="middle">F1*d1 = F2*d2 (equilibrium)</text>
+
+</svg>

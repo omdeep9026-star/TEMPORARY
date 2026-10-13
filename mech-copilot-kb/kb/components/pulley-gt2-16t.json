@@ -1,0 +1,70 @@
+{
+ "id": "pulley-gt2-16t",
+ "type": "component",
+ "category": "drives",
+ "label": "GT2 timing pulley 16T (6 mm belt)",
+ "summary": "16-tooth GT2 timing pulley for 6 mm belt. Pitch dia = 16*2 = ~10.2 mm? No: GT2 pitch = 2 mm, PD = 16*2/pi? Use vendor datasheet for exact PD.",
+ "interfaces": [
+  {
+   "kind": "bore",
+   "spec": {
+    "diameter_mm": 5.0,
+    "for": "shaft-5mm/6mm with grub"
+   }
+  },
+  {
+   "kind": "belt_track",
+   "spec": {
+    "profile": "GT2",
+    "belt_width_mm": 6.0,
+    "for": "GT2 belt"
+   }
+  }
+ ],
+ "connections": {
+  "accepts": [
+   "shaft-6mm"
+  ],
+  "mates_with": [
+   "pulley-gt2-16t",
+   "belt-gt2"
+  ],
+  "joint": "rigid-to-shaft + belt-coupling"
+ },
+ "geometry": {
+  "bbox_mm": [
+   13.0,
+   13.0,
+   15.0
+  ],
+  "volume_mm3": 1147.8
+ },
+ "parameters": {
+  "teeth": 16,
+  "belt": "GT2",
+  "belt_width_mm": 6.0
+ },
+ "asset": {
+  "step": "assets/cad/gt2-pulley-16t.step",
+  "preview_glb": "assets/previews/pulley-gt2-16t.glb"
+ },
+ "governing": {
+  "principles": [
+   "PR-BLT-01"
+  ],
+  "equations": [
+   "ratio = z2/z1",
+   "belt speed = PD * omega"
+  ]
+ },
+ "checks": [
+  "confirm pitch dia from datasheet before ratio math",
+  "no backlashes: timing belts positive-drive"
+ ],
+ "provenance": {
+  "source": "FreeCAD/FreeCAD-library Mechanical Parts/Pulleys/GT2_16T",
+  "license": "CC-BY-3.0",
+  "url": "https://github.com/FreeCAD/FreeCAD-library",
+  "note": "geometry reused; PD check flagged"
+ }
+}

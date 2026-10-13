@@ -1,0 +1,36 @@
+{
+ "id": "PR-SFT-01",
+ "level": "foundation",
+ "category": "shafts",
+ "title": "Shafts: torsion and bending",
+ "simple": "Shafts carry torque (twist) and often bending (transverse loads). Stress grows with the inverse cube of diameter - small size changes matter hugely.",
+ "equations": [
+  "tau = 16*T/(pi*d^3)",
+  "sigma_b = 32*M/(pi*d^3)"
+ ],
+ "variables": {
+  "T": "torque (N*mm)",
+  "M": "bending moment (N*mm)",
+  "d": "diameter (mm)"
+ },
+ "visual": "assets/diagrams/PR-TOR-01.svg",
+ "failure_modes": [
+  "keyway/notch as stress riser",
+  "cantilever mounting",
+  "diameter step without fillet"
+ ],
+ "example": "6 mm shaft vs 8 mm shaft: 8 mm carries ~2.4x the torque at the same stress.",
+ "agent_use": "A diameter reduction request triggers a torsion/bending sanity check against the stated load; refuse to certify, present numbers only.",
+ "limits": "Solid round shaft, elastic range. Fatigue, keys and couplings need more analysis.",
+ "verify_with": [
+  "hand calc",
+  "CalculiX for stepped shafts"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

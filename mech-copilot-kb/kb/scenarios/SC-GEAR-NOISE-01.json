@@ -1,0 +1,48 @@
+{
+ "id": "SC-GEAR-NOISE-01",
+ "assembly": "ASM-GEARTRAIN-01",
+ "symptom": "Grinding / whining noise from gearbox after months of use; worsens under load.",
+ "probable_causes": [
+  {
+   "cause": "centre distance drifted (bearing wear / housing wear)",
+   "evidence_to_collect": "measure actual centre distance; compare 48.0 \u00b10.05",
+   "kb_refs": [
+    "PR-GTR-01"
+   ]
+  },
+  {
+   "cause": "tooth wear or chipping from debris",
+   "evidence_to_collect": "inspect tooth flanks; look for pitting on pitch line",
+   "kb_refs": [
+    "PR-GTR-01",
+    "PR-LUB-01"
+   ]
+  },
+  {
+   "cause": "lubrication lost",
+   "evidence_to_collect": "check for oil film; discoloration",
+   "kb_refs": [
+    "PR-LUB-01"
+   ]
+  }
+ ],
+ "procedures": [
+  "1. power off, lock out",
+  "2. open housing; photograph gear mesh before touching",
+  "3. check bearings for roughness by hand-rotation",
+  "4. measure centre distance with calipers",
+  "5. if bearing rough -> replace bearing (608ZZ, cheap); if centre distance ok and teeth pitted -> replace gear pair"
+ ],
+ "verification": "after rebuild: run at no load 5 min, then load; noise should not recur",
+ "safety_notes": "rotating machinery: guards back on before power",
+ "kb_refs": [
+  "PR-GTR-01",
+  "PR-BRG-01",
+  "PR-LUB-01",
+  "PR-ASM-01"
+ ],
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0"
+ }
+}

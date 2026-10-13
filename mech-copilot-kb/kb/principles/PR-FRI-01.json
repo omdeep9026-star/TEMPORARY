@@ -1,0 +1,37 @@
+{
+ "id": "PR-FRI-01",
+ "level": "foundation",
+ "category": "tribology",
+ "title": "Friction, lubrication and wear",
+ "simple": "Friction resists sliding in proportion to normal force. Lubrication replaces metal-on-metal contact with fluid film; wear follows when the film fails.",
+ "equations": [
+  "F_f = mu*N",
+  "PV limit for bushings"
+ ],
+ "variables": {
+  "mu": "friction coefficient (pair-dependent!)",
+  "N": "normal force",
+  "P": "pressure",
+  "V": "sliding speed"
+ },
+ "visual": "assets/diagrams/PR-LUB-01.svg",
+ "failure_modes": [
+  "dry running a plain bush",
+  "wrong grease - plastics crack (polycarbonate + mineral oil)",
+  "fretting under vibration"
+ ],
+ "example": "3D-printed bushings run quietly in PTFE-lined or oil-impregnated bronze; direct steel-on-PLA galls.",
+ "agent_use": "Friction is a pair property - never quote a single 'friction of steel'. Use pair tables or state a range and mark unverified.",
+ "limits": "mu varies 2-5x with condition; PV limits are vendor data.",
+ "verify_with": [
+  "tribology pair table (KB, cited)",
+  "vendor data"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

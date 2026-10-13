@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Differential thermal expansion</text>
+
+<rect x="80" y="100" width="140" height="60" fill="#5b3a4a" stroke="#ff6b6b" stroke-width="2"/>
+<rect x="240" y="100" width="140" height="60" fill="#1d2c45" stroke="#7fd4ff" stroke-width="2"/>
+<text x="150" y="135" fill="#ffb3b3" font-size="13" text-anchor="middle">Al: a = 23 um/m-K</text>
+<text x="310" y="135" fill="#9fd0ff" font-size="13" text-anchor="middle">Steel: a = 12 um/m-K</text>
+<line x1="240" y1="90" x2="240" y2="60" stroke="#ffd166" stroke-width="2.5"/><polygon points="240,60 243.47972427288985,67.20357681882142 236.52027572711015,67.20357681882142" fill="#ffd166"/><text x="240.0" y="67.0" fill="#ffd166" font-size="12" text-anchor="middle">dT</text>
+<text x="240" y="210" fill="#ffd166" text-anchor="middle" font-size="13">dL = a*L*dT - bimetal joints bend or shear</text>
+
+</svg>

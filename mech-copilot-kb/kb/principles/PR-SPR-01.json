@@ -1,0 +1,39 @@
+{
+ "id": "PR-SPR-01",
+ "level": "foundation",
+ "category": "springs",
+ "title": "Springs: stiffness and energy",
+ "simple": "A spring pushes back proportionally to how much you compress it. Stiffness k depends on wire diameter, coil diameter, number of coils and material.",
+ "equations": [
+  "F = k*x",
+  "U = 0.5*k*x^2",
+  "k_helix = G*d^4 / (8*n*D^3)"
+ ],
+ "variables": {
+  "k": "rate (N/mm)",
+  "x": "deflection (mm)",
+  "G": "shear modulus",
+  "n": "active coils",
+  "D": "mean coil dia"
+ },
+ "visual": "assets/diagrams/PR-SPR-01.svg",
+ "failure_modes": [
+  "solid-height collision",
+  "stress relaxation at temperature",
+  "surge (dynamic resonance)"
+ ],
+ "example": "Pen spring vs valve spring: same shape, k differs 100x via wire diameter to the 4th power.",
+ "agent_use": "Never assume k. The KB spring stub deliberately has rate=null; a rate must come from the wire-coil formula with real dimensions or a datasheet.",
+ "limits": "Linear range only; buckling and surge need checks.",
+ "verify_with": [
+  "coil formula (agent, with given dims)",
+  "measurement (human)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

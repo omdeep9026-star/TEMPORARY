@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Deep-groove ball bearing</text>
+
+<circle cx="240" cy="130" r="85" fill="none" stroke="#cde" stroke-width="2"/>
+<circle cx="240" cy="130" r="35" fill="none" stroke="#cde" stroke-width="2"/>
+<circle cx="240" cy="55" r="11" fill="#1d2c45" stroke="#7fd4ff" stroke-width="2"/>
+<circle cx="240" cy="205" r="11" fill="#1d2c45" stroke="#7fd4ff" stroke-width="2"/>
+<circle cx="165" cy="130" r="11" fill="#1d2c45" stroke="#7fd4ff" stroke-width="2"/>
+<circle cx="315" cy="130" r="11" fill="#1d2c45" stroke="#7fd4ff" stroke-width="2"/>
+<line x1="240" y1="130" x2="240" y2="130" stroke="#0000" stroke-width="0"/><polygon points="240,130 232.7964231811786,133.47972427288985 232.7964231811786,126.52027572711016" fill="#0000"/>
+<line x1="150" y1="45" x2="190" y2="85" stroke="#ff6b6b" stroke-width="2.5"/><polygon points="190,85 182.44576535259333,82.36683861263299 187.366838612633,77.44576535259333" fill="#ff6b6b"/><text x="170.0" y="57.0" fill="#ff6b6b" font-size="12" text-anchor="middle">radial load</text>
+<line x1="330" y1="220" x2="300" y2="190" stroke="#7fd4ff" stroke-width="2.5"/><polygon points="300,190 307.5542346474067,192.633161387367 302.633161387367,197.55423464740667" fill="#7fd4ff"/><text x="315.0" y="197.0" fill="#7fd4ff" font-size="12" text-anchor="middle">axial: only small (deep-groove)</text>
+<text x="240" y="250" fill="#ffd166" font-size="13" text-anchor="middle">L10 = (C/P)^3 million revolutions</text>
+
+</svg>

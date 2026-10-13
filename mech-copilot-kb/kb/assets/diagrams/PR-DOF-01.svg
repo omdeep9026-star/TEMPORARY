@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Planar joint types and DOF</text>
+
+<rect x="40" y="50" width="120" height="60" fill="#1d2c45" stroke="#7fd4ff"/>
+<text x="100" y="75" fill="#cde" font-size="13" text-anchor="middle">revolute (pin)</text>
+<text x="100" y="95" fill="#8899aa" font-size="12" text-anchor="middle">R: removes 2</text>
+<circle cx="100" cy="120" r="5" fill="#0e1420" stroke="#7fd4ff" stroke-width="2"/>
+<rect x="180" y="50" width="120" height="60" fill="#1d2c45" stroke="#7fd4ff"/>
+<text x="240" y="75" fill="#cde" font-size="13" text-anchor="middle">prismatic (slide)</text>
+<text x="240" y="95" fill="#8899aa" font-size="12" text-anchor="middle">P: removes 2</text>
+<line x1="180" y1="125" x2="300" y2="125" stroke="#7fd4ff" stroke-width="2"/>
+<rect x="320" y="50" width="120" height="60" fill="#1d2c45" stroke="#7fd4ff"/>
+<text x="380" y="75" fill="#cde" font-size="13" text-anchor="middle">rigid (fixed)</text>
+<text x="380" y="95" fill="#8899aa" font-size="12" text-anchor="middle">removes 3 (planar)</text>
+<text x="240" y="190" fill="#ffd166" font-size="13" text-anchor="middle">Gruebler: DOF = 3(n-1) - 2j1 - j2</text>
+
+</svg>

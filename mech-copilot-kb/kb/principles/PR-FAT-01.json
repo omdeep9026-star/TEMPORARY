@@ -1,0 +1,37 @@
+{
+ "id": "PR-FAT-01",
+ "level": "advanced",
+ "category": "failure",
+ "title": "Fatigue, stress concentration and safety factor",
+ "simple": "Parts break at loads far below their static strength if the load repeats. Cracks start at stress concentrations: holes, corners, scratches.",
+ "equations": [
+  "n = S_allow / sigma_actual",
+  "Kt: geometric concentration factor",
+  "Se: endurance limit (~0.5*UTS steel)"
+ ],
+ "variables": {
+  "n": "safety factor",
+  "Kt": "notch factor",
+  "Se": "endurance limit"
+ },
+ "visual": "assets/diagrams/PR-FAT-01.svg",
+ "failure_modes": [
+  "sharp inside corners",
+  "thread runout in the stress zone",
+  "polishing improves life; notching kills it"
+ ],
+ "example": "Fillet radius at a shaft shoulder changes fatigue life by orders of magnitude.",
+ "agent_use": "Any geometry change that adds a sharp corner in a cyclic-load path triggers a fatigue warning; never output a numeric life without a full load-history and material S-N data.",
+ "limits": "S-N curves are material- and condition-specific; real fatigue design needs standards (FKM etc.).",
+ "verify_with": [
+  "CalculiX stress field (verified FEA)",
+  "human review of load history"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

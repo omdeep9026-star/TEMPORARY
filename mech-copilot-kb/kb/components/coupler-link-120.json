@@ -1,0 +1,44 @@
+{
+ "asset": {
+  "step": "assets/cad/coupler-link-120.step",
+  "stl": "assets/cad/coupler-link-120.stl",
+  "preview_glb": "assets/previews/coupler-link-120.glb"
+ },
+ "geometry": {
+  "bbox_mm": [
+   6.0,
+   6.0,
+   120.0
+  ],
+  "volume_mm3": 3392.9
+ },
+ "parameters": {
+  "length_mm": 120.0,
+  "pivot_dia_mm": 6.0
+ },
+ "id": "coupler-link-120",
+ "type": "component",
+ "category": "linkages",
+ "label": "Coupler link 120 mm",
+ "summary": "Coupler link for the four-bar demo.",
+ "interfaces": [],
+ "connections": {
+  "accepts": [
+   "shaft-6mm"
+  ],
+  "mates_with": [
+   "lever-arm-80"
+  ],
+  "joint": "revolute-pins"
+ },
+ "governing": {
+  "principles": [
+   "PR-4BAR-01"
+  ]
+ },
+ "checks": [],
+ "provenance": {
+  "source": "authored for this KB (build123d)",
+  "license": "CC0-1.0"
+ }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">Compression spring: F = kx</text>
+
+<path d="M 200 60 L 260 75 L 200 90 L 260 105 L 200 120 L 260 135 L 200 150 L 260 165 L 200 180" fill="none" stroke="#7fd4ff" stroke-width="4" stroke-linecap="round"/>
+<line x1="160" y1="60" x2="160" y2="180" stroke="#8899aa" stroke-width="2" stroke-dasharray="4 4"/>
+<line x1="320" y1="60" x2="320" y2="110" stroke="#ff6b6b" stroke-width="2.5"/><polygon points="320,110 316.5202757271102,102.79642318117858 323.4797242728898,102.79642318117858" fill="#ff6b6b"/><text x="320.0" y="77.0" fill="#ff6b6b" font-size="12" text-anchor="middle">F = k*x</text>
+<line x1="320" y1="180" x2="320" y2="130" stroke="#ff6b6b" stroke-width="2.5"/><polygon points="320,130 323.4797242728898,137.2035768188214 316.5202757271102,137.2035768188214" fill="#ff6b6b"/>
+<text x="300" y="225" fill="#ffd166" font-size="13" text-anchor="middle">U = 0.5*k*x^2; solid height limits stroke</text>
+
+</svg>

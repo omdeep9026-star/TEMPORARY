@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 260" font-family="sans-serif">
+<rect width="480" height="260" fill="#0e1420"/>
+<text x="16" y="24" fill="#7fd4ff" font-size="15" font-weight="bold">S-N curve: fatigue life vs stress amplitude</text>
+
+<line x1="70" y1="210" x2="420" y2="210" stroke="#8899aa" stroke-width="2"/>
+<line x1="70" y1="210" x2="70" y2="40" stroke="#8899aa" stroke-width="2"/>
+<polyline points="70,60 160,95 240,150 320,165 410,165" fill="none" stroke="#ffd166" stroke-width="3"/>
+<line x1="70" y1="165" x2="410" y2="165" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="390" y="158" fill="#ff6b6b" font-size="12" text-anchor="end">endurance limit Se</text>
+<text x="245" y="235" fill="#8899aa" font-size="12" text-anchor="middle">cycles N (log)</text>
+<text x="30" y="130" fill="#8899aa" font-size="12">stress</text>
+<text x="150" y="120" fill="#ffd166" font-size="12">stress concentration + rough finish shift curve DOWN</text>
+
+</svg>

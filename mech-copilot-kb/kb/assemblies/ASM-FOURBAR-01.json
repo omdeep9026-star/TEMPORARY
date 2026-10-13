@@ -1,0 +1,118 @@
+{
+ "id": "ASM-FOURBAR-01",
+ "type": "assembly",
+ "label": "Crank-rocker four-bar linkage",
+ "category": "linkages",
+ "summary": "Ground 150 - crank 60 - coupler 120 - rocker 80 (mm), four pin joints. Demonstrates DOF counting, Grashof condition and transmission angle.",
+ "parameters": {
+  "link_lengths_mm": {
+   "ground": 150,
+   "crank": 60,
+   "coupler": 120,
+   "rocker": 80
+  },
+  "DOF": {
+   "value": 1,
+   "equation": "3*(4-1) - 2*4 = 1",
+   "verified": "exact arithmetic"
+  },
+  "grashof": {
+   "value": "s+l = 60+150 = 210 <= p+q = 120+80 = 200 -> FALSE",
+   "note": "this configuration is a NON-Grashof double-rocker: crank cannot fully rotate. Flag for demo: swap ground/shortest to get crank-rocker.",
+   "verified": "exact arithmetic"
+  }
+ },
+ "graph": {
+  "parts": [
+   {
+    "part": "ground (150 mm, virtual)",
+    "quantity": 1,
+    "role": "ground"
+   },
+   {
+    "part": "lever-arm-80",
+    "quantity": 1,
+    "role": "crank-standin",
+    "note": "crank is 60 mm; use parametric lever variant"
+   },
+   {
+    "part": "coupler-link-120",
+    "quantity": 1,
+    "role": "coupler"
+   },
+   {
+    "part": "lever-arm-80",
+    "quantity": 1,
+    "role": "rocker"
+   },
+   {
+    "part": "pin-6mm",
+    "quantity": 4,
+    "role": "pivot"
+   }
+  ],
+  "edges": [
+   {
+    "from": "ground(150)",
+    "rel": "pin at",
+    "to": "crank(60)",
+    "interface": "pin-6"
+   },
+   {
+    "from": "crank(60)",
+    "rel": "pin at",
+    "to": "coupler-link-120",
+    "interface": "pin-6"
+   },
+   {
+    "from": "coupler-link-120",
+    "rel": "pin at",
+    "to": "lever-arm-80",
+    "interface": "pin-6"
+   },
+   {
+    "from": "lever-arm-80",
+    "rel": "pin to ground",
+    "to": "ground(150)",
+    "interface": "pin-6"
+   }
+  ],
+  "install_order": [
+   "ground",
+   "crank",
+   "coupler",
+   "rocker (pins inserted last)"
+  ],
+  "disassembly_blockers": [
+   "cotter pins on pivot pins (not modelled)"
+  ]
+ },
+ "checks": [
+  {
+   "id": "CHK-GRASHOF",
+   "rule": "s + l <= p + q for full crank rotation",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-DOF-PLANAR",
+   "rule": "DOF == 1 for a single-input mechanism",
+   "status": "agent-verifiable"
+  },
+  {
+   "id": "CHK-TRANSMISSION-ANGLE",
+   "rule": "transmission angle >= 40 deg through working arc",
+   "status": "requires-numeric-solve"
+  }
+ ],
+ "repair_scenarios": [
+  "SC-LINKAGE-BIND-01"
+ ],
+ "view": {
+  "layered_diagram": "top view, four bars with pin markers; animate crank at 1 rev/s",
+  "animation": "numeric crank rotation, coupler curve trace"
+ },
+ "provenance": {
+  "source": "authored",
+  "license": "CC0-1.0"
+ }
+}

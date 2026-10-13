@@ -1,0 +1,39 @@
+{
+ "id": "PR-FBD-01",
+ "level": "foundation",
+ "category": "statics",
+ "title": "Force, torque and free-body diagrams",
+ "simple": "A free-body diagram isolates one part and draws every force and moment acting on it. If it is not accelerating, forces and moments sum to zero.",
+ "equations": [
+  "sum F = 0",
+  "sum M = 0",
+  "W = m*g"
+ ],
+ "variables": {
+  "F": "force (N)",
+  "M": "moment (N*m)",
+  "m": "mass (kg)",
+  "g": "9.81 m/s^2"
+ },
+ "visual": "assets/diagrams/PR-FBD-01.svg",
+ "failure_modes": [
+  "missing a reaction force",
+  "ignoring friction direction",
+  "treating a moving part as static"
+ ],
+ "example": "Gear on a shaft: weight of gear, belt pull, bearing reactions form a force couple the shaft bending must carry.",
+ "agent_use": "Before proposing any load-bearing modification, enumerate supports and loads on the changed part; if any reaction is unknown, mark the analysis incomplete rather than guessing.",
+ "limits": "Static equilibrium only. Dynamics, vibration and stress distribution need a solver or measured data; margin calls belong to a human engineer.",
+ "verify_with": [
+  "static hand calc",
+  "PyNiteFEA beam/frame model",
+  "CalculiX for continuum stress"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

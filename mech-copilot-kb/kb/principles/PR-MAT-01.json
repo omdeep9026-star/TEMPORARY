@@ -1,0 +1,37 @@
+{
+ "id": "PR-MAT-01",
+ "level": "foundation",
+ "category": "materials",
+ "title": "Materials: stiffness, strength and failure modes",
+ "simple": "Stiffness (E) resists stretch; strength (yield) resists permanent dent; toughness resists cracking. Steel is ~3x stiffer than aluminium but 3x denser - the shapes differ, not just the material.",
+ "equations": [
+  "sigma = F/A",
+  "epsilon = sigma/E",
+  "ductile: yield then neck; brittle: fracture at UTS"
+ ],
+ "variables": {
+  "E": "Young's modulus (GPa)",
+  "sigma_y": "yield strength (MPa)",
+  "K_IC": "fracture toughness"
+ },
+ "visual": "assets/diagrams/PR-STR-01.svg",
+ "failure_modes": [
+  "yield (permanent set)",
+  "brittle fracture (printed plastics, low T)",
+  "creep (plastics under sustained load)"
+ ],
+ "example": "PLA brackets sag under sustained load at room temperature (creep); PETG or aluminium for loaded brackets.",
+ "agent_use": "Any material swap must compare E, sigma_y, density and temperature limits from the KB materials table; unknown material = refuse, ask for datasheet.",
+ "limits": "Nominal handbook values only; batch, direction (anisotropy of prints) and processing vary.",
+ "verify_with": [
+  "materials table (KB)",
+  "datasheet (human)"
+ ],
+ "schema": "0.1",
+ "type": "principle",
+ "license": "CC0-1.0",
+ "provenance": {
+  "source": "authored for this KB; standard ME textbook content (Shigley-level), no text copied",
+  "license": "CC0-1.0"
+ }
+}

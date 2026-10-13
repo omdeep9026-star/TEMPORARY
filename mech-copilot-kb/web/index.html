@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mech Copilot - 2.5D workspace (MVP)</title>
+<style>
+  :root { --bg:#0b0f17; --panel:#121826; --line:#223047; --txt:#dbe7f5; --dim:#7d8ea6; --acc:#7fd4ff; --warn:#ffd166; --bad:#ff6b6b; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt); font:14px/1.45 system-ui, sans-serif; }
+  header { padding:10px 16px; border-bottom:1px solid var(--line); display:flex; gap:16px; align-items:center; }
+  header h1 { font-size:15px; margin:0; color:var(--acc); }
+  header .tag { color:var(--dim); font-size:12px; }
+  #app { display:grid; grid-template-columns: 230px 1fr 360px; height:calc(100vh - 42px); }
+  .panel { border-right:1px solid var(--line); overflow:auto; }
+  .panel:last-child { border-right:0; border-left:1px solid var(--line); }
+  .panel h2 { font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--dim); margin:12px 14px 6px; }
+  .item { padding:8px 14px; cursor:pointer; border-left:3px solid transparent; }
+  .item:hover { background:#161f30; }
+  .item.active { background:#16233a; border-left-color:var(--acc); }
+  .item .kind { color:var(--dim); font-size:11px; }
+  #stage { position:relative; }
+  #gl { width:100%; height:100%; display:block; }
+  #overlay { position:absolute; top:10px; left:12px; font-size:12px; color:var(--dim); pointer-events:none; }
+  #labelbar { position:absolute; bottom:10px; left:12px; right:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .chip { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:3px 10px; font-size:12px; color:var(--txt); cursor:pointer; }
+  .chip:hover { border-color:var(--acc); }
+  #inspector { padding:0 14px 20px; }
+  .field { margin:10px 0; }
+  .field label { display:block; color:var(--dim); font-size:12px; margin-bottom:4px; }
+  .field input[type=range] { width:100%; }
+  .field .val { color:var(--acc); font-size:12px; }
+  .btn { background:#1b2troubleshoot; background:#1b2740; border:1px solid var(--line); color:var(--txt); border-radius:6px; padding:7px 12px; cursor:pointer; font-size:13px; }
+  .btn:hover { border-color:var(--acc); }
+  .btn.warn { border-color:var(--warn); color:var(--warn); }
+  #prompt { width:100%; background:#0e1522; color:var(--txt); border:1px solid var(--line); border-radius:6px; padding:8px; font:13px/1.4 inherit; resize:vertical; min-height:64px; }
+  #reply { margin-top:10px; font-size:13px; }
+  .label-verified { color:#7ee787; } .label-estimate { color:var(--warn); }
+  .label-open { color:var(--warn); } .label-blocked { color:var(--bad); }
+  pre.kb { background:#0e1522; border:1px solid var(--line); border-radius:6px; padding:8px; font-size:12px; white-space:pre-wrap; }
+  .principle-img { width:100%; border:1px solid var(--line); border-radius:6px; margin:8px 0; background:#0e1522; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Mech Copilot</h1>
+  <span class="tag">local knowledgebase + build123d + 2.5D viewer - AMD-ready stack</span>
+  <span class="tag" id="kbstats"></span>
+</header>
+<div id="app">
+  <div class="panel" id="browser"><h2>Knowledge base</h2><div id="blist"></div></div>
+  <div id="stage">
+    <canvas id="gl"></canvas>
+    <div id="overlay">drag to orbit - wheel to zoom - click a chip to highlight a part</div>
+    <div id="labelbar"></div>
+  </div>
+  <div class="panel" id="right">
+    <h2>Inspector</h2>
+    <div id="inspector"><p class="tag">Select an entry on the left.</p></div>
+    <h2>AI prompt</h2>
+    <div id="inspector2" style="padding:0 14px;">
+      <textarea id="prompt" placeholder="e.g. The output turns too fast, slow it down about 1.5x"></textarea>
+      <div style="display:flex; gap:8px; margin-top:8px;">
+        <button class="btn" id="send">Send</button>
+        <button class="btn" id="demobtn">Run demo flow</button>
+      </div>
+      <div id="reply"></div>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+}}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const API = async (path, body) => {
+  const r = await fetch('/api/' + path, body ? {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)} : undefined);
+  return r.json();
+};
+
+let renderer, scene, camera, controls, currentGroup;
+init3D();
+listKB();
+
+function init3D() {
+  const canvas = document.getElementById('gl');
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+  scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x0b0f17);
+  camera = new THREE.PerspectiveCamera(45, 2, 0.1, 5000);
+  camera.position.set(120, 90, 160);
+  controls = new OrbitControls(camera, canvas);
+  scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+  const d = new THREE.DirectionalLight(0xffffff, 1.2); d.position.set(1, 2, 1.5); scene.add(d);
+  const grid = new THREE.GridHelper(400, 40, 0x223047, 0x182236);
+  scene.add(grid);
+  const resize = () => {
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix();
+  };
+  new ResizeObserver(resize).observe(canvas); resize();
+  (function loop(){ requestAnimationFrame(loop); controls.update(); renderer.render(scene, camera); })();
+}
+
+function clearGroup() {
+  if (currentGroup) { scene.remove(currentGroup); currentGroup = null; }
+}
+
+function assetURL(p) {
+  // KB stores repo-relative paths like "assets/diagrams/PR-..svg" or "kb/assets/..."
+  if (!p) return p;
+  const rel = p.replace(/^kb\//, '');
+  return rel.startsWith('/kb-assets/') || rel.startsWith('http') ? rel : '/kb-assets/' + rel;
+}
+
+function showGLB(url) {
+  clearGroup();
+  currentGroup = new THREE.Group(); scene.add(currentGroup);
+  url = assetURL(url);
+  new GLTFLoader().load(url, (g) => {
+    const box = new THREE.Box3().setFromObject(g.scene);
+    const size = box.getSize(new THREE.Vector3()).length() || 1;
+    const s = 120 / size;
+    g.scene.scale.setScalar(s);
+    box.setFromObject(g.scene);
+    g.scene.position.y = -box.min.y;
+    g.scene.traverse(o => { if (o.isMesh) { o.material = new THREE.MeshStandardMaterial({color:0x7fd4ff, metalness:0.35, roughness:0.5}); }});
+    currentGroup.add(g.scene);
+    document.getElementById('overlay').textContent = url;
+  }, undefined, (e) => {
+    document.getElementById('overlay').textContent = 'preview unavailable (serve kb/ via the backend)';
+  });
+}
+
+function showSVG(url, title) {
+  clearGroup();
+  currentGroup = new THREE.Group(); scene.add(currentGroup);
+  const img = new THREE.Mesh(new THREE.PlaneGeometry(160, 87), new THREE.MeshBasicMaterial({map: new THREE.TextureLoader().load(url)}));
+  img.position.y = 45; currentGroup.add(img);
+  document.getElementById('overlay').textContent = title || url;
+}
+
+function showText(text) {
+  clearGroup();
+  const el = document.createElement('div');
+  el.style.cssText = 'position:absolute;top:40px;left:14px;right:14px;color:#9fb3cc;font-size:13px;';
+  el.textContent = text;
+  document.getElementById('stage').appendChild(el);
+  setTimeout(()=>el.remove(), 12000);
+}
+
+async function listKB() {
+  const data = await API('kb');
+  document.getElementById('kbstats').textContent =
+    `${data.counts.components} components - ${data.counts.principles} principles - ${data.counts.assemblies} assemblies - ${data.counts.scenarios} scenarios`;
+  const list = document.getElementById('blist'); list.innerHTML = '';
+  for (const item of data.entries) {
+    const div = document.createElement('div');
+    div.className = 'item';
+    div.innerHTML = `<div>${item.label}</div><div class="kind">${item.kind} - ${item.id}</div>`;
+    div.onclick = () => { document.querySelectorAll('.item').forEach(e=>e.classList.remove('active')); div.classList.add('active'); select(item); };
+    list.appendChild(div);
+  }
+}
+
+async function select(item) {
+  const full = await API('entry?id=' + encodeURIComponent(item.id));
+  const ins = document.getElementById('inspector');
+  ins.innerHTML = `<h3 style="margin:4px 0 2px;color:var(--acc)">${full.entry.label || full.entry.title || full.entry.id}</h3>
+    <p style="color:var(--dim);font-size:12px">${full.entry.summary || full.entry.simple || ''}</p>`;
+  if (full.entry.type === 'component' && full.preview) {
+    showGLB(full.preview);
+    // parameter sliders for agent-side recomputation
+    const params = full.entry.parameters || {};
+    for (const [k, v] of Object.entries(params)) {
+      if (typeof v === 'number') {
+        const f = document.createElement('div'); f.className = 'field';
+        f.innerHTML = `<label>${k}</label><input type="range" min="${v/2}" max="${v*2}" step="${v/50}" value="${v}"><span class="val">${v}</span>`;
+        const rng = f.querySelector('input'), val = f.querySelector('.val');
+        rng.oninput = () => { val.textContent = rng.value; };
+        ins.appendChild(f);
+      }
+    }
+    if (full.entry.governing?.equations?.length) {
+      const p = document.createElement('div'); p.className = 'field';
+      p.innerHTML = `<span class="tag">governing: ${full.entry.governing.equations.join(' - ')}</span>`;
+      ins.appendChild(p);
+    }
+  } else if (full.entry.type === 'principle' && full.entry.visual) {
+    showSVG(assetURL(full.entry.visual), full.entry.title);
+    const im = document.createElement('img'); im.className='principle-img'; im.src = assetURL(full.entry.visual);
+    ins.appendChild(im);
+    const eq = document.createElement('pre'); eq.className='kb';
+    eq.textContent = (full.entry.equations||[]).join('\n') + (full.entry.limits ? '\n\nLIMITS: ' + full.entry.limits : '');
+    ins.appendChild(eq);
+  } else if (full.entry.type === 'assembly') {
+    showText(full.entry.view?.layered_diagram || full.entry.summary);
+    // show parts as chips
+    const lb = document.getElementById('labelbar'); lb.innerHTML = '';
+    for (const p of full.entry.graph?.parts || []) {
+      const c = document.createElement('span'); c.className='chip'; c.textContent = p.part;
+      lb.appendChild(c);
+    }
+    const pre = document.createElement('pre'); pre.className='kb';
+    pre.textContent = 'install order: ' + (full.entry.graph?.install_order||[]).join(' -> ')
+      + '\nchecks: ' + (full.entry.checks||[]).map(c=>`${c.id} (${c.status})`).join(', ');
+    ins.appendChild(pre);
+  } else if (full.entry.type === 'scenario') {
+    showText(full.entry.symptom);
+    const pre = document.createElement('pre'); pre.className='kb';
+    pre.textContent = (full.entry.procedures||[]).join('\n');
+    ins.appendChild(pre);
+  }
+}
+
+document.getElementById('send').onclick = runPrompt;
+document.getElementById('demobtn').onclick = () => { document.getElementById('prompt').value = 'The output of my gear train turns too fast. Slow it down about 1.5x.'; runPrompt(); };
+
+async function runPrompt() {
+  const q = document.getElementById('prompt').value.trim();
+  if (!q) return;
+  const reply = document.getElementById('reply');
+  reply.innerHTML = '<span class="tag">thinking...</span>';
+  const res = await API('agent', {prompt: q});
+  renderReply(res);
+  if (res.proposal) {
+    // refresh the affected assembly view
+    const ev = await API('entry?id=' + res.proposal.assembly);
+    select({id: res.proposal.assembly, label:'', kind:'assembly'});
+  }
+}
+
+function renderReply(res) {
+  const reply = document.getElementById('reply');
+  const cls = {'verified-arithmetic':'label-verified','verified-with-open-items':'label-open','blocked-by-rules':'label-blocked','estimate':'label-estimate','unverified-proposal':'label-open'}[res.label] || 'label-open';
+  let html = `<div><b>answer</b> <span class="${cls}">[${res.label}]</span></div>`;
+  html += `<div style="margin:6px 0">${res.answer}</div>`;
+  if (res.changes) html += `<pre class="kb">proposed changes: ${JSON.stringify(res.changes)}</pre>`;
+  if (res.validation) html += `<pre class="kb">${res.validation.results.map(r=>`[${r.pass===true?'PASS':(r.pass===null?'OPEN':'FAIL')}] ${r.check}: ${r.detail}`).join('\n')}</pre>`;
+  if (res.citations) html += `<div class="tag">cites: ${res.citations.join(', ')}</div>`;
+  if (res.open_items) html += `<div class="label-open" style="font-size:12px">human must verify: ${res.open_items.join('; ')}</div>`;
+  reply.innerHTML = html;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+ "schema": "0.1",
+ "count": 16,
+ "foundation": [
+  "PR-FBD-01",
+  "PR-DOF-01",
+  "PR-LVR-01",
+  "PR-GTR-01",
+  "PR-BLT-01",
+  "PR-SFT-01",
+  "PR-BRG-01",
+  "PR-FST-01",
+  "PR-SPR-01",
+  "PR-MAT-01",
+  "PR-FRI-01",
+  "PR-TOL-01",
+  "PR-ASM-01"
+ ],
+ "advanced": [
+  "PR-4BAR-01",
+  "PR-FAT-01",
+  "PR-THM-01"
+ ]
+}
